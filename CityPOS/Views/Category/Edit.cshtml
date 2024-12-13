@@ -1,0 +1,55 @@
+﻿@model CategoryViewModel
+@{
+    ViewData["Title"] = "Category";
+}
+<h3>Category Edit</h3>
+@{
+    var info = TempData["info"];
+}
+@if (info != null)
+{
+    if (Convert.ToBoolean(TempData["status"]))
+    {
+        <div class="alert alert-success" role="alert">
+            @info
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            @info
+        </div>
+    }
+}
+<form action="/category/Update" method="post">
+    <input type="hidden" name="id" value="@Model.id" />
+    <div class="mb-3">
+        <label class="form-label">Code</label>
+        <input type="text" class="form-control" placeholder="Type Category Code" name="Code" value=@Model.Code required>
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" placeholder="Type Category Name" name="Name" value=@Model.Name required>
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        <input type="text" class="form-control" placeholder="Type Description" name="Description" value=@Model.Description required>
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label">CreatedAt</label>
+        <input type="text" class="form-control" name="CreatedAt" value=@Model.CreatedAt readonly>
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label">ModifiedAt</label>
+        <input type="text" class="form-control" name="ModifiedAt" value=@Model.ModifiedAt readonly>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a href="/category/list" class="btn btn-primary">Go to list</a>
+
+</form> 

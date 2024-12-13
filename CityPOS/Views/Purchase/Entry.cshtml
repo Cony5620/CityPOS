@@ -1,0 +1,211 @@
+﻿@model PurchaseWithDetailViewModel
+
+@{
+    ViewData["Title"] = "Purchase";
+}
+
+<h3>Add Purchase Record</h3>
+
+@if (ViewData["Info"] != null)
+{
+    if (Convert.ToBoolean(ViewData["status"]))
+    {
+        <div class="alert alert-success" role="alert">
+            @ViewData["Info"]
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            @ViewData["Info"]
+        </div>
+    }
+}
+
+<form asp-action="Entry" asp-controller="Purchase" method="post">
+    <div class="row mb-3">
+        <div class="col-3">
+            <label asp-for="Purchase.PurchaseDate" class="form-label">Purchase Date</label>
+            <input asp-for="Purchase.PurchaseDate" class="form-control" type="date" required />
+            <span asp-validation-for="Purchase.PurchaseDate" class="text-danger"></span>
+        </div>
+
+        <div class="col-3">
+            <label asp-for="Purchase.PurchaseVoNo" class="form-label">Voucher Number</label>
+            <input asp-for="Purchase.PurchaseVoNo" class="form-control" required />
+            <span asp-validation-for="Purchase.PurchaseVoNo" class="text-danger"></span>
+        </div>
+
+        <div class="col-3">
+            <label asp-for="Purchase.Supplierid" class="form-label">Supplier</label>
+            <select asp-for="Purchase.Supplierid" class="form-select" required>
+                <option value="">Select a Supplier</option>
+                @foreach (var supplier in ViewBag.Supplier)
+                {
+                    <option value="@supplier.id">@supplier.Name</option>
+                }
+            </select>
+            <span asp-validation-for="Purchase.Supplierid" class="text-danger"></span>
+        </div>
+    </div>
+
+    <!-- Item Details Entry -->
+    <div class="row mb-3">
+        <div class="col-3">
+            <label class="form-label">Item</label>
+            <select id="itemId" class="form-select" required>
+                <option value="">Select an Item</option>
+                @foreach (var item in ViewBag.Item)
+                {
+                    <option value="@item.id" data-name="@item.Name">@item.Name</option>
+                }
+            </select>
+        </div>
+
+        <div class="col-2">
+            <label class="form-label">Unit</label>
+            <select id="unitId" class="form-select" required>
+                <option value="">Select a Unit</option>
+                @foreach (var unit in ViewBag.Unit)
+                {
+                    <option value="@unit.id">@unit.Name</option>
+                }
+            </select>
+        </div>
+
+        <div class="col-2">
+            <label class="form-label">Quantity</label>
+            <input type="number" id="quantity" class="form-control" min="1" required />
+        </div>
+
+        <div class="col-2">
+            <label class="form-label">Price</label>
+            <input type="number" id="price" class="form-control" step="0.01" min="0" required />
+        </div>
+
+        <div class="col-2">
+            <label class="form-label">Expired Date</label>
+            <input type="date" id="expiredDate" class="form-control" />
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" id="addItemButton">Add Item</button>
+    <a href="/Purchase/List" class="btn btn-success">Go to List</a>
+
+    <div id="itemsSection" style="display:none; margin-top: 20px;">
+        <table class="table" id="itemsTable">
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Unit</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total Price</th>
+                    <th>Expired Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="dynamicTableBody">
+                <!-- Dynamically added rows will appear here -->
+            </tbody>
+        </table>
+
+        <div class="row mt-3 align-items-center">
+            <div class="col-8 text-end">
+                <button type="submit" class="btn btn-primary me-2" id="entryButton">Entry</button>
+                <button type="button" class="btn btn-secondary" onclick="confirmRefresh()">Refresh</button>
+            </div>
+            <div class="col-4">
+                <label class="form-label">Total Amount</label>
+                <input type="text" id="totalAmount" class="form-control" readonly />
+            </div>
+        </div>
+    </div>
+
+    @* Hidden input fields to enable MVC binding for ItemDetails *@
+    <div id="hiddenItemDetails"></div>
+</form>
+
+<script>
+    let totalAmount = 0;
+    let itemsAdded = false;
+
+    // Add item to the table
+    function addItem() {
+        const itemId = document.getElementById("itemId").value;
+        const itemName = document.getElementById("itemId").options[document.getElementById("itemId").selectedIndex].text;
+        const unitId = document.getElementById("unitId").value;
+        const unitName = document.getElementById("unitId").options[document.getElementById("unitId").selectedIndex].text;
+        const quantity = parseFloat(document.getElementById("quantity").value);
+        const price = parseFloat(document.getElementById("price").value);
+        const expiredDate = document.getElementById("expiredDate").value;
+        const totalPrice = (quantity * price).toFixed(2);
+
+        if (!itemId || !quantity || !price) {
+            alert("Please fill in all required fields.");
+            return;
+        }
+
+        totalAmount += parseFloat(totalPrice);
+        document.getElementById("totalAmount").value = totalAmount.toFixed(2);
+
+        if (!itemsAdded) {
+            document.getElementById("itemsSection").style.display = 'block';
+            itemsAdded = true;
+        }
+
+        const tableBody = document.getElementById("dynamicTableBody");
+        const index = tableBody.children.length;
+
+        const newRow = document.createElement("tr");
+        newRow.innerHTML = `
+                    <td>${itemName}</td>
+                    <td>${unitName}</td>
+                    <td>${quantity}</td>
+                    <td>${price.toFixed(2)}</td>
+                    <td>${totalPrice}</td>
+                    <td>${expiredDate || "N/A"}</td>
+                    <td><button type="button" class="btn btn-danger btn-sm" onclick="deleteRow(this, ${totalPrice})">Delete</button></td>
+                `;
+        tableBody.appendChild(newRow);
+
+        const hiddenItemDetails = document.getElementById("hiddenItemDetails");
+        hiddenItemDetails.innerHTML += `
+                    <input type="hidden" name="ItemDetails[${index}].Itemid" value="${itemId}" />
+                    <input type="hidden" name="ItemDetails[${index}].Unitid" value="${unitId}" />
+                    <input type="hidden" name="ItemDetails[${index}].Quantity" value="${quantity}" />
+                    <input type="hidden" name="ItemDetails[${index}].Price" value="${price}" />
+                    <input type="hidden" name="ItemDetails[${index}].TotalPrice" value="${totalPrice}" />
+                    <input type="hidden" name="ItemDetails[${index}].ExpiredDate" value="${expiredDate}" />
+                `;
+    }
+
+    function deleteRow(button, price) {
+        if (confirm("Are you sure you want to delete this item?")) {
+            const row = button.closest("tr");
+            row.parentNode.removeChild(row);
+            totalAmount -= parseFloat(price);
+            document.getElementById("totalAmount").value = totalAmount.toFixed(2);
+
+            if (!document.getElementById("dynamicTableBody").children.length) {
+                document.getElementById("itemsSection").style.display = 'none';
+                itemsAdded = false;
+            }
+        }
+    }
+    function confirmRefresh() {
+        if (confirm("Are you sure you want to refresh? All unsaved data will be lost.")) {
+            refreshList();
+        }
+    }
+    function refreshList() {
+        document.getElementById("dynamicTableBody").innerHTML = '';
+        document.getElementById("hiddenItemDetails").innerHTML = '';
+        totalAmount = 0;
+        document.getElementById("totalAmount").value = totalAmount.toFixed(2);
+        document.getElementById("itemsSection").style.display = 'none';
+        itemsAdded = false;
+    }
+
+    document.getElementById("addItemButton").addEventListener('click', addItem);
+</script>

@@ -1,0 +1,56 @@
+﻿@model BrandViewModel
+@{
+    ViewData["Title"] = "Edit Brand";
+}
+
+<h3>Brand Edit</h3>
+
+@{
+    var info = TempData["info"];
+}
+
+@if (info != null)
+{
+    if (Convert.ToBoolean(TempData["status"]))
+    {
+        <div class="alert alert-success" role="alert">
+            @info
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            @info
+        </div>
+    }
+}
+
+<form action="/brand/update" method="post">
+    <input type="hidden" name="id" value="@Model.id" />
+    <div class="mb-3">
+        <label class="form-label">Code</label>
+        <input type="text" class="form-control" name="Code" value="@Model.Code" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" name="Name" value="@Model.Name" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Category</label>
+        <select class="form-select" name="Categoryid">
+            <option selected>Select the Category</option>
+            @foreach (var Category in ViewBag.Categories)
+            @if(Category.id==Model.Categoryid)
+            {
+                <option value="@Category.id" selected>@Category.Code</option>
+            }
+            else
+                {
+                    <option value="@Category.id" >@Category.Code</option>
+                }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a href="/brand/list" class="btn btn-secondary">Go to List</a>
+</form>

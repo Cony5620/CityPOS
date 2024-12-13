@@ -1,0 +1,54 @@
+﻿@model TownshipViewModel
+@{
+    ViewData["Title"] = "Township";
+}
+<h3>Township</h3>
+@{
+    var info = TempData["info"];
+}
+@if (info != null)
+{
+    if (Convert.ToBoolean(TempData["status"]))
+    {
+        <div class="alert alert-success" role="alert">
+            @info
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            @info
+        </div>
+    }
+}
+<form action="/township/Update" method="post">
+<input type="hidden" name="id" value="@Model.id" />
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" name="Name" value="@Model.Name" required>
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label">City</label>
+        <select class="form-select" name="Cityid">
+          
+            @foreach (var City in ViewBag.City)
+            @if(City.id==Model.Cityid)
+            {
+                <option value="@City.id" selected>@City.Name</option>
+            }
+              else
+            {
+                    <option value="@City.id">@City.Name</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Delivery Fees</label>
+        <input type="number" class="form-control" placeholder="Type Delivery Fees" name="DeliveryFees" value="@Model.DeliveryFees" required>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a href="/township/list" class="btn btn-primary">Go to list</a>
+
+</form> 

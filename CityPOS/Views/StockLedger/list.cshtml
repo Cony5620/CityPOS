@@ -1,0 +1,128 @@
+﻿@model IEnumerable<StockLedgerViewModel>
+
+<h3>Stock Ledger List</h3>
+
+@{
+    var info = ViewData["info"];
+}
+
+@if (info != null)
+{
+    if (Convert.ToBoolean(ViewData["status"]))
+    {
+        <div class="alert alert-success" role="alert">
+            @info
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            @info
+        </div>
+    }
+}
+
+<form id="filterForm" method="get">
+    <div class="row mb-3">
+        <div class="col-3">
+            <div class="mb-3">
+                <label class="form-label">From Date</label>
+                <input type="date" class="form-control" name="fromDate" />
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="mb-3">
+                <label class="form-label">To Date</label>
+                <input type="date" class="form-control" name="toDate" />
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="mb-3">
+                <label class="form-label">Item</label>
+                <select class="form-select" id="ItemDropdown" name="Itemid">
+                    <option value="" selected>Select an Item</option>
+                    @if (ViewBag.Item != null)
+                    {
+                        foreach (var item in ViewBag.Item)
+                        {
+                            <option value="@item.id">@item.Name</option>
+                        }
+                    }
+                    else
+                    {
+                        <option disabled>No items available</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="col-3 d-flex align-items-end">
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<table id="StockLedgerTable" class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Ledger Date</th>
+            <th scope="col">Item Code</th>
+            <th scope="col">Item Name</th>
+            <th scope="col">In Qty</th>
+            <th scope="col">Out Qty</th>
+            <th scope="col">Unit</th>
+            <th scope="col">Status</th>
+            <th scope="col">Expired Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            int i = 1;
+            foreach (var ledger in Model)
+            {
+                <tr>
+                    <th scope="row">@i</th>
+                    <td>@(ledger.LedgerDate.HasValue ? ledger.LedgerDate.Value.ToShortDateString() : "No Date")</td>
+                    <td>@(ledger.ItemCode ?? "N/A")</td>
+                    <td>@(ledger.ItemName ?? "N/A")</td>
+                    <td>@ledger.InQty</td>
+                    <td>@ledger.OutQty</td>
+                    <td>@(ledger.UnitName ?? "N/A")</td>
+                    <td>@(ledger.TransactionType ?? "Unknown")</td>
+                    <td>@(ledger.ExpiredDate.HasValue ? ledger.ExpiredDate.Value.ToShortDateString() : "No Date")</td>
+                    
+                </tr>
+                i++;
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="8" class="text-center">There is no data available!</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#filterForm').on('submit', function (event) {
+            const fromDate = $('[name="fromDate"]').val();
+            const toDate = $('[name="toDate"]').val();
+            const itemId = $('[name="Itemid"]').val();
+
+           
+            if (!(fromDate && toDate) && !itemId) {
+                alert("Please fill in either the dates or select an item.");
+                event.preventDefault();
+            }
+        });
+    });
+</script>

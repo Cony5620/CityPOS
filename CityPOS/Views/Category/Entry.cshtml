@@ -1,0 +1,48 @@
+﻿@model CategoryViewModel
+@{
+    ViewData["Title"] = "Category";
+}
+<h3>Category</h3>
+@{
+    var info=ViewData["Info"];
+}
+@if (info != null)
+{
+    if (Convert.ToBoolean(ViewData["Status"]))
+    {
+        <div class="alert alert-success" role="alert">
+           @info
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            @info
+        </div>
+    }
+}
+<form action="/category/entry" method="post">
+   
+    
+        <div class="mb-3">
+            <label class="form-label">Code</label>
+            <input type="text" class="form-control" placeholder="Type Category Code" name="Code" value="@Model?.Code" readonly>
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" placeholder="Type Category Name" name="Name" required>
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Description</label>
+            <input type="text" class="form-control" placeholder="Type Description" name="Description" required>
+
+        </div>
+    
+
+   
+    <button type="submit" class="btn btn-primary">Entry</button>
+    <a href="/category/list" class="btn btn-primary">Go to list</a>
+   
+</form> 

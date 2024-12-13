@@ -1,0 +1,140 @@
+﻿@model IEnumerable<StockBalanceViewModel>
+
+<h3>Stock Balance List</h3>
+
+@{
+    var info = ViewData["info"];
+}
+
+@if (info != null)
+{
+    if (Convert.ToBoolean(ViewData["status"]))
+    {
+        <div class="alert alert-success" role="alert">
+            @info
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            @info
+        </div>
+    }
+}
+
+<form id="filterForm" method="get">
+    <div class="row mb-3">
+        <div class="col-4">
+            <div class="mb-3">
+                <label class="form-label">Category</label>
+                <select class="form-select" id="CategoryDropdown" name="Categoryid" required>
+                    <option value="" selected>Select the Category</option>
+                    @foreach (var category in ViewBag.Category)
+                    {
+                        <option value="@category.id">@category.Code</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="mb-3">
+                <label class="form-label">Item</label>
+                <select class="form-select" id="ItemDropdown" name="Itemid" >
+                    <option value="" selected>Select an Item</option>
+                    <!-- Item will be dynamically populated here based on the selected category -->
+                </select>
+            </div>
+        </div>
+
+        <div class="col-4 d-flex align-items-end">
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<table id="StockBalanceTable" class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Category Name</th>
+            <th scope="col">Item Code</th>
+            <th scope="col">Item Name</th>
+            <th scope="col">Qty</th>
+            <th scope="col">Unit</th>
+            <th scope="col">Expired Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            int i = 1;
+            foreach (var stockBalance in Model)
+            {
+                <tr>
+                    <th scope="row">@i</th>
+                    <td>@(stockBalance.CategoryName ?? "N/A")</td>
+                    <td>@(stockBalance.ItemCode ?? "N/A")</td>
+                    <td>@(stockBalance.ItemName ?? "N/A")</td>
+                    <td>@(stockBalance.Quantity)</td>
+                    <td>@(stockBalance.UnitName ?? "N/A")</td>
+                    <td>@stockBalance.ExpiredDate.ToShortDateString()</td>
+                </tr>
+                i++;
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="7" class="text-center">There is no data available!</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/StockBalance/entry" class="btn btn-primary">Go To StockControl</a>
+<a href="/StockLedger/list" class="btn btn-primary">Go To StockLedger</a>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Fetch items based on selected category
+        $('#CategoryDropdown').change(function () {
+            var categoryid = $(this).val();
+            if (categoryid) {
+                $.ajax({
+                    url: '@Url.Action("GetItems", "StockBalance")', // Corrected to match the controller action name
+                    type: 'GET',
+                    data: { categoryid: categoryid }, // Adjusted to match controller parameter name
+                    success: function (data) {
+                        $('#ItemDropdown').empty(); // Clear existing items
+                        $('#ItemDropdown').append($('<option>', {
+                            value: '',
+                            text: 'Select an Item'
+                        }));
+                        if (data && data.length > 0) {
+                            console.log("Data Success");
+                            $.each(data, function (index, item) {
+                                $('#ItemDropdown').append($('<option>', {
+                                    value: item.id,
+                                    text: item.name // Adjust this based on your item object structure
+                                }));
+                            });
+                        } else {
+                            $('#ItemDropdown').append($('<option>', {
+                                value: '',
+                                text: 'No items available'
+                            }));
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error fetching items: " + error);
+                    }
+                });
+            } else {
+                $('#ItemDropdown').empty().append('<option selected>Select an Item</option>');
+            }
+        });
+    });
+</script>

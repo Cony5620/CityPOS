@@ -1,0 +1,87 @@
+﻿@model IEnumerable<BrandViewModel>
+
+<h3>Brand List</h3>
+
+@{
+    var info = ViewData["info"];
+}
+
+@if (info != null)
+{
+    if (Convert.ToBoolean(ViewData["status"]))
+    {
+        <div class="alert alert-success" role="alert">
+            @info
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            @info
+        </div>
+    }
+}
+
+<table id="brandTable" class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Code</th>
+            <th scope="col">Name</th>
+            <th scope="col">Category</th>
+            <th scope="col">Actions</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Any())
+        {
+            int i = 1;
+            foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@i</th>
+                    <td>@item.Code</td>
+                    <td>@item.Name</td>
+                    <td>@item.CategoryName</td>
+                    <td>
+                        <a href="/brand/edit?id=@item.id" class="btn btn-success">Edit</a>
+                    </td>
+                    <td>
+                        <a href="/brand/delete?id=@item.id" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?');">Delete</a>
+                    </td>
+                </tr>
+                i++;
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="6" class="text-center">There is no data available!</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/brand/entry" class="btn btn-primary">Entry</a>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- DataTables CSS and JS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" />
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#categoryTable').DataTable({
+            "paging": true,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "lengthChange": true,
+            "pageLength": 10
+        });
+    });
+</script>

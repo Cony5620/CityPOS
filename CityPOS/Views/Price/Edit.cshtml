@@ -1,0 +1,81 @@
+﻿@model PriceViewModel
+@{
+    ViewData["Title"] = "Edit Price";
+}
+
+<h3>Price Edit</h3>
+
+@{
+    var info = TempData["info"];
+}
+
+@if (info != null)
+{
+    if (Convert.ToBoolean(TempData ["status"]))
+    {
+        <div class="alert alert-success" role="alert">
+            @info
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            @info
+        </div>
+    }
+}
+
+<form action="/Price/update" method="post">
+    <input type="hidden" name="id" value="@Model.id" />
+    <div class="mb-3">
+        <label class="form-label">Item</label>
+        <select class="form-select" name="Itemid">
+            <option selected>Select the Item</option>
+            @foreach (var item in ViewBag.Item)
+                @if (item.id == Model.Itemid)
+                {
+                    <option value="@item.id" selected>@item.Name</option>
+                }
+                else
+                {
+                    <option value="@item.id">@item.Code</option>
+                }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Unit</label>
+        <select class="form-select" name="Unitid">
+            <option selected>Select the Unit</option>
+            @foreach (var Unit in ViewBag.Unit)
+                @if (Unit.id == Model.Unitid)
+                {
+                    <option value="@Unit.id" selected>@Unit.Name</option>
+                }
+                else
+                {
+                    <option value="@Unit.id">@Unit.Name</option>
+                }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Pricing Date</label>
+        <input type="date" class="form-control" name="PricingDate" value="@Model.PricingDate.ToString("yyyy-MM-dd")" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Purchase Price</label>
+        <input type="number" class="form-control" name="PurchasePrice" value="@Model.PurchasePrice" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">WholeSale Price</label>
+        <input type="number" class="form-control" name="WholeSalePrice" value="@Model.WholeSalePrice" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">RetailSale Price</label>
+        <input type="number" class="form-control" name="RetailSalePrice" value="@Model.RetailSalePrice" required>
+    </div>
+
+  
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a href="/Price/list" class="btn btn-secondary">Go to List</a>
+</form>

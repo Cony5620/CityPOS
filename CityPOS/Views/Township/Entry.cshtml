@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Township";
+}
+<h3>Township</h3>
+@{
+    var info = ViewData["info"];
+}
+@if (info != null)
+{
+    if (Convert.ToBoolean(ViewData["status"]))
+    {
+        <div class="alert alert-success" role="alert">
+            @info
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            @info
+        </div>
+    }
+}
+<form action="/township/entry" method="post">
+  
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" placeholder="Type township Name" name="Name" required>
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label">City</label>
+        <select class="form-select" name="Cityid">
+            <option selected>Select the City</option>
+            @foreach (var City in ViewBag.City)
+            {
+                <option value="@City.id">@City.Name</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Delivery Fees</label>
+        <input type="number" class="form-control" placeholder="Type Delivery Fees" name="DeliveryFees" required>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Entry</button>
+    <a href="/township/list" class="btn btn-primary">Go to list</a>
+
+</form> 

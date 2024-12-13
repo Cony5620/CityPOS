@@ -1,0 +1,63 @@
+﻿@model IEnumerable<CityViewModel>
+@{
+    ViewData["Title"] = "City";
+}
+<h3>City List</h3>
+@{
+    var info = TempData["info"];
+}
+@if (info != null)
+{
+    @if (Convert.ToBoolean(TempData["status"]))
+    {
+        <div class="alert alert-success" role="alert">
+            @info
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            @info
+        </div>
+
+    }
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Remark</th>
+            <th scope="col">Actions</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Any())
+        {
+            int i = 1;
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@i</th>
+                    <td>@item.Name</td>
+                    <td>@item.Remark</td>
+                    <td><a href="/city/edit?id=@item.id" class="btn btn-success">Edit</a></td>
+                    <td><a href="/city/delete?id=@item.id" class="btn btn-danger" onclick="return confirm('Are you sure to delete');">Delete</a></td>
+                </tr>
+                i++;
+            }
+
+
+        }
+        else
+        {
+            <div class="alert alert-danger" role="alert">
+                There is no data.
+            </div>
+        }
+
+
+    </tbody>
+</table>
+<a href="/city/entry" class="btn btn-primary">Entry</a>

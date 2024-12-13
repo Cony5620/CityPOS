@@ -1,0 +1,205 @@
+﻿@model Tuple<ItemViewModel, PriceViewModel>
+@{
+    ViewData["Title"] = "Item";
+}
+<h3>Item</h3>
+@{
+    var info = ViewData["info"];
+}
+@if (info != null)
+{
+    if (Convert.ToBoolean(ViewData["status"]))
+    {
+        <div class="alert alert-success" role="alert">
+            @info
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            @info
+        </div>
+    }
+}
+<form action="/Item/entry" method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-4">
+            <div class="mb-3">
+                <label class="form-label">Code</label>
+                <input type="text" class="form-control" name="ItemViewModel.Code" value="@Model?.Item1.Code" readonly>
+
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" placeholder="Type Item Name" name="ItemViewModel.Name" required>
+
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="mb-3">
+                <label class="form-label">Photo</label>
+                <input type="file" class="form-control" name="ItemViewModel.photoimg" accept="image/*" id="customFile" onchange="readURL(this)">
+                <img src="" alt="No Image" id="img" class="rounded-circle" height="40" width="40">
+
+            </div>
+        </div>
+    </div>
+  
+  <div class="row">
+      <div class="col-4">
+            <div class="mb-3">
+                <label class="form-label">Category</label>
+                <select class="form-select" id="CategoryDropdown" name="ItemViewModel.Categoryid">
+                    <option selected>Select the Category</option>
+                    @foreach (var Category in ViewBag.Category)
+                    {
+                        <option value="@Category.id">@Category.Code</option>
+                    }
+                </select>
+            </div>
+      </div>
+        <div class="col-4">
+            <div class="mb-3">
+                <label class="form-label">Brand</label>
+                <select class="form-select" id="BrandDropdown" name="ItemViewModel.Brandid">
+                    <option selected>Select the Brand</option>
+                    <!-- Brands will be dynamically populated here based on the selected category -->
+                </select>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="mb-3">
+                <label class="form-label">Supplier</label>
+                <select class="form-select" name="ItemViewModel.Supplierid">
+                    <option selected>Select the Supplier</option>
+                    @foreach (var supplier in ViewBag.Supplier)
+                    {
+                        <option value="@supplier.id">@supplier.Name</option>
+                    }
+                </select>
+            </div>
+        </div>
+  </div>
+  
+
+  <div class="row">
+      <div class="col-4">
+            <div class="mb-3">
+                <label class="form-label">FDA Number</label>
+                <input type="text" class="form-control" placeholder="Type Item FDA No no" name="ItemViewModel.FDANo" required>
+
+            </div>
+      </div>
+        <div class="col-4">
+            <div class="mb-3">
+                <label class="form-label">Bar Code</label>
+                <input type="text" class="form-control" placeholder="Type Item Bar Code" name="ItemViewModel.BarCode" required>
+
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="mb-3">
+                <label class="form-label">Purchase Price</label>
+                <input type="number" class="form-control" placeholder="Type Purchase price" name="PriceViewModel.PurchasePrice" min="0">
+
+            </div>
+        </div>
+  </div>
+    <div class="row">
+        <div class="col-4">
+            <div class="mb-3">
+                <label class="form-label">RetailSale Price</label>
+                <input type="number" class="form-control" placeholder="Type  RetailSale Price" name="PriceViewModel.RetailSalePrice" min="0">
+
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="mb-3">
+                <label class="form-label">WholeSale Price</label>
+                <input type="number" class="form-control" placeholder="Type WholeSale Price" name="PriceViewModel.WholeSalePrice" min="0">
+
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="mb-3">
+                <label class="form-label">Unit</label>
+                <select class="form-select"  name="PriceViewModel.Unitid">
+                    <option selected>Select the Unit</option>
+                    @foreach (var unit in ViewBag.Unit)
+                    {
+                        <option value="@unit.id">@unit.Name</option>
+                    }
+                </select>
+            </div>
+        </div>
+      
+    </div>
+  
+    <button type="submit" class="btn btn-primary">Entry</button>
+    <a href="/Item/list" class="btn btn-primary">Go to list</a>
+
+</form> 
+<!-- Include jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Fetch brands based on selected category
+        $('#CategoryDropdown').change(function () {
+            var categoryid = $(this).val();
+            if (categoryid) {
+                $.ajax({
+                    url: '@Url.Action("GetBrand", "Item")', // Ensure this matches the controller action name
+                    type: 'GET',
+                    data: { categoryid: categoryid }, // Adjusted to match controller parameter name
+                    success: function (data) {
+                        $('#BrandDropdown').empty(); // Clear existing brands
+                        $('#BrandDropdown').append($('<option>', {
+                            value: '',
+                            text: 'Select the Brand'
+                        }));
+                        if (data && data.length > 0) {
+                            console.log("Data Success");
+                            $.each(data, function (index, brand) {
+                                $('#BrandDropdown').append($('<option>', {
+                                    value: brand.id,
+                                    text: brand.name
+                                }));
+                            });
+                        } else {
+                            $('#BrandDropdown').append($('<option>', {
+                                value: '',
+                                text: 'No brands available'
+                            }));
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error fetching brands: " + error);
+                    }
+                }); // Close AJAX call
+            } else {
+                $('#BrandDropdown').empty().append('<option selected>Select the Brand</option>');
+            }
+        });
+    }); // Close $(document).ready
+</script>
+@section scripts {
+    <script type="text/javascript">
+        // Add the following code if you want the name of the file appear on select
+        $(".custom-file-input").on("change", function () {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    document.querySelector("#img").setAttribute("src", e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+}
+

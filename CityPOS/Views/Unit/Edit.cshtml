@@ -1,0 +1,40 @@
+﻿@model UnitViewModel
+@{
+    ViewData["Title"] = "Unit";
+}
+<h3>Unit</h3>
+@{
+    var info = TempData["info"];
+}
+@if (info != null)
+{
+    if (Convert.ToBoolean(TempData["status"]))
+    {
+        <div class="alert alert-success" role="alert">
+            @info
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            @info
+        </div>
+    } 
+}
+<form action="/unit/Update" method="post">
+    <input type="hidden" name="id" value="@Model.id" />
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" placeholder="Type Category Name" name="Name" value="@Model.Name" required>
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Remark</label>
+        <input type="text" class="form-control" placeholder="Type Remark" name="Remark" value="@Model.Remark">
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a href="/unit/list" class="btn btn-primary">Go to list</a>
+
+</form>

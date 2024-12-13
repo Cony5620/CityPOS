@@ -1,0 +1,116 @@
+﻿@model CustomerViewModel
+@{
+    ViewData["Title"] = "Customer";
+}
+<h3>Customer</h3>
+@{
+    var info = ViewData["info"];
+}
+@if (info != null)
+{
+    if (Convert.ToBoolean(ViewData["status"]))
+    {
+        <div class="alert alert-success" role="alert">
+            @info
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            @info
+        </div>
+    }
+}
+<form action="/Customer/entry" method="post">
+    <div class="mb-3">
+        <label class="form-label">Code</label>
+        <input type="text" class="form-control" name="Code" value="@Model?.Code" required>
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" placeholder="Type Customer Name" name="Name" required>
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="text" class="form-control" placeholder="Type Customer Email" name="Email" required>
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label">City</label>
+        <select class="form-select" id="CityDropdown" name="Cityid">
+            <option selected>Select the City</option>
+            @foreach (var citys in ViewBag.Citys)
+            {
+                <option value="@citys.id">@citys.Name</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Township</label>
+        <select class="form-select" id="TownshipDropdown" name="Townshipid">
+            <option selected>Select the Township</option>
+            <!-- Townships will be dynamically added here -->
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Adress</label>
+        <textarea class="form-control" placeholder="type adress" name="Adress"></textarea>
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Phone Number</label>
+        <input type="tel" class="form-control" placeholder="Type Customer phone no" name="PhoneNo" required>
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Company</label>
+        <input type="text" class="form-control" placeholder="Type Customer Company" name="Company" required>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Entry</button>
+    <a href="/Customer/list" class="btn btn-primary">Go to list</a>
+
+</form> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#CityDropdown').change(function () {
+            var cityid = $(this).val();
+            if (cityid) {
+                $.ajax({
+                    url: '@Url.Action("GetTownships", "Supplier")', // URL for AJAX call
+                    type: 'GET',
+                    data: { cityId: cityid }, // Ensure you use the correct key name here
+                    success: function (data) {
+                        $('#TownshipDropdown').empty(); // Clear existing townships
+                        $('#TownshipDropdown').append($('<option>', {
+                            value: '',
+                            text: 'Select the Township'
+                        }));
+                        if (data && data.length > 0) {
+                            console.log("Data Success")
+                            $.each(data, function (index, township) {
+                                $('#TownshipDropdown').append($('<option>', {
+                                    value: township.id,
+                                    text: township.name
+                                }));
+                            });
+                        } else {
+                            $('#TownshipDropdown').append($('<option>', {
+                                value: '',
+                                text: 'No townships available'
+                            }));
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error fetching townships: " + error);
+                    }
+                });
+            } else {
+                $('#TownshipDropdown').empty().append('<option selected>Select the Township</option>');
+            }
+        });
+    });
+</script>

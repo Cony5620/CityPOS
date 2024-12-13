@@ -1,0 +1,104 @@
+﻿@model IEnumerable<ItemViewModel>
+
+<h3>Item List</h3>
+
+@{
+    var info = ViewData["info"];
+}
+
+@if (info != null)
+{
+    if (Convert.ToBoolean(ViewData["status"]))
+    {
+        <div class="alert alert-success" role="alert">
+            @info
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            @info
+        </div>
+    }
+}
+
+<table id="ItemTable" class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Code</th>
+            <th scope="col">Name</th>
+            <th scope="col">photo</th>
+            <th scope="col">Category</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Supplier</th>
+            <th scope="col">FDA No</th>
+            <th scope="col">BarCode</th>
+            <th scope="col">Actions</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Any())
+        {
+            int i = 1;
+            foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@i</th>
+                    <td>@item.Code</td>
+                    <td>@item.Name</td>
+                    <td>
+                        <a href="#photoModal" data-bs-toggle="modal" data-bs-target="#photoModal" data-img-src="@Url.Content("~/images/" + item.photo)">
+                            <img src="@Url.Content("~/images/" + item.photo)" class="rounded-circle" height="50" width="50" alt="Item Image" />
+                        </a>
+                    </td>
+                    <td>@item.CategoryName</td>
+                    <td>@item.BrandName</td>
+                    <td>@item.SupplierName</td>
+                    <td>@item.FDANo</td>
+                    <td>@item.BarCode</td>
+                    <td>
+                        <a href="/Item/edit?id=@item.id" class="btn btn-success">Edit</a>
+                    </td>
+                    <td>
+                        <a href="/Item/delete?id=@item.id" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?');">Delete</a>
+                    </td>
+                </tr>
+                i++;
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="6" class="text-center">There is no data available!</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Item/entry" class="btn btn-primary">Entry</a>
+<div class="modal fade" id="photoModal" tabindex="-1" aria-labelledby="photoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="photoModalLabel">Item Photo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img id="modalImage" src="" alt="Item Photo" class="img-fluid" />
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const photoModal = document.getElementById('photoModal');
+    photoModal.addEventListener('show.bs.modal', function (event) {
+        const button = event.relatedTarget; // Button that triggered the modal
+        const imgSrc = button.getAttribute('data-img-src'); // Extract info from data-* attributes
+        const modalImage = document.getElementById('modalImage'); // Find the image element in the modal
+        modalImage.src = imgSrc; // Update the modal's image src
+        console.log(imgSrc); // Log to the console for debugging
+    });
+</script>
+

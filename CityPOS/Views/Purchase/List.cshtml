@@ -1,0 +1,161 @@
+﻿@model IEnumerable<PurchaseViewModel>
+
+<h3>Purchase List</h3>
+
+@{
+    var info = TempData["info"];
+}
+
+@if (info != null)
+{
+    if (Convert.ToBoolean(TempData["status"]))
+    {
+        <div class="alert alert-success" role="alert">
+            @info
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            @info
+        </div>
+    }
+}
+
+<form id="filterForm" method="get">
+    <div class="row mb-3">
+        <div class="col-3">
+            <div class="mb-3">
+                <label class="form-label">From Date</label>
+                <input type="date" class="form-control" name="fromDate" />
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="mb-3">
+                <label class="form-label">To Date</label>
+                <input type="date" class="form-control" name="toDate" />
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="mb-3">
+                <label class="form-label">Voucher NO</label>
+                <select class="form-select" id="PurchaseDropdown" name="Purchaseid">
+                    <option value="" selected>Select an Voucher NO </option>
+                    @if (ViewBag.Purchase != null)
+                    {
+                        foreach (var Purchases in ViewBag.Purchase)
+                        {
+                            <option value="@Purchases.id">@Purchases.PurchaseVoNo</option>
+                        }
+                    }
+                    else
+                    {
+                        <option disabled>No Voucher NO available</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-3">
+                <label class="form-label">Supplier</label>
+                <select class="form-select" id="SupplierDropdown" name="Supplierid">
+                    <option value="" selected>Select an Supplier</option>
+                    @if (ViewBag.Supplier != null)
+                    {
+                        foreach (var Supplier in ViewBag.Supplier)
+                        {
+                            <option value="@Supplier.id">@Supplier.Name</option>
+                        }
+                    }
+                    else
+                    {
+                        <option disabled>No Voucher NO available</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="col-3 d-flex align-items-end">
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Search</button>
+                <a href="/Purchase/entry" class="btn btn-success">New Purchase</a>
+            </div>
+          
+               
+            
+        </div>
+    </div>
+</form>
+
+<table id="PurchaseTable" class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Purchase Date</th>
+            <th scope="col">Supplier</th>
+            <th scope="col">Voucher NO</th>
+            <th scope="col">Total Amount</th>
+            <th scope="col">Cash Amount</th>
+            <th scope="col">Actions</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            int i = 1;
+            decimal totalAmountSum = 0;
+            decimal cashAmountSum = 0;
+            foreach (var item in Model)
+            {
+                totalAmountSum += item.TotalAmount;
+                cashAmountSum += item.CashAmount;
+                <tr>
+                    <th scope="row">@i</th>
+                    <td>@item.PurchaseDate.ToShortDateString() </td>
+                    <td>@item.SupplierName</td>
+                    <td>@item.PurchaseVoNo</td>
+                    <td>@item.TotalAmount</td>
+                    <td>@item.CashAmount</td>
+                    <td>
+                        <a href="/Purchase/delete?id=@item.id" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?');">Delete</a>
+                    </td>
+                    
+
+                </tr>
+                i++;
+            }
+            <tr>
+                <td colspan="4" class="text-end fw-bold">Total</td>
+                <td class="fw-bold">@totalAmountSum</td>
+                <td class="fw-bold">@cashAmountSum</td>
+                <td></td>
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <td colspan="8" class="text-center">There is no data available!</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    $('#filterForm').on('submit', function (event) {
+        const fromDate = $('[name="fromDate"]').val();
+        const toDate = $('[name="toDate"]').val();
+        const purchaseId = $('[name="Purchaseid"]').val();
+        const supplierId = $('[name="Supplierid"]').val();
+
+        console.log({ fromDate, toDate, purchaseId, supplierId });
+
+        if (!(fromDate && toDate) && !purchaseId && !supplierId) {
+            alert("Please fill in either the dates or select a filter (Voucher NO or Supplier).");
+            event.preventDefault(); // Prevent form submission
+        }
+    });
+</script>
+
