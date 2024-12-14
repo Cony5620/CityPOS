@@ -122,10 +122,10 @@
         </div>
 
         <!-- Discount Amount -->
-      @*   <div class="col-1">
+         <div class="col-1">
             <label for="discountAmount" class="form-label">Disc Amt</label>
             <input type="text" id="discountAmount" class="form-control" placeholder="0.00">
-        </div> *@
+        </div> 
 
         <!-- FOC Checkbox -->
         <div class="col-1 d-flex align-items-center">
@@ -219,7 +219,7 @@
                     <input type="number" asp-for="SaleOrder.DisPercent" id="overallDiscountPercent" class="form-control" placeholder="%" min="0" max="100">
             </div>
                 <div class="col-4 d-flex">
-                    <input type="number" asp-for="SaleOrder.DisAmount" id="overallDiscountAmount" class="form-control" placeholder="0.00" >
+                    <input type="number" asp-for="SaleOrder.DisAmount" id="overallDiscountAmount" class="form-control"  >
                 </div>
 
         </div>
@@ -338,60 +338,67 @@
             }
         });
     
-            // Add button click event
-            $('#addButton').on('click', function () {
-                var itemName = $('#itemId').val();
-                 var unitId = $('#unitId').val(); // Keep unitId for any backend logic if needed
-                 var unitName = $('#unitId option:selected').text(); // Get the displayed text (unitName)
-                var price = parseFloat($('#price').val()) || 0;
-                var quantity = parseInt($('#quantity').val()) || 0;
-                var discountPercent = parseFloat($('#discountPercent').val()) || 0;
-                var isFoc = $('#focCheckbox').is(':checked');
+        $('#addButton').on('click', function () {
+            var itemName = $('#itemId').val();
+            var unitId = $('#unitId').val();
+            var unitName = $('#unitId option:selected').text();
+            var price = parseFloat($('#price').val()) || 0;
+            var quantity = parseInt($('#quantity').val()) || 0;
+            var discountPercent = parseFloat($('#discountPercent').val()) || 0;
+            var discountAmount = parseFloat($('#discountAmount').val()) || 0;
+            var isFoc = $('#focCheckbox').is(':checked');
 
-                if (!itemName || !unitName || price <= 0 || quantity <= 0) {
-                    alert("Please fill all required fields."); // Display error message
-                    return false; // Prevent further execution
-                }
+            // Validation
+            if (!itemName || !unitName || price <= 0 || quantity <= 0) {
+                alert("Please fill all required fields.");
+                return false;
+            }
 
-                // Calculate Amount (Price * Quantity)
-                var amount = (price * quantity).toFixed(2);
-                amount = parseFloat(amount); // Convert back to number for calculations
+            var amount = (price * quantity).toFixed(2);
+            amount = parseFloat(amount); // Ensure amount is a number
 
-                // Calculate Discount Amount
-                var discountAmount = (amount * discountPercent / 100).toFixed(2);
-                discountAmount = parseFloat(discountAmount); // Convert back to number for calculations
+            // Handle discount calculations
+            if (isNaN(discountAmount)) discountAmount = 0;
+            if (isNaN(discountPercent)) discountPercent = 0;
 
-                // Calculate Total (Amount - Discount Amount)
-                var total = amount - discountAmount;
+            if (discountAmount > 0) {
+                discountPercent = ((discountAmount / amount) * 100).toFixed(2);
+                discountPercent = parseFloat(discountPercent);
+            } else if (discountPercent > 0) {
+                discountAmount = (amount * discountPercent / 100).toFixed(2);
+                discountAmount = parseFloat(discountAmount);
+            } else {
+                discountAmount = 0;
+                discountPercent = 0;
+            }
 
-                // If FOC is checked, set total to 0
-                if (isFoc) {
-                    total = 0;
-                }
+            var total = amount - discountAmount;
+            if (isFoc) {
+                total = 0;
+            }
 
-                // Append a new row to the table
-                var newRow = `
-                        <tr>
-                            <td>${itemName}</td>
-                            <td>${unitName}</td>
-                            <td>${price.toFixed(2)}</td>
-                            <td>${quantity}</td>
-                            <td>${discountPercent.toFixed(2)}</td>
-                            <td>${discountAmount.toFixed(2)}</td>
-                            <td>${amount.toFixed(2)}</td>
-                            <td>${isFoc ? 'Yes' : 'No'}</td>
-                            <td>${total.toFixed(2)}</td> <!-- Total displayed based on FOC -->
-                            <td>
-                                <button type="button" class="btn btn-danger btn-sm delete-row">Delete</button>
-                            </td>
-                        </tr>
-                    `;
+            // Append new row
+            var newRow = `
+            <tr>
+                <td>${itemName}</td>
+                <td>${unitName}</td>
+                <td>${price.toFixed(2)}</td>
+                <td>${quantity}</td>
+                <td>${discountPercent > 0 ? discountPercent.toFixed(2) : '0.00'}</td>
+                <td>${discountAmount > 0 ? discountAmount.toFixed(2) : '0.00'}</td>
+                <td>${amount.toFixed(2)}</td>
+                <td>${isFoc ? 'Yes' : 'No'}</td>
+                <td>${total.toFixed(2)}</td>
+                <td>
+                    <button type="button" class="btn btn-danger btn-sm delete-row">Delete</button>
+                </td>
+            </tr>
+        `;
 
-                $('#itemListTable tbody').append(newRow);
-                calculateTotals();
-                // Show the table if it's hidden
-                $('#itemListTable').show();
-            });
+            $('#itemListTable tbody').append(newRow);
+            calculateTotals();
+            $('#itemListTable').show();
+        });
 
             // Delete row functionality with confirmation
             $('#itemListTable').on('click', '.delete-row', function () {
@@ -401,19 +408,21 @@
                     calculateTotals();
                 }
             });
+        // Function to calculate totals
+        function calculateTotals() {
+            let subTotal = 0;
 
-            // Function to calculate totals
-            function calculateTotals() {
-                let subTotal = 0;
-                $("#itemListTable tbody tr").each(function () {
-                    const total = parseFloat($(this).find("td:nth-child(9)").text()) || 0;
-                    subTotal += total;
-                });
+            // Calculate subtotal from item list table
+            $("#itemListTable tbody tr").each(function () {
+                const total = parseFloat($(this).find("td:nth-child(9)").text()) || 0;
+                subTotal += total;
+            });
 
-                $("#subTotal").val(subTotal.toFixed(2));
-                let taxAmount = 0;
-                let overallDiscountAmount = 0;
+            $("#subTotal").val(subTotal.toFixed(2));
+            let taxAmount = 0;
+            let overallDiscountAmount = 0;
 
+            // Tax calculation
             const taxPercent = parseFloat($("#taxPercent").val()) || 0;
             if (taxPercent > 0) {
                 taxAmount = (subTotal * taxPercent) / 100;
@@ -422,10 +431,11 @@
             }
             $("#taxAmount").val(taxAmount.toFixed(2));
 
-                const deliveryFee = parseFloat($("#deliveryFee").val()) || 0;
-                const grandTotal = subTotal + taxAmount + deliveryFee;
-                $("#grandTotal").val(grandTotal.toFixed(2));
+            const deliveryFee = parseFloat($("#deliveryFee").val()) || 0;
+            const grandTotal = subTotal + taxAmount + deliveryFee;
+            $("#grandTotal").val(grandTotal.toFixed(2));
 
+            // Overall discount calculation
             const overallDiscountPercent = parseFloat($("#overallDiscountPercent").val()) || 0;
             if (overallDiscountPercent > 0) {
                 overallDiscountAmount = (grandTotal * overallDiscountPercent) / 100;
@@ -433,37 +443,110 @@
                 overallDiscountAmount = parseFloat($("#overallDiscountAmount").val()) || 0;
             }
             $("#overallDiscountAmount").val(overallDiscountAmount.toFixed(2));
+
             const netTotal = grandTotal - overallDiscountAmount;
             $("#netTotal").val(netTotal.toFixed(2));
 
-              
-                const cashAmount = parseFloat($("#cashAmount").val()) || 0;
+            // Balance and return amount calculation
+            const cashAmount = parseFloat($("#cashAmount").val()) || 0;
+            let balance = netTotal - cashAmount;
+            let totalReturnAmount = 0;
 
-                     let balance = netTotal - cashAmount;
-               
-                let totalReturnAmount = 0;
-                if (cashAmount > netTotal) {
-                  
-                    totalReturnAmount = cashAmount - netTotal;
-                    balance = 0;
-
-                } else if (cashAmount === netTotal) {
-                
-                    totalReturnAmount = 0;
-                    balance = 0;
-                } else {
-                 
-                    totalReturnAmount = 0;
-                }
-
-                 $("#balance").val(balance.toFixed(2));
-                $("#totalReturnAmount").val(totalReturnAmount.toFixed(2));
-
-
+            if (cashAmount > netTotal) {
+                totalReturnAmount = cashAmount - netTotal;
+                balance = 0;
+            } else if (cashAmount === netTotal) {
+                totalReturnAmount = 0;
+                balance = 0;
             }
 
-        // Add event listeners for changes to tax, delivery fee, and cash amount fields
-        $("#taxPercent, #deliveryFee, #cashAmount, #overallDiscountPercent, #taxAmount, #overallDiscountAmount").on('input', function () {
+            $("#balance").val(balance.toFixed(2));
+            $("#totalReturnAmount").val(totalReturnAmount.toFixed(2));
+        }
+
+        // Function to sync tax percentage and amount dynamically
+        function setupTaxSync() {
+            // Flag to prevent circular updates
+            let updating = false;
+
+            // When tax percentage changes
+            $("#taxPercent").on("input", function () {
+                if (updating) return;
+                updating = true;
+
+                const subTotal = parseFloat($("#subTotal").val()) || 0;
+                const taxPercent = parseFloat($(this).val()) || 0;
+                const taxAmount = (subTotal * taxPercent) / 100;
+
+                $("#taxAmount").val(taxAmount.toFixed(2));
+                calculateTotals();
+
+                updating = false;
+            });
+
+            // When tax amount changes
+            $("#taxAmount").on("input", function () {
+                if (updating) return;
+                updating = true;
+
+                const subTotal = parseFloat($("#subTotal").val()) || 0;
+                const taxAmount = parseFloat($(this).val()) || 0;
+                const taxPercent = (taxAmount / subTotal) * 100;
+
+                $("#taxPercent").val(taxPercent.toFixed(2));
+                calculateTotals();
+
+                updating = false;
+            });
+        }
+
+        // Function to sync discount percentage and amount dynamically
+        function setupDiscountSync() {
+            // Flag to prevent circular updates
+            let updating = false;
+
+            // When discount percentage changes
+            $("#overallDiscountPercent").on("input", function () {
+                if (updating) return;
+                updating = true;
+
+                const grandTotal = parseFloat($("#grandTotal").val()) || 0;
+                const overallDiscountPercent = parseFloat($(this).val()) || 0;
+                const overallDiscountAmount = (grandTotal * overallDiscountPercent) / 100;
+
+                $("#overallDiscountAmount").val(overallDiscountAmount.toFixed(2));
+                calculateTotals();
+
+                updating = false;
+            });
+
+            // When discount amount changes
+            $("#overallDiscountAmount").on("input", function () {
+                if (updating) return;
+                updating = true;
+
+                const grandTotal = parseFloat($("#grandTotal").val()) || 0;
+                const overallDiscountAmount = parseFloat($(this).val()) || 0;
+                const overallDiscountPercent = (overallDiscountAmount / grandTotal) * 100;
+
+                $("#overallDiscountPercent").val(overallDiscountPercent.toFixed(2));
+                calculateTotals();
+
+                updating = false;
+            });
+        }
+
+        // Initialize on page load
+        $(document).ready(function () {
+            setupTaxSync();
+            setupDiscountSync();
+
+            // Trigger recalculation on other relevant fields
+            $("#taxPercent, #deliveryFee, #cashAmount, #overallDiscountPercent, #subTotal").on("input", function () {
+                calculateTotals();
+            });
+
+            // Initial totals calculation
             calculateTotals();
         });
 
@@ -476,7 +559,7 @@
                 }
             });
        
-         });
+    });
     </script>
 
    

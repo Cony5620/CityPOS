@@ -48,7 +48,7 @@ namespace CityPOS.Services
                     Unitid=detail.Unitid,
                     Quantity = detail.Quantity,
                     Price = detail.Price,
-                  
+                
                     IsFOC = detail.IsFOC,
                     DisPercent = detail.DisPercent,
                     DisAmount = detail.DisAmount,

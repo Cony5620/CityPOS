@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "D:\\MVCprojects\\POS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6364555F-966A-418D-BD5D-AE023BDC3AC9}|CityPOS\\CityPOS.csproj|d:\\mvcprojects\\pos\\citypos\\views\\sale\\entry.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6364555F-966A-418D-BD5D-AE023BDC3AC9}|CityPOS\\CityPOS.csproj|solutionrelative:citypos\\views\\sale\\entry.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6364555F-966A-418D-BD5D-AE023BDC3AC9}|CityPOS\\CityPOS.csproj|d:\\mvcprojects\\pos\\citypos\\views\\purchase\\entry.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6364555F-966A-418D-BD5D-AE023BDC3AC9}|CityPOS\\CityPOS.csproj|solutionrelative:citypos\\views\\purchase\\entry.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6364555F-966A-418D-BD5D-AE023BDC3AC9}|CityPOS\\CityPOS.csproj|d:\\mvcprojects\\pos\\citypos\\controllers\\salecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6364555F-966A-418D-BD5D-AE023BDC3AC9}|CityPOS\\CityPOS.csproj|solutionrelative:citypos\\controllers\\salecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6364555F-966A-418D-BD5D-AE023BDC3AC9}|CityPOS\\CityPOS.csproj|d:\\mvcprojects\\pos\\citypos\\views\\sale\\entry.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6364555F-966A-418D-BD5D-AE023BDC3AC9}|CityPOS\\CityPOS.csproj|solutionrelative:citypos\\views\\sale\\entry.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6364555F-966A-418D-BD5D-AE023BDC3AC9}|CityPOS\\CityPOS.csproj|d:\\mvcprojects\\pos\\citypos\\models\\datamodels\\saledetatilentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6364555F-966A-418D-BD5D-AE023BDC3AC9}|CityPOS\\CityPOS.csproj|solutionrelative:citypos\\models\\datamodels\\saledetatilentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6364555F-966A-418D-BD5D-AE023BDC3AC9}|CityPOS\\CityPOS.csproj|d:\\mvcprojects\\pos\\citypos\\services\\saleorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,24 +27,12 @@
       "RelativeMoniker": "D:0:0:{6364555F-966A-418D-BD5D-AE023BDC3AC9}|CityPOS\\CityPOS.csproj|solutionrelative:citypos\\models\\viewmodels\\salewithdetailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6364555F-966A-418D-BD5D-AE023BDC3AC9}|CityPOS\\CityPOS.csproj|d:\\mvcprojects\\pos\\citypos\\views\\purchase\\entry.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6364555F-966A-418D-BD5D-AE023BDC3AC9}|CityPOS\\CityPOS.csproj|solutionrelative:citypos\\views\\purchase\\entry.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6364555F-966A-418D-BD5D-AE023BDC3AC9}|CityPOS\\CityPOS.csproj|d:\\mvcprojects\\pos\\citypos\\services\\purchaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6364555F-966A-418D-BD5D-AE023BDC3AC9}|CityPOS\\CityPOS.csproj|solutionrelative:citypos\\services\\purchaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6364555F-966A-418D-BD5D-AE023BDC3AC9}|CityPOS\\CityPOS.csproj|d:\\mvcprojects\\pos\\citypos\\services\\priceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6364555F-966A-418D-BD5D-AE023BDC3AC9}|CityPOS\\CityPOS.csproj|solutionrelative:citypos\\services\\priceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6364555F-966A-418D-BD5D-AE023BDC3AC9}|CityPOS\\CityPOS.csproj|d:\\mvcprojects\\pos\\citypos\\controllers\\purchasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6364555F-966A-418D-BD5D-AE023BDC3AC9}|CityPOS\\CityPOS.csproj|solutionrelative:citypos\\controllers\\purchasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6364555F-966A-418D-BD5D-AE023BDC3AC9}|CityPOS\\CityPOS.csproj|d:\\mvcprojects\\pos\\citypos\\models\\datamodels\\saledetatilentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6364555F-966A-418D-BD5D-AE023BDC3AC9}|CityPOS\\CityPOS.csproj|solutionrelative:citypos\\models\\datamodels\\saledetatilentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6364555F-966A-418D-BD5D-AE023BDC3AC9}|CityPOS\\CityPOS.csproj|d:\\mvcprojects\\pos\\citypos\\services\\saledetailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -672,43 +668,88 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Entry.cshtml",
-              "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Purchase\\Entry.cshtml",
-              "RelativeDocumentMoniker": "CityPOS\\Views\\Purchase\\Entry.cshtml",
-              "ToolTip": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Purchase\\Entry.cshtml",
-              "RelativeToolTip": "CityPOS\\Views\\Purchase\\Entry.cshtml",
-              "ViewState": "AQIAALcAAAAAAAAAAAAAAH8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-14T08:47:29.26Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "SaleController.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Controllers\\SaleController.cs",
               "RelativeDocumentMoniker": "CityPOS\\Controllers\\SaleController.cs",
               "ToolTip": "D:\\MVCprojects\\POS\\CityPOS\\Controllers\\SaleController.cs",
               "RelativeToolTip": "CityPOS\\Controllers\\SaleController.cs",
-              "ViewState": "AQIAADYAAAAAAAAAAAAowEEAAAAIAAAA",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAIwC0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-03T16:21:09.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SaleOrderService.cs",
+              "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\SaleOrderService.cs",
+              "RelativeDocumentMoniker": "CityPOS\\Services\\SaleOrderService.cs",
+              "ToolTip": "D:\\MVCprojects\\POS\\CityPOS\\Services\\SaleOrderService.cs",
+              "RelativeToolTip": "CityPOS\\Services\\SaleOrderService.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAowDIAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T04:42:25.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Entry.cshtml",
+              "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Sale\\Entry.cshtml",
+              "RelativeDocumentMoniker": "CityPOS\\Views\\Sale\\Entry.cshtml",
+              "ToolTip": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Sale\\Entry.cshtml",
+              "RelativeToolTip": "CityPOS\\Views\\Sale\\Entry.cshtml",
+              "ViewState": "AQIAAHYBAAAAAAAAAAAswDcCAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-03T16:21:29.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SaleWithDetailViewModel.cs",
+              "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\ViewModels\\SaleWithDetailViewModel.cs",
+              "RelativeDocumentMoniker": "CityPOS\\Models\\ViewModels\\SaleWithDetailViewModel.cs",
+              "ToolTip": "D:\\MVCprojects\\POS\\CityPOS\\Models\\ViewModels\\SaleWithDetailViewModel.cs",
+              "RelativeToolTip": "CityPOS\\Models\\ViewModels\\SaleWithDetailViewModel.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAA4wCwAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T16:07:52.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SaleDetatilEntity.cs",
+              "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\DataModels\\SaleDetatilEntity.cs",
+              "RelativeDocumentMoniker": "CityPOS\\Models\\DataModels\\SaleDetatilEntity.cs",
+              "ToolTip": "D:\\MVCprojects\\POS\\CityPOS\\Models\\DataModels\\SaleDetatilEntity.cs",
+              "RelativeToolTip": "CityPOS\\Models\\DataModels\\SaleDetatilEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T09:25:27.399Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Entry.cshtml",
+              "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Purchase\\Entry.cshtml",
+              "RelativeDocumentMoniker": "CityPOS\\Views\\Purchase\\Entry.cshtml",
+              "ToolTip": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Purchase\\Entry.cshtml",
+              "RelativeToolTip": "CityPOS\\Views\\Purchase\\Entry.cshtml",
+              "ViewState": "AQIAAMEAAAAAAAAAAAAmwMYAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-14T08:47:29.26Z",
               "EditorCaption": ""
             },
             {
@@ -725,55 +766,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SaleOrderService.cs",
-              "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\SaleOrderService.cs",
-              "RelativeDocumentMoniker": "CityPOS\\Services\\SaleOrderService.cs",
-              "ToolTip": "D:\\MVCprojects\\POS\\CityPOS\\Services\\SaleOrderService.cs",
-              "RelativeToolTip": "CityPOS\\Services\\SaleOrderService.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAA9wCQAAABFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T04:42:25.866Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Entry.cshtml",
-              "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Sale\\Entry.cshtml",
-              "RelativeDocumentMoniker": "CityPOS\\Views\\Sale\\Entry.cshtml",
-              "ToolTip": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Sale\\Entry.cshtml",
-              "RelativeToolTip": "CityPOS\\Views\\Sale\\Entry.cshtml",
-              "ViewState": "AQIAAM0AAAAAAAAAAADwv90AAACKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-03T16:21:29.576Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "PriceService.cs",
-              "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\PriceService.cs",
-              "RelativeDocumentMoniker": "CityPOS\\Services\\PriceService.cs",
-              "ToolTip": "D:\\MVCprojects\\POS\\CityPOS\\Services\\PriceService.cs",
-              "RelativeToolTip": "CityPOS\\Services\\PriceService.cs",
-              "ViewState": "AQIAAHEAAAAAAAAAAAAwwH8AAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T13:34:02.675Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SaleWithDetailViewModel.cs",
-              "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\ViewModels\\SaleWithDetailViewModel.cs",
-              "RelativeDocumentMoniker": "CityPOS\\Models\\ViewModels\\SaleWithDetailViewModel.cs",
-              "ToolTip": "D:\\MVCprojects\\POS\\CityPOS\\Models\\ViewModels\\SaleWithDetailViewModel.cs",
-              "RelativeToolTip": "CityPOS\\Models\\ViewModels\\SaleWithDetailViewModel.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAqwBwAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T16:07:52.956Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "PurchaseService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\PurchaseService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\PurchaseService.cs",
@@ -785,19 +778,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "SaleDetatilEntity.cs",
-              "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\DataModels\\SaleDetatilEntity.cs",
-              "RelativeDocumentMoniker": "CityPOS\\Models\\DataModels\\SaleDetatilEntity.cs",
-              "ToolTip": "D:\\MVCprojects\\POS\\CityPOS\\Models\\DataModels\\SaleDetatilEntity.cs",
-              "RelativeToolTip": "CityPOS\\Models\\DataModels\\SaleDetatilEntity.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAkwA4AAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T09:25:27.399Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "SaleOrderEntity.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\DataModels\\SaleOrderEntity.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\DataModels\\SaleOrderEntity.cs",
@@ -809,7 +790,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "SaleDetailService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\SaleDetailService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\SaleDetailService.cs",
@@ -821,7 +802,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "PurchaseDetailService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\PurchaseDetailService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\PurchaseDetailService.cs",
@@ -833,7 +814,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "ISaleDetailService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\ISaleDetailService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\ISaleDetailService.cs",
@@ -845,7 +826,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 13,
               "Title": "IPurchaseService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\IPurchaseService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\IPurchaseService.cs",
@@ -857,7 +838,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 14,
               "Title": "BrandService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\BrandService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\BrandService.cs",
@@ -869,7 +850,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "IPurchaseDetailService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\IPurchaseDetailService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\IPurchaseDetailService.cs",
@@ -881,7 +862,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 15,
               "Title": "IPurchaseDetailRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\IPurchaseDetailRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\IPurchaseDetailRepository.cs",
@@ -893,7 +874,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 16,
               "Title": "IPurchaseRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\IPurchaseRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\IPurchaseRepository.cs",
@@ -905,7 +886,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 17,
               "Title": "SaleOrderRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\SaleOrderRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\SaleOrderRepository.cs",
@@ -917,7 +898,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 18,
               "Title": "PurchaseRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\PurchaseRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\PurchaseRepository.cs",
@@ -929,7 +910,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 19,
               "Title": "PriceRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\PriceRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\PriceRepository.cs",
@@ -941,7 +922,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 21,
               "Title": "UnitRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\UnitRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\UnitRepository.cs",
@@ -953,7 +934,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 24,
               "Title": "IItemService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\IItemService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\IItemService.cs",
@@ -965,7 +946,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 20,
               "Title": "ItemService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\ItemService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\ItemService.cs",
@@ -977,7 +958,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 23,
               "Title": "ItemPriceViewModel.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\ViewModels\\ItemPriceViewModel.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\ViewModels\\ItemPriceViewModel.cs",
@@ -989,7 +970,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 22,
               "Title": "UnitService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\UnitService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\UnitService.cs",
@@ -1001,7 +982,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 26,
               "Title": "IItemRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\IItemRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\IItemRepository.cs",
@@ -1013,7 +994,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 25,
               "Title": "ItemRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\ItemRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\ItemRepository.cs",
@@ -1025,7 +1006,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 27,
               "Title": "IPriceService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\IPriceService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\IPriceService.cs",
@@ -1037,7 +1018,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 28,
               "Title": "IPriceRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\IPriceRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\IPriceRepository.cs",
@@ -1049,7 +1030,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 29,
               "Title": "Entry.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Item\\Entry.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Item\\Entry.cshtml",
@@ -1061,7 +1042,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 30,
               "Title": "PriceViewModel.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\ViewModels\\PriceViewModel.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\ViewModels\\PriceViewModel.cs",
@@ -1073,7 +1054,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 31,
               "Title": "ItemViewModel.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\ViewModels\\ItemViewModel.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\ViewModels\\ItemViewModel.cs",
@@ -1085,7 +1066,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 35,
               "Title": "CityPOS.csproj",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\CityPOS.csproj",
               "RelativeDocumentMoniker": "CityPOS\\CityPOS.csproj",
@@ -1097,7 +1078,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 33,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Shared\\_Layout.cshtml",
@@ -1109,7 +1090,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 34,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Home\\Index.cshtml",
@@ -1121,7 +1102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 38,
               "Title": "Chart.js",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\plugins\\chart.js\\Chart.js",
               "RelativeDocumentMoniker": "CityPOS\\wwwroot\\plugins\\chart.js\\Chart.js",
@@ -1133,7 +1114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 32,
               "Title": "_LayoutPOS.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Shared\\_LayoutPOS.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Shared\\_LayoutPOS.cshtml",
@@ -1145,7 +1126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 37,
               "Title": "adminlte.js",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\dist\\js\\adminlte.js",
               "RelativeDocumentMoniker": "CityPOS\\wwwroot\\dist\\js\\adminlte.js",
@@ -1157,7 +1138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 36,
               "Title": "demo.js",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\dist\\js\\demo.js",
               "RelativeDocumentMoniker": "CityPOS\\wwwroot\\dist\\js\\demo.js",
@@ -1169,7 +1150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 40,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Program.cs",
               "RelativeDocumentMoniker": "CityPOS\\Program.cs",
@@ -1181,7 +1162,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 39,
               "Title": "ItemController.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Controllers\\ItemController.cs",
               "RelativeDocumentMoniker": "CityPOS\\Controllers\\ItemController.cs",
@@ -1193,7 +1174,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 43,
               "Title": "IUnitOfWork.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\UnitOfWorks\\IUnitOfWork.cs",
               "RelativeDocumentMoniker": "CityPOS\\UnitOfWorks\\IUnitOfWork.cs",
@@ -1205,7 +1186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 41,
               "Title": "ISaleOrderService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\ISaleOrderService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\ISaleOrderService.cs",
@@ -1217,7 +1198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 44,
               "Title": "SaleDetailRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\SaleDetailRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\SaleDetailRepository.cs",
@@ -1229,7 +1210,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 45,
               "Title": "ISaleDetailRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\ISaleDetailRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\ISaleDetailRepository.cs",
@@ -1241,7 +1222,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 46,
               "Title": "ISaleOrderRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\ISaleOrderRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\ISaleOrderRepository.cs",
@@ -1253,7 +1234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 42,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\UnitOfWorks\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "CityPOS\\UnitOfWorks\\UnitOfWork.cs",
@@ -1265,7 +1246,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 47,
               "Title": "IUnitRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\IUnitRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\IUnitRepository.cs",
@@ -1277,7 +1258,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 166,
+              "DocumentIndex": 165,
               "Title": "20241203155400_sale.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Migrations\\20241203155400_sale.cs",
               "RelativeDocumentMoniker": "CityPOS\\Migrations\\20241203155400_sale.cs",
@@ -1289,7 +1270,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 48,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Item\\Edit.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Item\\Edit.cshtml",
@@ -1301,7 +1282,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 49,
               "Title": "PurchaseWithDetailViewModel.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\ViewModels\\PurchaseWithDetailViewModel.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\ViewModels\\PurchaseWithDetailViewModel.cs",
@@ -1313,7 +1294,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 51,
               "Title": "PurchaseEntity.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\DataModels\\PurchaseEntity.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\DataModels\\PurchaseEntity.cs",
@@ -1325,7 +1306,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 50,
               "Title": "PurchaseDetailEntity.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\DataModels\\PurchaseDetailEntity.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\DataModels\\PurchaseDetailEntity.cs",
@@ -1337,7 +1318,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 52,
               "Title": "CityPOSDbContext.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\DAO\\CityPOSDbContext.cs",
               "RelativeDocumentMoniker": "CityPOS\\DAO\\CityPOSDbContext.cs",
@@ -1349,7 +1330,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 54,
               "Title": "_LoginPartial.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Shared\\_LoginPartial.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Shared\\_LoginPartial.cshtml",
@@ -1361,7 +1342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 53,
               "Title": "CityService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\CityService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\CityService.cs",
@@ -1373,7 +1354,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 60,
               "Title": "BaseRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Common\\BaseRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Common\\BaseRepository.cs",
@@ -1385,7 +1366,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 56,
               "Title": "Login.cshtml.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
               "RelativeDocumentMoniker": "CityPOS\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
@@ -1397,7 +1378,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 55,
               "Title": "Login.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
@@ -1409,7 +1390,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 59,
               "Title": "SupplierController.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Controllers\\SupplierController.cs",
               "RelativeDocumentMoniker": "CityPOS\\Controllers\\SupplierController.cs",
@@ -1421,7 +1402,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 61,
               "Title": "SupplierViewModel.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\ViewModels\\SupplierViewModel.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\ViewModels\\SupplierViewModel.cs",
@@ -1433,7 +1414,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 58,
               "Title": "Entry.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Supplier\\Entry.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Supplier\\Entry.cshtml",
@@ -1445,7 +1426,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 57,
               "Title": "SupplierService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\SupplierService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\SupplierService.cs",
@@ -1453,11 +1434,12 @@
               "RelativeToolTip": "CityPOS\\Services\\SupplierService.cs",
               "ViewState": "AQIAAAcAAAAAAAAAAIA3wBAAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T10:48:33.912Z"
+              "WhenOpened": "2024-10-15T10:48:33.912Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 63,
               "Title": "Entry.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Brand\\Entry.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Brand\\Entry.cshtml",
@@ -1469,7 +1451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 64,
               "Title": "Entry.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Unit\\Entry.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Unit\\Entry.cshtml",
@@ -1481,7 +1463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 62,
               "Title": "List.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Supplier\\List.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Supplier\\List.cshtml",
@@ -1493,7 +1475,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 68,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\_ViewImports.cshtml",
@@ -1505,7 +1487,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 66,
               "Title": "BrandController.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Controllers\\BrandController.cs",
               "RelativeDocumentMoniker": "CityPOS\\Controllers\\BrandController.cs",
@@ -1517,7 +1499,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 65,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Brand\\Edit.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Brand\\Edit.cshtml",
@@ -1529,7 +1511,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 70,
               "Title": "ScaffoldingReadMe.txt",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\ScaffoldingReadMe.txt",
               "RelativeDocumentMoniker": "CityPOS\\ScaffoldingReadMe.txt",
@@ -1541,7 +1523,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 67,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\_ViewStart.cshtml",
@@ -1553,7 +1535,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 73,
               "Title": "ResetPassword.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Areas\\Identity\\Pages\\Account\\ResetPassword.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Areas\\Identity\\Pages\\Account\\ResetPassword.cshtml",
@@ -1565,7 +1547,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 69,
               "Title": "index3.html",
               "DocumentMoniker": "D:\\EWAD videos\\AdminLTE-3.2.0 (1)\\AdminLTE-3.2.0\\index3.html",
               "RelativeDocumentMoniker": "..\\..\\EWAD videos\\AdminLTE-3.2.0 (1)\\AdminLTE-3.2.0\\index3.html",
@@ -1577,7 +1559,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 72,
               "Title": "Register.cshtml.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "RelativeDocumentMoniker": "CityPOS\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
@@ -1589,7 +1571,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 71,
               "Title": "Register.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
@@ -1601,7 +1583,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 78,
               "Title": "StockLedgerEntity.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\DataModels\\StockLedgerEntity.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\DataModels\\StockLedgerEntity.cs",
@@ -1613,7 +1595,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 165,
+              "DocumentIndex": 164,
               "Title": "20241119162442_func.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Migrations\\20241119162442_func.cs",
               "RelativeDocumentMoniker": "CityPOS\\Migrations\\20241119162442_func.cs",
@@ -1625,7 +1607,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 75,
               "Title": "UnitEntity.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\DataModels\\UnitEntity.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\DataModels\\UnitEntity.cs",
@@ -1637,7 +1619,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 79,
               "Title": "StockBalanceEntity.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\DataModels\\StockBalanceEntity.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\DataModels\\StockBalanceEntity.cs",
@@ -1649,7 +1631,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 77,
               "Title": "SupplierEntity.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\DataModels\\SupplierEntity.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\DataModels\\SupplierEntity.cs",
@@ -1661,7 +1643,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 74,
               "Title": "BrandViewModel.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\ViewModels\\BrandViewModel.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\ViewModels\\BrandViewModel.cs",
@@ -1673,7 +1655,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 80,
               "Title": "PriceEntity.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\DataModels\\PriceEntity.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\DataModels\\PriceEntity.cs",
@@ -1685,7 +1667,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 76,
               "Title": "TownshipEntity.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\DataModels\\TownshipEntity.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\DataModels\\TownshipEntity.cs",
@@ -1697,7 +1679,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 81,
               "Title": "ItemEntity.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\DataModels\\ItemEntity.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\DataModels\\ItemEntity.cs",
@@ -1709,7 +1691,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 82,
               "Title": "CustomerEntity.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\DataModels\\CustomerEntity.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\DataModels\\CustomerEntity.cs",
@@ -1721,7 +1703,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 83,
               "Title": "CityEntity.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\DataModels\\CityEntity.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\DataModels\\CityEntity.cs",
@@ -1733,7 +1715,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 84,
               "Title": "CategoryEntity.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\DataModels\\CategoryEntity.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\DataModels\\CategoryEntity.cs",
@@ -1745,7 +1727,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 85,
               "Title": "BrandEntity.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\DataModels\\BrandEntity.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\DataModels\\BrandEntity.cs",
@@ -1757,7 +1739,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 87,
               "Title": "StockLedgerService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\StockLedgerService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\StockLedgerService.cs",
@@ -1769,7 +1751,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
+              "DocumentIndex": 89,
               "Title": "IStockBalanceService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\IStockBalanceService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\IStockBalanceService.cs",
@@ -1781,7 +1763,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 86,
               "Title": "List.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Item\\List.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Item\\List.cshtml",
@@ -1793,7 +1775,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 91,
+              "DocumentIndex": 90,
               "Title": "IStockLedgerService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\IStockLedgerService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\IStockLedgerService.cs",
@@ -1805,7 +1787,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 88,
               "Title": "StockBalanceService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\StockBalanceService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\StockBalanceService.cs",
@@ -1817,7 +1799,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 92,
+              "DocumentIndex": 91,
               "Title": "list.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\StockBalance\\list.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\StockBalance\\list.cshtml",
@@ -1829,7 +1811,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 93,
               "Title": "List.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Price\\List.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Price\\List.cshtml",
@@ -1841,7 +1823,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 93,
+              "DocumentIndex": 92,
               "Title": "List.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Purchase\\List.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Purchase\\List.cshtml",
@@ -1853,7 +1835,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 96,
+              "DocumentIndex": 95,
               "Title": "PurchaseDetailRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\PurchaseDetailRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\PurchaseDetailRepository.cs",
@@ -1865,7 +1847,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 95,
+              "DocumentIndex": 94,
               "Title": "StockBalanceRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\StockBalanceRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\StockBalanceRepository.cs",
@@ -1877,7 +1859,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 97,
+              "DocumentIndex": 96,
               "Title": "StockLedgerRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\StockLedgerRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\StockLedgerRepository.cs",
@@ -1889,7 +1871,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 98,
+              "DocumentIndex": 97,
               "Title": "IStockBalanceRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\IStockBalanceRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\IStockBalanceRepository.cs",
@@ -1901,7 +1883,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 99,
+              "DocumentIndex": 98,
               "Title": "StockBalanceController.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Controllers\\StockBalanceController.cs",
               "RelativeDocumentMoniker": "CityPOS\\Controllers\\StockBalanceController.cs",
@@ -1913,7 +1895,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 100,
+              "DocumentIndex": 99,
               "Title": "TownshipController.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Controllers\\TownshipController.cs",
               "RelativeDocumentMoniker": "CityPOS\\Controllers\\TownshipController.cs",
@@ -1925,7 +1907,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 101,
+              "DocumentIndex": 100,
               "Title": "IStockLedgerRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\IStockLedgerRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\IStockLedgerRepository.cs",
@@ -1937,7 +1919,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 102,
+              "DocumentIndex": 101,
               "Title": "PurchaseDetailViewModel.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\ViewModels\\PurchaseDetailViewModel.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\ViewModels\\PurchaseDetailViewModel.cs",
@@ -1949,7 +1931,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 103,
+              "DocumentIndex": 102,
               "Title": "list.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\StockLedger\\list.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\StockLedger\\list.cshtml",
@@ -1961,7 +1943,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 106,
+              "DocumentIndex": 105,
               "Title": "Entry.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\City\\Entry.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\City\\Entry.cshtml",
@@ -1973,7 +1955,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 105,
+              "DocumentIndex": 104,
               "Title": "List.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\City\\List.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\City\\List.cshtml",
@@ -1985,7 +1967,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 107,
+              "DocumentIndex": 106,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\City\\Edit.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\City\\Edit.cshtml",
@@ -1997,7 +1979,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 108,
+              "DocumentIndex": 107,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Category\\Edit.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Category\\Edit.cshtml",
@@ -2009,7 +1991,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 104,
+              "DocumentIndex": 103,
               "Title": "Error.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Shared\\Error.cshtml",
@@ -2021,7 +2003,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 109,
+              "DocumentIndex": 108,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "CityPOS\\Controllers\\CategoryController.cs",
@@ -2033,7 +2015,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 110,
+              "DocumentIndex": 109,
               "Title": "CategoryService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\CategoryService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\CategoryService.cs",
@@ -2045,7 +2027,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 111,
+              "DocumentIndex": 110,
               "Title": "ICityService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\ICityService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\ICityService.cs",
@@ -2057,7 +2039,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 112,
+              "DocumentIndex": 111,
               "Title": "CategoryRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\CategoryRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\CategoryRepository.cs",
@@ -2069,7 +2051,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 113,
+              "DocumentIndex": 112,
               "Title": "IBaseRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Common\\IBaseRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Common\\IBaseRepository.cs",
@@ -2081,7 +2063,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 114,
+              "DocumentIndex": 113,
               "Title": "BaseEntity.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\DataModels\\BaseEntity.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\DataModels\\BaseEntity.cs",
@@ -2093,7 +2075,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 115,
+              "DocumentIndex": 114,
               "Title": "NetworkHelper.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Utility\\NetworkHelper.cs",
               "RelativeDocumentMoniker": "CityPOS\\Utility\\NetworkHelper.cs",
@@ -2105,7 +2087,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 116,
+              "DocumentIndex": 115,
               "Title": "Entry.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Category\\Entry.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Category\\Entry.cshtml",
@@ -2117,7 +2099,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 117,
+              "DocumentIndex": 116,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\appsettings.json",
               "RelativeDocumentMoniker": "CityPOS\\appsettings.json",
@@ -2129,7 +2111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 118,
+              "DocumentIndex": 117,
               "Title": "StockLedgerController.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Controllers\\StockLedgerController.cs",
               "RelativeDocumentMoniker": "CityPOS\\Controllers\\StockLedgerController.cs",
@@ -2141,7 +2123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 119,
+              "DocumentIndex": 118,
               "Title": "Entry.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\StockBalance\\Entry.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\StockBalance\\Entry.cshtml",
@@ -2153,7 +2135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 120,
+              "DocumentIndex": 119,
               "Title": "StockLedgerViewModel.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\ViewModels\\StockLedgerViewModel.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\ViewModels\\StockLedgerViewModel.cs",
@@ -2165,7 +2147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 121,
+              "DocumentIndex": 120,
               "Title": "CustomerService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\CustomerService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\CustomerService.cs",
@@ -2177,7 +2159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 122,
+              "DocumentIndex": 121,
               "Title": "Entry.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Township\\Entry.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Township\\Entry.cshtml",
@@ -2189,7 +2171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 123,
+              "DocumentIndex": 122,
               "Title": "PriceController.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Controllers\\PriceController.cs",
               "RelativeDocumentMoniker": "CityPOS\\Controllers\\PriceController.cs",
@@ -2201,7 +2183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 124,
+              "DocumentIndex": 123,
               "Title": "StockBalanceViewModel.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\ViewModels\\StockBalanceViewModel.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\ViewModels\\StockBalanceViewModel.cs",
@@ -2213,7 +2195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 125,
+              "DocumentIndex": 124,
               "Title": "ISupplierService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\ISupplierService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\ISupplierService.cs",
@@ -2225,7 +2207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 126,
+              "DocumentIndex": 125,
               "Title": "IBrandRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\IBrandRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\IBrandRepository.cs",
@@ -2237,7 +2219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 128,
+              "DocumentIndex": 127,
               "Title": "BrandRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\BrandRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\BrandRepository.cs",
@@ -2249,7 +2231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 127,
+              "DocumentIndex": 126,
               "Title": "IBrandService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\IBrandService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\IBrandService.cs",
@@ -2261,7 +2243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 129,
+              "DocumentIndex": 128,
               "Title": "ICategoryRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\ICategoryRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\ICategoryRepository.cs",
@@ -2273,7 +2255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 131,
+              "DocumentIndex": 130,
               "Title": "ICategoryService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\ICategoryService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\ICategoryService.cs",
@@ -2285,7 +2267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 130,
+              "DocumentIndex": 129,
               "Title": "CategoryViewModel.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\ViewModels\\CategoryViewModel.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\ViewModels\\CategoryViewModel.cs",
@@ -2297,7 +2279,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 132,
+              "DocumentIndex": 131,
               "Title": "20241101151821_SB.cs",
               "DocumentMoniker": "C:\\POS\\CityPOS\\Migrations\\20241101151821_SB.cs",
               "ToolTip": "C:\\POS\\CityPOS\\Migrations\\20241101151821_SB.cs",
@@ -2306,7 +2288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 134,
+              "DocumentIndex": 133,
               "Title": "20241101151033_stockb.cs",
               "DocumentMoniker": "C:\\POS\\CityPOS\\Migrations\\20241101151033_stockb.cs",
               "ToolTip": "C:\\POS\\CityPOS\\Migrations\\20241101151033_stockb.cs",
@@ -2315,7 +2297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 133,
+              "DocumentIndex": 132,
               "Title": "20241101151240_StockBalance.cs",
               "DocumentMoniker": "C:\\POS\\CityPOS\\Migrations\\20241101151240_StockBalance.cs",
               "ToolTip": "C:\\POS\\CityPOS\\Migrations\\20241101151240_StockBalance.cs",
@@ -2324,7 +2306,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 135,
+              "DocumentIndex": 134,
               "Title": "TownshipService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\TownshipService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\TownshipService.cs",
@@ -2336,7 +2318,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 136,
+              "DocumentIndex": 135,
               "Title": "ITownshipService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\ITownshipService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\ITownshipService.cs",
@@ -2348,7 +2330,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 137,
+              "DocumentIndex": 136,
               "Title": "TownshipRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\TownshipRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\TownshipRepository.cs",
@@ -2360,7 +2342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 138,
+              "DocumentIndex": 137,
               "Title": "ITownshipRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\ITownshipRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\ITownshipRepository.cs",
@@ -2372,7 +2354,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 139,
+              "DocumentIndex": 138,
               "Title": "ISupplierRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\ISupplierRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\ISupplierRepository.cs",
@@ -2384,7 +2366,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 140,
+              "DocumentIndex": 139,
               "Title": "List.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Category\\List.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Category\\List.cshtml",
@@ -2396,7 +2378,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 141,
+              "DocumentIndex": 140,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "CityPOS\\Controllers\\HomeController.cs",
@@ -2408,7 +2390,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 142,
+              "DocumentIndex": 141,
               "Title": "TownshipViewModel.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\ViewModels\\TownshipViewModel.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\ViewModels\\TownshipViewModel.cs",
@@ -2420,7 +2402,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 143,
+              "DocumentIndex": 142,
               "Title": "Entry.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Customer\\Entry.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Customer\\Entry.cshtml",
@@ -2432,7 +2414,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 144,
+              "DocumentIndex": 143,
               "Title": "CustomerController.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Controllers\\CustomerController.cs",
               "RelativeDocumentMoniker": "CityPOS\\Controllers\\CustomerController.cs",
@@ -2444,7 +2426,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 145,
+              "DocumentIndex": 144,
               "Title": "SupplierRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\SupplierRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\SupplierRepository.cs",
@@ -2456,7 +2438,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 147,
+              "DocumentIndex": 146,
               "Title": "CustomerRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\CustomerRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\CustomerRepository.cs",
@@ -2468,7 +2450,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 146,
+              "DocumentIndex": 145,
               "Title": "ICustomerService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\ICustomerService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\ICustomerService.cs",
@@ -2480,7 +2462,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 148,
+              "DocumentIndex": 147,
               "Title": "ICustomerRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\ICustomerRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\ICustomerRepository.cs",
@@ -2492,7 +2474,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 149,
+              "DocumentIndex": 148,
               "Title": "ICityRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\ICityRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\ICityRepository.cs",
@@ -2504,7 +2486,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 150,
+              "DocumentIndex": 149,
               "Title": "CityRepository.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Repositories\\Domain\\CityRepository.cs",
               "RelativeDocumentMoniker": "CityPOS\\Repositories\\Domain\\CityRepository.cs",
@@ -2516,7 +2498,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 151,
+              "DocumentIndex": 150,
               "Title": "List.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Township\\List.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Township\\List.cshtml",
@@ -2528,7 +2510,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 152,
+              "DocumentIndex": 151,
               "Title": "CityController.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Controllers\\CityController.cs",
               "RelativeDocumentMoniker": "CityPOS\\Controllers\\CityController.cs",
@@ -2540,7 +2522,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 153,
+              "DocumentIndex": 152,
               "Title": "UnitController.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Controllers\\UnitController.cs",
               "RelativeDocumentMoniker": "CityPOS\\Controllers\\UnitController.cs",
@@ -2552,7 +2534,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 154,
+              "DocumentIndex": 153,
               "Title": "IUnitService.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Services\\IUnitService.cs",
               "RelativeDocumentMoniker": "CityPOS\\Services\\IUnitService.cs",
@@ -2564,7 +2546,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 155,
+              "DocumentIndex": 154,
               "Title": "CityViewModel.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\ViewModels\\CityViewModel.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\ViewModels\\CityViewModel.cs",
@@ -2576,7 +2558,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 156,
+              "DocumentIndex": 155,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Price\\Edit.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Price\\Edit.cshtml",
@@ -2588,7 +2570,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 157,
+              "DocumentIndex": 156,
               "Title": "CustomerViewModel.cs",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Models\\ViewModels\\CustomerViewModel.cs",
               "RelativeDocumentMoniker": "CityPOS\\Models\\ViewModels\\CustomerViewModel.cs",
@@ -2600,7 +2582,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 159,
+              "DocumentIndex": 158,
               "Title": "List.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Customer\\List.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Customer\\List.cshtml",
@@ -2612,7 +2594,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 158,
+              "DocumentIndex": 157,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Customer\\Edit.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Customer\\Edit.cshtml",
@@ -2624,7 +2606,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 160,
+              "DocumentIndex": 159,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Township\\Edit.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Township\\Edit.cshtml",
@@ -2636,7 +2618,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 161,
+              "DocumentIndex": 160,
               "Title": "List.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Brand\\List.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Brand\\List.cshtml",
@@ -2648,7 +2630,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 162,
+              "DocumentIndex": 161,
               "Title": "20241014131827_initial.cs",
               "DocumentMoniker": "C:\\POS\\CityPOS\\Migrations\\20241014131827_initial.cs",
               "ToolTip": "C:\\POS\\CityPOS\\Migrations\\20241014131827_initial.cs",
@@ -2657,7 +2639,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 163,
+              "DocumentIndex": 162,
               "Title": "20241014130019_township.cs",
               "DocumentMoniker": "C:\\POS\\CityPOS\\Migrations\\20241014130019_township.cs",
               "ToolTip": "C:\\POS\\CityPOS\\Migrations\\20241014130019_township.cs",
@@ -2666,7 +2648,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 164,
+              "DocumentIndex": 163,
               "Title": "List.cshtml",
               "DocumentMoniker": "D:\\MVCprojects\\POS\\CityPOS\\Views\\Unit\\List.cshtml",
               "RelativeDocumentMoniker": "CityPOS\\Views\\Unit\\List.cshtml",
