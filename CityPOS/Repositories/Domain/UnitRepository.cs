@@ -18,7 +18,7 @@ namespace CityPOS.Repositories.Domain
         {
            return _dbContext.Units.Where(w=>!w.IsInActive).Select(s=>new UnitViewModel
            {id=s.id,
-               Name = s.Name,
+            Name = s.Name,
            }).ToList();
         }
 

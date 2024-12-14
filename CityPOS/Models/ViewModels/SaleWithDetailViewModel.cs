@@ -13,7 +13,7 @@
     }
     public class SaleOrderViewModel
     {
-        public string Id { get; set; }
+        public string id { get; set; }
         public DateTime SaleDate { get; set; } = DateTime.Today;
         public string VoucherNo { get; set; }
         public decimal SubTotal { get; set; }
@@ -31,7 +31,7 @@
         public string Userid { get; set; }
         public decimal DisPercent { get; set; }
         public decimal DisAmount { get; set; }
-        public string SaleTime { get; set; }
+        public string SaleTime { get; set; } 
 
         public SaleOrderViewModel() { }
     }
@@ -39,7 +39,7 @@
     {
         public string SaleOrderid { get; set; }
         public string Itemid { get; set; }
-        public string UnitID { get; set; }
+        public string Unitid{ get; set; }
         public int Quantity { get; set; }
         public decimal Price { get; set; }
         public decimal TotalPrice { get; set; }

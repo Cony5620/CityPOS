@@ -1,4 +1,5 @@
-﻿using CityPOS.Services;
+﻿using CityPOS.Models.ViewModels;
+using CityPOS.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CityPOS.Controllers
@@ -60,5 +61,28 @@ namespace CityPOS.Controllers
             var itemDetails = _priceService.GetItemDetailsByBarcode(barcode);
             return Json(itemDetails);
         }
+        [HttpPost]
+        public IActionResult Entry(SaleWithDetailViewModel model)
+        {
+            try
+            {
+
+
+                _saleOrderService.Create(model);
+
+                ViewData["Info"] = "Successfully saved data to the system.";
+                ViewData["status"] = true;
+            }
+            catch (Exception e)
+            {
+                ViewData["Info"] = "Error occurred while saving data to the system: " + e.Message;
+                ViewData["status"] = false;
+            }
+            bindItemData();
+            bindUnitData();
+            bindCustomerData();
+            return View(model);
+        }
     }
-}
+ }
+

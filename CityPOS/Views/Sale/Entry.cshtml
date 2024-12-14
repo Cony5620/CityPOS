@@ -20,23 +20,25 @@
             @ViewData["Info"]
         </div>
     }
-}<form asp-action="Entry" asp-controller="Sale" method="post">
+}
+
+<form asp-action="Entry" asp-controller="Sale" method="post">
 <div class="container mt-3">
     <div class="row align-items-center">
         <!-- Sale Date -->
         <div class="col-3">
-            <label for="saleDate" class="form-label">Sale Date</label>
-            <input type="date" id="saleDate" class="form-control" required>
+                <label asp-for="SaleOrder.SaleDate" class="form-label">Sale Date</label>
+                <input type="date" id="saleDate" asp-for="SaleOrder.SaleDate" class="form-control" required>
         </div>
 
         <!-- VO No -->
         <div class="col-3">
-            <label for="voNo" class="form-label">Voucher No</label>
-            <input type="text" id="voNo" class="form-control" placeholder="VONO202412001" required>
+                <label asp-for="SaleOrder.VoucherNo" class="form-label">Voucher No</label>
+                <input type="text" asp-for="SaleOrder.VoucherNo" id="voNo" class="form-control" placeholder="VONO202412001" required>
         </div>
         <div class="col-2">
-            <label class="form-label" >Customer</label>
-            <select id="unitId" name="Customerid" class="form-select" required>
+                <label asp-for="SaleOrder.Customerid" class="form-label">Customer</label>
+                <select asp-for="SaleOrder.Customerid" class="form-select" required>
                 <option value="">Select a Customer</option>
                 @foreach (var customer in ViewBag.Customer)
                 {
@@ -69,14 +71,14 @@
     <div class="row align-items-center">
         <!-- Barcode -->
         <div class="col-2">
-            <label for="barcode" class="form-label">Barcode</label>
+                <label for="barcode" class="form-label">Barcode</label>
             <input type="text" id="barcode" class="form-control" placeholder="Scan or Enter Barcode">
         </div>
 
         <!-- Item Dropdown -->
         
             <div class="col-2">
-            <label class="form-label" for="itemId">Item</label>
+                <label  class="form-label" for="itemId">Item</label>
             <select id="itemId" name="Itemid" class="form-select" required>
                 <option value="">Select an Item</option>
                 @foreach (var item in ViewBag.Item)
@@ -88,16 +90,17 @@
 
 
         <!-- Unit Dropdown -->
-        <div class="col-1">
-            <label class="form-label" for="unitId">Unit</label>
-            <select id="unitId" name="Unitid" class="form-select" required>
-                <option value="">Select a Unit</option>
-                @foreach (var unit in ViewBag.Unit)
-                {
-                        <option value="@unit.id">@unit.Name</option> <!-- Ensure Name matches data.unitName -->
-                }
-            </select>
-        </div>
+            <div class="col-1">
+                <label class="form-label" for="unitId">Unit</label>
+                <select id="unitId" name="Unitid" class="form-select" required>
+                    <option value="">Select a Unit</option>
+                    @foreach (var unit in ViewBag.Unit)
+                    {
+                        <option value="@unit.id">@unit.Name</option> <!-- Use unit.id for value and unit.Name for text -->
+                    }
+                </select>
+            </div>
+
 
 
         <!-- Price -->
@@ -119,10 +122,10 @@
         </div>
 
         <!-- Discount Amount -->
-        <div class="col-1">
+      @*   <div class="col-1">
             <label for="discountAmount" class="form-label">Disc Amt</label>
             <input type="text" id="discountAmount" class="form-control" placeholder="0.00">
-        </div>
+        </div> *@
 
         <!-- FOC Checkbox -->
         <div class="col-1 d-flex align-items-center">
@@ -167,31 +170,31 @@
 
         <div class="row mb-1">
             <div class="col-4 d-flex">
-                <label for="subTotal" class="form-label me-2">Sub Total:</label>
+                    <label asp-for="SaleOrder.SubTotal" for="SubTotal" class="form-label me-2">Sub Total:</label>
             </div>
             <div class="col-8 d-flex">
-                <input type="text" id="subTotal" class="form-control" readonly>
+                    <input type="text" asp-for="SaleOrder.SubTotal" id="subTotal" class="form-control" readonly>
             </div>
         </div>
         <div class="row mb-1">
             <div class="col-4 d-flex">
-                <label for="tax" class="form-label me-2">Tax:</label>
+                    <label asp-for="SaleOrder.TaxPercent" class="form-label me-2">Tax:</label>
             </div>
             <div class="col-4 d-flex">
-                <input type="number" id="taxPercent" class="form-control" placeholder="%">
+                    <input type="number" asp-for="SaleOrder.TaxPercent"  id="taxPercent" class="form-control" placeholder="%">
             </div>
             <div class="col-4 d-flex">
-                <input type="number" id="taxAmount" class="form-control" placeholder="0.00" >
+                    <input type="number" asp-for="SaleOrder.Tax" id="taxAmount"  class="form-control" placeholder="0.00">
             </div>
         </div>
 
         <div class="row mb-1">
             <!-- Deliver Fee -->
             <div class="col-4 d-flex">
-                <label for="deliverFee" class="form-label me-2">Deliver Fee:</label>
+                    <label asp-for="SaleOrder.DeliverFees"  class="form-label me-2">Deliver Fee:</label>
             </div>
             <div class="col-8 d-flex">
-                <input type="number" id="deliveryFee" class="form-control" placeholder="0.00">
+                    <input type="number" asp-for="SaleOrder.DeliverFees"  id="deliveryFee" class="form-control" placeholder="0.00">
             </div>
 
         </div>
@@ -199,10 +202,10 @@
             <!-- Grand Total -->
 
             <div class="col-4 d-flex">
-                <label for="grandTotal" class="form-label me-2">Grand Total:</label>
+                    <label asp-for="SaleOrder.TotalAmount" class="form-label me-2">Grand Total:</label>
             </div>
             <div class="col-8 d-flex">
-                <input type="text" id="grandTotal" class="form-control" placeholder="0.00" readonly>
+                    <input type="text" asp-for="SaleOrder.TotalAmount" id="grandTotal" class="form-control" placeholder="0.00" readonly>
             </div>
 
         </div>
@@ -210,50 +213,64 @@
             <!-- Discount -->
 
             <div class="col-4 d-flex">
-                <label for="overallDiscountPercent">Discount (%):</label>
+                    <label asp-for="SaleOrder.DisPercent">Discount (%):</label>
             </div>
-            <div class="col-8 d-flex">
-                <input type="number" id="overallDiscountPercent" class="form-control" placeholder="%" min="0" max="100">
+            <div class="col-4 d-flex">
+                    <input type="number" asp-for="SaleOrder.DisPercent" id="overallDiscountPercent" class="form-control" placeholder="%" min="0" max="100">
             </div>
+                <div class="col-4 d-flex">
+                    <input type="number" asp-for="SaleOrder.DisAmount" id="overallDiscountAmount" class="form-control" placeholder="0.00" >
+                </div>
 
         </div>
         <div class="row mb-1">
             <!-- Net Total -->
             <div class="col-4 d-flex">
-                <label for="netTotal" class="form-label me-2">Net Total:</label>
+                    <label  asp-for="SaleOrder.NetTotal" class="form-label me-2">Net Total:</label>
 
             </div>
             <div class="col-8 d-flex">
 
-                <input type="number" id="netTotal" class="form-control" readonly>
+                    <input type="number" asp-for="SaleOrder.NetTotal"  id="netTotal" class="form-control" readonly>
             </div>
         </div>
         <div class="row mb-1">
             <!-- Cash Amount -->
             <div class="col-4 d-flex">
-                <label for="cashAmount" class="form-label me-2">Cash Amount:</label>
+                    <label  asp-for="SaleOrder.CashAmount" class="form-label me-2">Cash Amount:</label>
 
             </div>
             <div class="col-8 d-flex">
 
-                <input type="text" id="cashAmount" class="form-control" placeholder="0.00">
+                    <input type="text" asp-for="SaleOrder.CashAmount"  id="cashAmount" class="form-control" placeholder="0.00">
             </div>
         </div>
         <div class="row mb-1">
             <!-- Balance -->
             <div class="col-4 d-flex">
-                <label for="balance" class="form-label me-2">Balance:</label>
+                    <label  asp-for="SaleOrder.Balance" class="form-label me-2">Balance:</label>
 
             </div>
             <div class="col-8 d-flex">
 
-                <input type="text" id="balance" class="form-control" placeholder="0.00" readonly>
+                    <input type="text" asp-for="SaleOrder.Balance" id="balance" class="form-control" placeholder="0.00" readonly>
+            </div>
+        </div>
+            <!-- totalReturnAmount -->
+         <div class="row mb-1">
+            <div class="col-4 d-flex">
+                    <label asp-for="SaleOrder.TotalReturnAmount" class="form-label me-2">TotalReturnAmount:</label>
+
+            </div>
+            <div class="col-8 d-flex">
+
+                    <input type="text" asp-for="SaleOrder.TotalReturnAmount" id="totalReturnAmount" class="form-control" placeholder="0.00" readonly>
             </div>
         </div>
         <!-- Save and Refresh Buttons -->
         <div class="row mt-3">
             <div class="col-6 d-flex justify-content-end">
-                <button type="button" class="btn btn-success me-2">Entry</button>
+                    <button type="submit" class="btn btn-success me-2">Entry</button>
                 <button type="button" id="refreshButton" class="btn btn-warning">Refresh</button>
             </div>
         </div>
@@ -263,16 +280,15 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function () {
-            // Handle input event on the barcode field
-            $('#barcode').on('input', function () {
-                var barcode = $(this).val().trim();
-                if (barcode) {
-                    $.ajax({
-                        url: '@Url.Action("GetItemDetails", "Sale")',
-                        type: 'GET',
-                        data: { barcode: barcode },
-                        success: function (data) {
+    $(document).ready(function () {
+        $('#barcode').on('input', function () {
+            var barcode = $(this).val().trim();
+            if (barcode) {
+                $.ajax({
+                    url: '@Url.Action("GetItemDetails", "Sale")',
+                    type: 'GET',
+                    data: { barcode: barcode },
+                    success: function (data) {
                         if (data) {
                             console.log('Data received:', data);
 
@@ -281,38 +297,52 @@
                                 $('#itemId').val(data.itemName).change();
                             }
 
-                            // Match the dropdown value to the unitid
-                            if (data.unitid) {
-                                $('#unitId').val(data.unitid).change(); // Match unitid, not unitName
-                            }
+                            // Match the dropdown value to the unitName
+                            if (data.unitName) {
+                                console.log('Unit Name from server:', data.unitName);
 
-                                // Populate the price field based on the selected sale type
-                                var saleType = $('input[name="saleType"]:checked').val();
-                                if (saleType === 'Retail') {
-                                    $('#price').val(data.retailSalePrice || 0.00);
-                                    console.log("Price updated for Retail:", data.retailSalePrice);
-                                } else if (saleType === 'Wholesale') {
-                                    $('#price').val(data.wholeSalePrice || 0.00);
-                                    console.log("Price updated for Wholesale:", data.wholeSalePrice);
+                                // Find the option where the text matches unitName
+                                const matchedOption = $('#unitId option').filter(function () {
+                                    return $(this).text().trim().toLowerCase() === data.unitName.trim().toLowerCase();
+                                });
+
+                                if (matchedOption.length > 0) {
+                                    matchedOption.prop('selected', true).change();
+                                    console.log('Successfully matched and selected unit with ID:', matchedOption.val());
+                                } else {
+                                    console.error('Failed to match unitName:', data.unitName);
                                 }
-                            } else {
-                                console.error('No data found for the barcode');
-                                $('#itemId, #unitId, #price').val('');
                             }
-                        },
-                        error: function () {
-                            console.error('Error fetching item details');
-                        }
-                    });
-                } else {
-                    console.error('Barcode is empty');
-                }
-            });
 
+
+                            // Populate the price field based on the selected sale type
+                            var saleType = $('input[name="saleType"]:checked').val();
+                            if (saleType === 'Retail') {
+                                $('#price').val(data.retailSalePrice || 0.00);
+                                console.log('Price updated for Retail:', data.retailSalePrice);
+                            } else if (saleType === 'Wholesale') {
+                                $('#price').val(data.wholeSalePrice || 0.00);
+                                console.log('Price updated for Wholesale:', data.wholeSalePrice);
+                            }
+                        } else {
+                            console.error('No data found for the barcode');
+                            $('#itemId, #unitId, #price').val('');
+                        }
+                    },
+                    error: function () {
+                        console.error('Error fetching item details');
+                    }
+                });
+            } else {
+                console.error('Barcode is empty');
+            }
+        });
+    
             // Add button click event
             $('#addButton').on('click', function () {
                 var itemName = $('#itemId').val();
-                var unitName = $('#unitId').val();
+                 var unitId = $('#unitId').val(); // Keep unitId for any backend logic if needed
+                 var unitName = $('#unitId option:selected').text(); // Get the displayed text (unitName)
                 var price = parseFloat($('#price').val()) || 0;
                 var quantity = parseInt($('#quantity').val()) || 0;
                 var discountPercent = parseFloat($('#discountPercent').val()) || 0;
@@ -381,34 +411,61 @@
                 });
 
                 $("#subTotal").val(subTotal.toFixed(2));
+                let taxAmount = 0;
+                let overallDiscountAmount = 0;
 
-                const taxPercent = parseFloat($("#taxPercent").val()) || 0;
-                const taxAmount = (subTotal * taxPercent) / 100;
-                $("#taxAmount").val(taxAmount.toFixed(2));
+            const taxPercent = parseFloat($("#taxPercent").val()) || 0;
+            if (taxPercent > 0) {
+                taxAmount = (subTotal * taxPercent) / 100;
+            } else {
+                taxAmount = parseFloat($("#taxAmount").val()) || 0;
+            }
+            $("#taxAmount").val(taxAmount.toFixed(2));
 
                 const deliveryFee = parseFloat($("#deliveryFee").val()) || 0;
                 const grandTotal = subTotal + taxAmount + deliveryFee;
                 $("#grandTotal").val(grandTotal.toFixed(2));
 
-                const overallDiscountPercent = parseFloat($("#overallDiscountPercent").val()) || 0;
-                const discountAmount = (grandTotal * overallDiscountPercent) / 100;
-                const netTotal = grandTotal - discountAmount;
-                $("#netTotal").val(netTotal.toFixed(2));
+            const overallDiscountPercent = parseFloat($("#overallDiscountPercent").val()) || 0;
+            if (overallDiscountPercent > 0) {
+                overallDiscountAmount = (grandTotal * overallDiscountPercent) / 100;
+            } else {
+                overallDiscountAmount = parseFloat($("#overallDiscountAmount").val()) || 0;
+            }
+            $("#overallDiscountAmount").val(overallDiscountAmount.toFixed(2));
+            const netTotal = grandTotal - overallDiscountAmount;
+            $("#netTotal").val(netTotal.toFixed(2));
 
               
                 const cashAmount = parseFloat($("#cashAmount").val()) || 0;
 
-                // Calculate balance
-                let balance = netTotal - cashAmount;
-                balance = balance < 0 ? 0 : balance; // Ensure balance is not negative
-                $("#balance").val(balance.toFixed(2));
+                     let balance = netTotal - cashAmount;
+               
+                let totalReturnAmount = 0;
+                if (cashAmount > netTotal) {
+                  
+                    totalReturnAmount = cashAmount - netTotal;
+                    balance = 0;
+
+                } else if (cashAmount === netTotal) {
+                
+                    totalReturnAmount = 0;
+                    balance = 0;
+                } else {
+                 
+                    totalReturnAmount = 0;
+                }
+
+                 $("#balance").val(balance.toFixed(2));
+                $("#totalReturnAmount").val(totalReturnAmount.toFixed(2));
+
 
             }
 
-            // Add event listeners for changes to tax, delivery fee, and cash amount fields
-            $("#taxPercent, #deliveryFee, #cashAmount, #overallDiscountPercent").on('input', function () {
-                calculateTotals();
-            });
+        // Add event listeners for changes to tax, delivery fee, and cash amount fields
+        $("#taxPercent, #deliveryFee, #cashAmount, #overallDiscountPercent, #taxAmount, #overallDiscountAmount").on('input', function () {
+            calculateTotals();
+        });
 
             // Refresh button functionality
             $('#refreshButton').on('click', function () {
@@ -418,7 +475,8 @@
                     location.reload();
                 }
             });
-        });
+       
+         });
     </script>
 
    
