@@ -313,6 +313,10 @@
       "PackagePath": "staticwebassets\\images\\3369b3cb-502e-4a16-91c7-40b1dfef1eaf_download (1).jpg"
     },
     {
+      "Id": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\38215f7f-4fde-42fd-ac9e-a927f18a88d2_maybelinesuncream.jpg",
+      "PackagePath": "staticwebassets\\images\\38215f7f-4fde-42fd-ac9e-a927f18a88d2_maybelinesuncream.jpg"
+    },
+    {
       "Id": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\3f42f14a-84bb-4ffe-a500-041367cca676_images.jpg",
       "PackagePath": "staticwebassets\\images\\3f42f14a-84bb-4ffe-a500-041367cca676_images.jpg"
     },
@@ -367,6 +371,14 @@
     {
       "Id": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\b1e1f5d5-890a-4e10-bfc5-274ff95316ad_517q0h4B5FL.jpg",
       "PackagePath": "staticwebassets\\images\\b1e1f5d5-890a-4e10-bfc5-274ff95316ad_517q0h4B5FL.jpg"
+    },
+    {
+      "Id": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\d67cca71-cfbd-459b-882f-db1cb59e142f_sunplay suncream.jpg",
+      "PackagePath": "staticwebassets\\images\\d67cca71-cfbd-459b-882f-db1cb59e142f_sunplay suncream.jpg"
+    },
+    {
+      "Id": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\dbcc2f0a-f58b-4f9b-accf-8642e62c658b_lorealsuncream.jpg",
+      "PackagePath": "staticwebassets\\images\\dbcc2f0a-f58b-4f9b-accf-8642e62c658b_lorealsuncream.jpg"
     },
     {
       "Id": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\dfca33f9-591d-489b-a535-4597fd950811_391b2d94462fac298bd555fb3db5b4de.jpg",

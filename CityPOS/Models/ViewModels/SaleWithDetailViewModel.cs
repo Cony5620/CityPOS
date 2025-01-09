@@ -4,11 +4,13 @@
     {
         public SaleOrderViewModel SaleOrder { get; set; }
         public List<SaleDetailViewModel> SaleDetails { get; set; }
+        public bool StockSwitch { get; set; }
 
         public SaleWithDetailViewModel()
         {
             SaleOrder = new SaleOrderViewModel();
             SaleDetails = new List<SaleDetailViewModel>();
+            StockSwitch = false;
         }
     }
     public class SaleOrderViewModel
@@ -42,12 +44,13 @@
         public string Unitid{ get; set; }
         public int Quantity { get; set; }
         public decimal Price { get; set; }
-        public decimal TotalPrice { get; set; }
+        public decimal Total { get; set; }
         public bool IsFOC { get; set; }
         public decimal DisPercent { get; set; }
         public decimal DisAmount { get; set; }
-        public decimal ActualSaleAmount { get; set; }
-
+        public decimal Amount { get; set; }
+        public string Categoryid { get; set; }
+        public DateTime ExpiredDate { get; set; }
         public SaleDetailViewModel() { }
     }
 }

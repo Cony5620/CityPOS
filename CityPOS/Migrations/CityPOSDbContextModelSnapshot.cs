@@ -438,6 +438,9 @@ namespace CityPOS.Migrations
                     b.Property<string>("Remark")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("Unitid")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

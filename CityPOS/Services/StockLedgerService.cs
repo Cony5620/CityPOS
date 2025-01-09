@@ -35,7 +35,7 @@ namespace CityPOS.Services
                                    ItemCode = i?.Code ?? "N/A",
                                    UnitName = u?.Name ?? "N/A",
                                    InQty = (sl.transactionType == "Income" || sl.transactionType == "Purchase") ? (sl.Quantity ) : 0,
-                                   OutQty = (sl.transactionType == "Damage" || sl.transactionType == "Lost" || sl.transactionType == "Adjustment") || sl.transactionType=="Purchase Delete"? (sl.Quantity ) : 0*-1
+                                   OutQty = (sl.transactionType == "Damage" || sl.transactionType == "Lost" || sl.transactionType == "Adjustment" || sl.transactionType == "Sale") || sl.transactionType=="Purchase Delete"? (sl.Quantity ) : 0*-1
                                };
 
             if (fromDate.HasValue && toDate.HasValue)

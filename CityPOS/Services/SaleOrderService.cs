@@ -40,25 +40,55 @@ namespace CityPOS.Services
 
             foreach (var detail in model.SaleDetails)
             {
-                var saleDetail = new SaleDetatilEntity
+                if (model.StockSwitch)
                 {
-                    id = Guid.NewGuid().ToString(),
-                    Orderid = SaleOrderEntity.id,
-                    Itemid = detail.Itemid,
-                    Unitid=detail.Unitid,
-                    Quantity = detail.Quantity,
-                    Price = detail.Price,
+                    var usedBatches = _unitOfWork.StockBalanceRepository.ReduceStockForSale(detail.Itemid, detail.Unitid, detail.Quantity);
+
+                    foreach (var batch in usedBatches)
+                    {
+                        var stockLedgerEntry = new StockLedgerEntity
+                        {
+                            id = Guid.NewGuid().ToString(),
+                            Itemid = detail.Itemid,
+                            Quantity = batch.QuantityUsed,
+                            Unitid = detail.Unitid,
+                            LedgerDate = DateTime.Now,
+                            transactionType = "Sale",
+                            Sourceid = SaleOrderEntity.id,
+                            ExpiredDate = DateTime.Parse(batch.ExpiredDate), // Use the expiration date from the batch
+                            CreatedAt = DateTime.Now
+                        };
+
+                        _unitOfWork.StockLedgerRepository.Create(stockLedgerEntry);
+
+                    }
+
+                }
+
+
+                   var saleDetail = new SaleDetatilEntity
+                    {
+                        id = Guid.NewGuid().ToString(),
+                        Orderid = SaleOrderEntity.id,
+                        Itemid = detail.Itemid,
+                        Unitid = detail.Unitid,
+                        Quantity = detail.Quantity,
+                        Price = detail.Price,
+                        TotalPrice = detail.Total,
+                        IsFOC = detail.IsFOC,
+                        DisPercent = detail.DisPercent,
+                        DisAmount = detail.DisAmount,
+                        ActualSaleAmount = detail.Amount,
+                    };
+
+
+
+                    _unitOfWork.SaleDetailRepository.Create(saleDetail);
+
                 
-                    IsFOC = detail.IsFOC,
-                    DisPercent = detail.DisPercent,
-                    DisAmount = detail.DisAmount,
-                    ActualSaleAmount = detail.ActualSaleAmount
-                };
-
-                _unitOfWork.SaleDetailRepository.Create(saleDetail);
-
+                _unitOfWork.Commit();
             }
-            _unitOfWork.Commit();
-            }
+        }
     }
-}
+} 
+

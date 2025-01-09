@@ -22,11 +22,11 @@ namespace CityPOS.Services
                 Unitid = saleDetailViewModel.Unitid,
                 Quantity = saleDetailViewModel.Quantity,
                 Price = saleDetailViewModel.Price,
-
+                TotalPrice = saleDetailViewModel.Total,
                 IsFOC = saleDetailViewModel.IsFOC,
                 DisPercent = saleDetailViewModel.DisPercent,
                 DisAmount = saleDetailViewModel.DisAmount,
-                ActualSaleAmount = saleDetailViewModel.ActualSaleAmount
+                ActualSaleAmount = saleDetailViewModel.Amount
             };
             _unitOfWork.SaleDetailRepository.Create(SaleDetailEntity);
         }

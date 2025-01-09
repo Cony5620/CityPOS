@@ -14,7 +14,8 @@ namespace CityPOS.Repositories.Domain
             this._dbContext = dbContext;
         }
 
-  
+       
+
         public StockBalanceEntity GetStockBalanceByItemUnitAndExpiration(string itemid, string unitid, DateTime expirationDate)
         {
             return _dbContext.StockBalances
@@ -22,6 +23,51 @@ namespace CityPOS.Repositories.Domain
                                 sb.Itemid == itemid &&
                                 sb.Unitid == unitid &&
                                 sb.ExpiredDate.Date == expirationDate.Date); ;
+        }
+
+        public List<(string ExpiredDate, int QuantityUsed)> ReduceStockForSale(string itemId, string unitId, int quantity)
+        {
+            // Fetch all stock balances for the given item and unit, ordered by expiration date
+                var stockBalances = _dbContext.StockBalances
+             .Where(sb => sb.Itemid == itemId && sb.Unitid == unitId)
+             .OrderBy(sb => sb.ExpiredDate) // Prioritize by earliest expiration
+             .ToList();
+
+            var usedBatches = new List<(string ExpiredDate, int QuantityUsed)>();
+
+            foreach (var stockBalance in stockBalances)
+            {
+                if (quantity <= 0)
+                    break;
+
+                int usedQuantity = 0;
+
+                if (stockBalance.Quantity >= quantity)
+                {
+                    usedQuantity = quantity;
+                    stockBalance.Quantity -= quantity;
+                    quantity = 0;
+                }
+                else
+                {
+                    usedQuantity = stockBalance.Quantity;
+                    quantity -= stockBalance.Quantity;
+                    stockBalance.Quantity = 0;
+                }
+
+                _dbContext.StockBalances.Update(stockBalance);
+
+                // Add the batch's expiration date and quantity used to the list
+                usedBatches.Add((ExpiredDate: stockBalance.ExpiredDate.ToString(), QuantityUsed: usedQuantity));
+            }
+
+            if (quantity > 0)
+            {
+                throw new InvalidOperationException("Not enough stock available.");
+            }
+
+            _dbContext.SaveChanges();
+            return usedBatches;
         }
 
         public void UpdateStockBalanceByItemUnitAndExpiration(string itemid, string unitid, DateTime expirationDate,int Quantity, string Categoryid )

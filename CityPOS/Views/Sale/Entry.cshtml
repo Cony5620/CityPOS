@@ -22,7 +22,8 @@
     }
 }
 
-<form asp-action="Entry" asp-controller="Sale" method="post">
+<form id="saleform" asp-action="Entry" asp-controller="Sale" method="post">
+   
 <div class="container mt-3">
     <div class="row align-items-center">
         <!-- Sale Date -->
@@ -62,6 +63,7 @@
             <div class="form-check form-switch">
                 <input type="checkbox" id="stockSwitch" class="form-check-input">
                 <label for="stockSwitch" class="form-check-label">Stock On/Off</label>
+                    <input type="hidden" id="stockSwitchHidden" name="StockSwitch" />
             </div>
         </div>
     </div>
@@ -74,7 +76,7 @@
                 <label for="barcode" class="form-label">Barcode</label>
             <input type="text" id="barcode" class="form-control" placeholder="Scan or Enter Barcode">
         </div>
-
+         
         <!-- Item Dropdown -->
         
             <div class="col-2">
@@ -83,7 +85,7 @@
                 <option value="">Select an Item</option>
                 @foreach (var item in ViewBag.Item)
                 {
-                    <option value="@item.Name">@item.Name</option>
+                    <option value="@item.id">@item.Name</option>
                 }
                 </select>
             </div>
@@ -136,7 +138,8 @@
         <div class="col-1">
             <button type="button" id="addButton" class="btn btn-primary mt-4">Add</button>
         </div>
-       
+            @* Hidden input fields to enable MVC binding for ItemDetails *@
+            <div id="hiddenSaleDetails"></div>
     </div>
   
 </div>
@@ -276,6 +279,7 @@
         </div>
 
 </div>
+      
 </form>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -283,7 +287,11 @@
     $(document).ready(function () {
         $('#barcode').on('input', function () {
             var barcode = $(this).val().trim();
+
             if (barcode) {
+                // Log barcode for debugging
+                console.log('Barcode:', barcode);
+
                 $.ajax({
                     url: '@Url.Action("GetItemDetails", "Sale")',
                     type: 'GET',
@@ -294,28 +302,31 @@
 
                             // Populate the item dropdown
                             if (data.itemName) {
-                                $('#itemId').val(data.itemName).change();
-                            }
-
-                            // Match the dropdown value to the unitName
-                            if (data.unitName) {
-                                console.log('Unit Name from server:', data.unitName);
-
-                                // Find the option where the text matches unitName
-                                const matchedOption = $('#unitId option').filter(function () {
-                                    return $(this).text().trim().toLowerCase() === data.unitName.trim().toLowerCase();
+                                const matchedItem = $('#itemId option').filter(function () {
+                                    return $(this).text().trim().toLowerCase() === data.itemName.trim().toLowerCase();
                                 });
-
-                                if (matchedOption.length > 0) {
-                                    matchedOption.prop('selected', true).change();
-                                    console.log('Successfully matched and selected unit with ID:', matchedOption.val());
+                                if (matchedItem.length > 0) {
+                                    matchedItem.prop('selected', true).change();
+                                    console.log('Matched item selected:', matchedItem.val());
                                 } else {
-                                    console.error('Failed to match unitName:', data.unitName);
+                                    console.error('Item not found in the dropdown:', data.itemName);
                                 }
                             }
 
+                            // Populate the unit dropdown
+                            if (data.unitName) {
+                                const matchedUnit = $('#unitId option').filter(function () {
+                                    return $(this).text().trim().toLowerCase() === data.unitName.trim().toLowerCase();
+                                });
+                                if (matchedUnit.length > 0) {
+                                    matchedUnit.prop('selected', true).change();
+                                    console.log('Matched unit selected:', matchedUnit.val());
+                                } else {
+                                    console.error('Unit not found in the dropdown:', data.unitName);
+                                }
+                            }
 
-                            // Populate the price field based on the selected sale type
+                            // Populate the price field
                             var saleType = $('input[name="saleType"]:checked').val();
                             if (saleType === 'Retail') {
                                 $('#price').val(data.retailSalePrice || 0.00);
@@ -329,17 +340,27 @@
                             $('#itemId, #unitId, #price').val('');
                         }
                     },
-                    error: function () {
-                        console.error('Error fetching item details');
+                    error: function (xhr, status, error) {
+                        console.error('Error fetching item details:', error);
                     }
                 });
             } else {
                 console.error('Barcode is empty');
             }
+           
         });
-    
+
+        $('#stockSwitch').on('change', function () {
+            var isChecked = $(this).is(':checked');
+            $('#stockSwitchHidden').val(isChecked);
+            console.log('Stock switch toggled:', isChecked ? 'On' : 'Off');
+        });
+
+
+        let itemIndex = 0;
         $('#addButton').on('click', function () {
-            var itemName = $('#itemId').val();
+            var itemId = $('#itemId').val();
+            var itemName = $('#itemId option:selected').text();
             var unitId = $('#unitId').val();
             var unitName = $('#unitId option:selected').text();
             var price = parseFloat($('#price').val()) || 0;
@@ -347,6 +368,9 @@
             var discountPercent = parseFloat($('#discountPercent').val()) || 0;
             var discountAmount = parseFloat($('#discountAmount').val()) || 0;
             var isFoc = $('#focCheckbox').is(':checked');
+
+            // Initialize adjustedDiscountPercent to handle undefined variable error
+            let adjustedDiscountPercent = discountPercent;
 
             // Validation
             if (!itemName || !unitName || price <= 0 || quantity <= 0) {
@@ -362,14 +386,14 @@
             if (isNaN(discountPercent)) discountPercent = 0;
 
             if (discountAmount > 0) {
-                discountPercent = ((discountAmount / amount) * 100).toFixed(2);
-                discountPercent = parseFloat(discountPercent);
+                adjustedDiscountPercent = ((discountAmount / amount) * 100).toFixed(2);
+                adjustedDiscountPercent = parseFloat(adjustedDiscountPercent);
             } else if (discountPercent > 0) {
                 discountAmount = (amount * discountPercent / 100).toFixed(2);
                 discountAmount = parseFloat(discountAmount);
             } else {
                 discountAmount = 0;
-                discountPercent = 0;
+                adjustedDiscountPercent = 0;
             }
 
             var total = amount - discountAmount;
@@ -398,16 +422,31 @@
             $('#itemListTable tbody').append(newRow);
             calculateTotals();
             $('#itemListTable').show();
+            console.log($('#hiddenItemDetails').html());
+
+            $('#hiddenSaleDetails').append(`
+
+                <input type="hidden" name="SaleDetails[${itemIndex}].Itemid" value="${itemId}" />
+                <input type="hidden" name="SaleDetails[${itemIndex}].Unitid" value="${unitId}" />
+                <input type="hidden" name="SaleDetails[${itemIndex}].Quantity" value="${quantity}" />
+                <input type="hidden" name="SaleDetails[${itemIndex}].Price" value="${price.toFixed(2)}" />
+                <input type="hidden" name="SaleDetails[${itemIndex}].Total" value="${total.toFixed(2)}" />
+                <input type="hidden" name="SaleDetails[${itemIndex}].IsFOC" value="${isFoc}" />
+                <input type="hidden" name="SaleDetails[${itemIndex}].DisPercent" value="${discountPercent.toFixed(2)}" />
+                <input type="hidden" name="SaleDetails[${itemIndex}].DisAmount" value="${discountAmount.toFixed(2)}" />
+                <input type="hidden" name="SaleDetails[${itemIndex}].Amount" value="${amount.toFixed(2)}" />
+        `);
+            itemIndex++;
         });
 
             // Delete row functionality with confirmation
-            $('#itemListTable').on('click', '.delete-row', function () {
-                var confirmation = confirm("Are you sure you want to delete this item?");
-                if (confirmation) {
-                    $(this).closest('tr').remove();
-                    calculateTotals();
-                }
-            });
+        $('#itemListTable').on('click', '.delete-row', function () {
+            var confirmation = confirm("Are you sure you want to delete this item?");
+            if (confirmation) {
+                $(this).closest('tr').remove();
+                calculateTotals(); // Recalculate totals after deletion
+            }
+        });
         // Function to calculate totals
         function calculateTotals() {
             let subTotal = 0;

@@ -9,6 +9,7 @@ namespace CityPOS.Models.DataModels
         public string Orderid { get; set; }
         public string Itemid { get; set; }
         public decimal Price { get; set; }
+        public decimal TotalPrice {  get; set; }
         public int Quantity { get; set; }
         public string Unitid { get; set; }
         public decimal ActualSaleAmount { get; set; }
