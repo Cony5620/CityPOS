@@ -24,5 +24,6 @@ namespace CityPOS.Models.DataModels
         public decimal DisPercent { get; set; }
         public decimal DisAmount { get; set; }
         public string SaleTime { get; set; }
+        public string SaleType { get; set; }
     }
 }

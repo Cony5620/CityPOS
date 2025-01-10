@@ -5,12 +5,14 @@
         public SaleOrderViewModel SaleOrder { get; set; }
         public List<SaleDetailViewModel> SaleDetails { get; set; }
         public bool StockSwitch { get; set; }
+        public string SaleType { get; set; }
 
         public SaleWithDetailViewModel()
         {
             SaleOrder = new SaleOrderViewModel();
             SaleDetails = new List<SaleDetailViewModel>();
             StockSwitch = false;
+            SaleType = "Retail";
         }
     }
     public class SaleOrderViewModel
@@ -27,13 +29,15 @@
         public decimal Balance { get; set; }
         public string Paymentid { get; set; }
         public string Customerid { get; set; }
+        public string CustomerName { get; set; }
         public int Step { get; set; }
         public decimal TotalReturnAmount { get; set; }
         public decimal DeliverFees { get; set; }
         public string Userid { get; set; }
         public decimal DisPercent { get; set; }
         public decimal DisAmount { get; set; }
-        public string SaleTime { get; set; } 
+        public string SaleTime { get; set; }
+        public string SaleType { get; set; }
 
         public SaleOrderViewModel() { }
     }

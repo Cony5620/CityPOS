@@ -35,6 +35,7 @@ namespace CityPOS.Services
                 SaleTime = "1",
                 Step = 1,
                 TotalReturnAmount = model.SaleOrder.TotalReturnAmount,
+                SaleType = model.SaleType,
             };
             _unitOfWork.SaleOrderRepository.Create(SaleOrderEntity);
 
@@ -64,8 +65,6 @@ namespace CityPOS.Services
                     }
 
                 }
-
-
                    var saleDetail = new SaleDetatilEntity
                     {
                         id = Guid.NewGuid().ToString(),
@@ -89,6 +88,28 @@ namespace CityPOS.Services
                 _unitOfWork.Commit();
             }
         }
+
+        public IEnumerable<SaleOrderViewModel> GetAll(DateTime? fromDate = null, DateTime? toDate = null, string? Customerid = null)
+        {
+            var saleOrder = from so in _unitOfWork.SaleOrderRepository.GetAll()
+                            join c in _unitOfWork.CustomerRepository.GetAll()
+                            on so.Customerid equals c.id
+                            where !so.IsInActive && !c.IsInActive
+                            select new SaleOrderViewModel
+                            {id=so.id,
+                            SaleDate=so.SaleDate,
+                            VoucherNo=so.VoucherNo,
+                            Customerid=c.id,
+                            CustomerName=c.Name,
+                            SaleType=so.SaleType,
+                            CashAmount=so.CashAmount,
+
+                            };
+            return saleOrder.ToList();
+                          
+        }
     }
-} 
+
+ }
+
 

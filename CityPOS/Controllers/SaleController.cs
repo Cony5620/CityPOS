@@ -26,10 +26,17 @@ namespace CityPOS.Controllers
         }
         public IActionResult Entry()
         {
+            bindSaleData();
             bindItemData();
             bindUnitData();
             bindCustomerData();
             return View();
+        }
+
+        private void bindSaleData()
+        {
+            var sale=_saleOrderService.GetAll();
+            ViewBag.Sale = sale;    
         }
 
         private void bindCustomerData()
@@ -82,6 +89,13 @@ namespace CityPOS.Controllers
             bindUnitData();
             bindCustomerData();
             return View(model);
+        }
+        [HttpGet]
+        public IActionResult List()
+        {var sale=_saleOrderService.GetAll();
+            bindSaleData();
+            bindCustomerData();
+            return View(sale);
         }
     }
  }
