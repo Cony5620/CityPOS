@@ -1,5 +1,6 @@
 using CityPOS.DAO;
 using CityPOS.Services;
+using CityPOS.Services.ReportingServices;
 using CityPOS.UnitOfWorks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -25,9 +26,10 @@ builder.Services.AddTransient<IPriceService, PriceService>();
 builder.Services.AddTransient<IStockBalanceService, StockBalanceService>();
 builder.Services.AddTransient<IStockLedgerService, StockLedgerService>();
 builder.Services.AddTransient<IPurchaseService, PurchaseService>();
-builder.Services.AddTransient < IPurchaseDetailService, PurchaseDetailService>();
+builder.Services.AddTransient< IPurchaseDetailService, PurchaseDetailService>();
 builder.Services.AddTransient<ISaleOrderService, SaleOrderService>();
-
+builder.Services.AddTransient<ISaleDetailService, SaleDetailService>();
+builder.Services.AddTransient<ISaleDetailReportService, SaleDetailReportService>();
 builder.Services.AddRazorPages();
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<CityPOSDbContext>()
     .AddDefaultUI()
