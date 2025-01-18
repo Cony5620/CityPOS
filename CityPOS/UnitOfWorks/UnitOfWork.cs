@@ -129,6 +129,7 @@ namespace CityPOS.UnitOfWorks
                 return _saleOrderRepository= _saleOrderRepository ?? new SaleOrderRepository(_dbContext);   
             }
         }
+       
 
         public void Commit()
         {

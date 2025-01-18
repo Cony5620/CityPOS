@@ -24,5 +24,6 @@ namespace CityPOS.DAO
         public DbSet<PurchaseEntity>Purchases { get; set; } 
         public DbSet<SaleOrderEntity>SaleOrders { get; set; }
         public DbSet<SaleDetatilEntity> SaleDetatils { get; set; }
+       
     }
 }

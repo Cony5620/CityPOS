@@ -20,6 +20,7 @@ namespace CityPOS.UnitOfWorks
         IPurchaseDetailRepository PurchaseDetailRepository { get; }
         ISaleDetailRepository SaleDetailRepository { get; }
         ISaleOrderRepository SaleOrderRepository { get; }
+       
         //Commit stages (insert,update,delete)
         void Commit();
         //Rollback transcation

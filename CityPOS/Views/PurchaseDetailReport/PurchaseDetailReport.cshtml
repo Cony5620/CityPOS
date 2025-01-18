@@ -1,0 +1,60 @@
+﻿﻿@{
+    ViewData["Title"] = "PurchaseDetailReport";
+}
+<h3>PurchaseDetailReport</h3>
+@{
+    var info = ViewData["Info"];
+}
+@if (info != null)
+{
+    if (Convert.ToBoolean(ViewData["status"]))
+    {
+        <div class="alert alert-success" role="alert">
+            @info
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            @info
+        </div>
+    }
+}
+
+<form action="/PurchaseDetailReport/PurchaseDetailReport" id="PurchaseDetailForm" method="post">
+
+    <div class="mb-3">
+        <label class="form-label">FromDate</label>
+        <input type="date" class="form-control" id="fromDate" required name="FromDate">
+    </div>
+
+
+    <div class="mb-3">
+        <label class="form-label">ToDate</label>
+        <input type="date" class="form-control" id="toDate" required name="ToDate">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Item</label>
+        <select class="form-select" name="Itemid" id="itemId" required>
+            <option selected>Select Item</option>
+            @foreach (var Item in ViewBag.Items)
+            {
+                <option value="@Item.id">@Item.Name</option>
+            }
+        </select>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary" id="downloadButton">Download</button>
+    <button type="button" id="cancelButton" class="btn btn-primary">Cancel</button>
+
+</form>
+<script>
+
+
+    document.getElementById("cancelButton").addEventListener("click", function () {
+
+        const form = document.getElementById("PurchaseDetailForm");
+        form.reset();
+    });
+</script>

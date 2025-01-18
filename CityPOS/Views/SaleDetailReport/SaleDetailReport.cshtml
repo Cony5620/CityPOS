@@ -25,53 +25,32 @@
 
         <div class="mb-3">
             <label class="form-label">FromDate</label>
-        <input type="date" class="form-control" id="fromDate" name="FromDate">
+        <input type="date" class="form-control" id="fromDate" required name="FromDate">
         </div>
    
 
         <div class="mb-3">
             <label class="form-label">ToDate</label>
-        <input type="date" class="form-control" id="toDate" name="ToDate">
+        <input type="date" class="form-control" id="toDate" required name="ToDate">
         </div>
-            <div class="mb-3">
-                <label class="form-label">Item</label>
-        <select class="form-select" name="Itemid" id="itemId" required>
-                    <option selected>Select Item</option>
-                    @foreach (var Item in ViewBag.Items)
-                    {
-                        <option value="@Item.id">@Item.Name</option>
-                    }
-                </select>
+                 <div class="mb-3">
+                     <label class="form-label">Item</label>
+                         <select class="form-select" name="Itemid" id="itemId" required>
+                             <option selected>Select Item</option>
+                            @foreach (var Item in ViewBag.Items)
+                            {
+                                <option value="@Item.id">@Item.Name</option>
+                            }
+                         </select>
           
-            </div>
-
-
-
+                 </div>
 
     <button type="submit" class="btn btn-primary" id="downloadButton">Download</button>
-        <button type="button" id="cancelButton" class="btn btn-primary">Cancel</button>
+    <button type="button" id="cancelButton" class="btn btn-primary">Cancel</button>
 
 </form>
 <script>
-    const fromDate = document.getElementById("fromDate");
-    const toDate = document.getElementById("toDate");
-    const itemId = document.getElementById("itemId");
-    const downloadButton = document.getElementById("downloadButton");
-    const form = document.getElementById("saleDetailForm");
-
-    // Function to check if all required fields are filled
-    downloadButton.addEventListener("click", function () {
-        if ( !itemId.value) {
-            alert("Please fill all required fields: FromDate, ToDate, and Item.");
-        } else {
-            form.submit(); // Submit the form if all fields are filled
-        }
-    });
-
-    // Add event listeners to validate the form on input change
-    fromDate.addEventListener("input", validateForm);
-    toDate.addEventListener("input", validateForm);
-    itemId.addEventListener("change", validateForm);
+  
 
     document.getElementById("cancelButton").addEventListener("click", function () {
         

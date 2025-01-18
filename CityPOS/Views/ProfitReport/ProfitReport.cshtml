@@ -1,0 +1,49 @@
+﻿﻿@{
+    ViewData["Title"] = "ProfitReport";
+}
+<h3>ProfitReport</h3>
+@{
+    var info = ViewData["Info"];
+}
+@if (info != null)
+{
+    if (Convert.ToBoolean(ViewData["status"]))
+    {
+        <div class="alert alert-success" role="alert">
+            @info
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            @info
+        </div>
+    }
+}
+
+<form action="/ProfitReport/ProfitReport" id="ProfitDetailForm" method="post">
+
+    <div class="mb-3">
+        <label class="form-label">FromDate</label>
+        <input type="date" class="form-control" id="fromDate" required name="FromDate">
+    </div>
+
+
+    <div class="mb-3">
+        <label class="form-label">ToDate</label>
+        <input type="date" class="form-control" id="toDate" required name="ToDate">
+    </div>
+    
+    <button type="submit" class="btn btn-primary" id="downloadButton">Download</button>
+    <button type="button" id="cancelButton" class="btn btn-primary">Cancel</button>
+
+</form>
+<script>
+
+
+    document.getElementById("cancelButton").addEventListener("click", function () {
+
+        const form = document.getElementById("ProfitDetailForm");
+        form.reset();
+    });
+</script>

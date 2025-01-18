@@ -36,8 +36,26 @@ namespace CityPOS.Controllers
             IList<SaleDetailReoprtViewModel>SaleDetails=_saleDetailReportService.SaleDetails(fromDate, ToDate, itemid);
             string fileName = $"SaleDetailReport{DateTime.Now.ToString()}.xlsx";
             if (SaleDetails.Any())
-            {
-                var fileContentInBytes=ReportHelper.ExportToExcel(SaleDetails,fileName) ;
+            { 
+                var totalQuantity = SaleDetails.Sum(s => s.Quantity);
+                var totalPrice = SaleDetails.Sum(s => s.Price);
+                var totalAmount = SaleDetails.Sum(s => s.Amount);
+                var totalTotal = SaleDetails.Sum(s => s.Total);
+
+               
+               SaleDetails.Add(new SaleDetailReoprtViewModel
+                {
+                    UnitName = "Total",
+                   
+                    Quantity = totalQuantity,
+                    Price = totalPrice,
+                    Amount = totalAmount,
+                    Total = totalTotal
+                });
+
+               
+
+                var fileContentInBytes =ReportHelper.ExportToExcel(SaleDetails,fileName) ;
                 var contentType = "application/vnd.openxmlformat-officedocument.spreadsheet.sheet";
                 ViewData["Info"] = "Successfully download the saledetail ExcelFile.";
                 ViewData["Status"] = true;

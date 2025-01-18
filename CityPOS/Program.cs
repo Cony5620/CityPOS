@@ -30,6 +30,9 @@ builder.Services.AddTransient< IPurchaseDetailService, PurchaseDetailService>();
 builder.Services.AddTransient<ISaleOrderService, SaleOrderService>();
 builder.Services.AddTransient<ISaleDetailService, SaleDetailService>();
 builder.Services.AddTransient<ISaleDetailReportService, SaleDetailReportService>();
+builder.Services.AddTransient<IPurchaseDetailReportService,PurchaseDetailReportService>();
+builder.Services.AddTransient<IProfitReportService, ProfitReportService>();
+builder.Services.AddTransient<IAspNetRolesService, AspNetRolesService>();
 builder.Services.AddRazorPages();
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<CityPOSDbContext>()
     .AddDefaultUI()
