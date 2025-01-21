@@ -36,58 +36,34 @@ builder.Services.AddTransient<IProfitReportService, ProfitReportService>();
 builder.Services.AddTransient<IAspNetRolesService, AspNetRolesService>();
 
 builder.Services.AddRazorPages();
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-    .AddEntityFrameworkStores<CityPOSDbContext>()
-    .AddDefaultUI()
-    .AddDefaultTokenProviders();
+
+//builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+//    .AddEntityFrameworkStores<CityPOSDbContext>()
+//    .AddDefaultUI()
+//    .AddDefaultTokenProviders();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+{
+    // Configure password requirements
+    options.Password.RequireDigit = true;
+    options.Password.RequiredLength = 8;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = true;
+    options.Password.RequireLowercase = true;
+    options.SignIn.RequireConfirmedEmail = false;
+    // Configure lockout settings
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+    options.Lockout.MaxFailedAccessAttempts = 5;
+
+    // Configure user settings
+    options.User.RequireUniqueEmail = true;
+})
+.AddEntityFrameworkStores<CityPOSDbContext>()
+.AddDefaultUI()
+.AddDefaultTokenProviders();
 
 
-//async Task SeedRolesAndUsers(IServiceProvider services)
-//{
-//    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-//    var userManager = services.GetRequiredService<UserManager<IdentityUser>>();
-
-   
-//    var roles = new[] { "Admin", "Manager", "Cashier" };
-//    var users = new[]
-//    {
-//        new { Email = "admin@citypos.com", Password = "Admin@123", Role = "Admin" },
-//        new { Email = "manager@citypos.com", Password = "Manager@123", Role = "Manager" },
-//        new { Email = "cashier@citypos.com", Password = "Cashier@123", Role = "Cashier" }
-//    };
-
-  
-//    foreach (var role in roles)
-//    {
-//        if (!await roleManager.RoleExistsAsync(role))
-//        {
-//            await roleManager.CreateAsync(new IdentityRole(role));
-//        }
-//    }
-
-  
-//    foreach (var user in users)
-//    {
-//        var existingUser = await userManager.FindByEmailAsync(user.Email);
-//        if (existingUser == null)
-//        {
-//            var newUser = new IdentityUser { UserName = user.Email, Email = user.Email, EmailConfirmed = true };
-//            var createUserResult = await userManager.CreateAsync(newUser, user.Password);
-
-//            if (createUserResult.Succeeded)
-//            {
-//                await userManager.AddToRoleAsync(newUser, user.Role);
-//            }
-//        }
-//    }
-//}
 
 var app = builder.Build();
-//using (var scope = app.Services.CreateScope())
-//{
-//    await SeedRolesAndUsers(scope.ServiceProvider);
-//}
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");

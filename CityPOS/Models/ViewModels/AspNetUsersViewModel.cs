@@ -5,6 +5,7 @@ namespace CityPOS.Models.ViewModels
 {
     public class AspNetUsersViewModel
     {
+       
         [Required]
         [StringLength(100)]
         public string UserName { get; set; }
@@ -20,6 +21,6 @@ namespace CityPOS.Models.ViewModels
         [Required(ErrorMessage = "Please select a role.")]
         public string SelectedRole { get; set; }  // This is what needs to be validated
 
-       
+      
     }
 }
