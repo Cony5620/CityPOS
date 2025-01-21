@@ -286,6 +286,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-5v4nx1gwit
 
-[D:/MVCprojects/POS/CityPOS/Views/Shared/_LayoutPOS.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRQT1MuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-swzbukrkii
+[D:/MVCprojects/POS/CityPOS/Views/Shared/_LayoutA.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-ckjy5dp620
+
+[D:/MVCprojects/POS/CityPOS/Views/Shared/_LayoutC.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRDLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-zsbqsuylmu

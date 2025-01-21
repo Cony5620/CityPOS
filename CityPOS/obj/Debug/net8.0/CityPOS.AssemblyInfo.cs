@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CityPOS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0e8641717b9837731c7e192e04e09dbfc15c7ca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51f23fe5c320dec07a43be4defb79c054a159195")]
 [assembly: System.Reflection.AssemblyProductAttribute("CityPOS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CityPOS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

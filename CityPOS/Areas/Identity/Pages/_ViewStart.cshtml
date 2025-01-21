@@ -1,4 +1,24 @@
-﻿
-@{
+﻿@* ﻿﻿@if (User.IsInRole("Admin"))
+{
+    Layout = "/Views/Shared/_LayoutPOS.cshtml";
+}
+else
+{
     Layout = "/Views/Shared/_Layout.cshtml";
+} *@
+@{
+    Layout = "/Views/Shared/_Layout.cshtml"; // Default layout for unauthenticated users.
+
+    if (User.Identity.IsAuthenticated)
+    {
+        // Check roles or other conditions to decide the layout.
+        if (User.IsInRole("Admin"))
+        {
+            Layout = "~/Views/Shared/_LayoutA.cshtml";
+        }
+        else if (User.IsInRole("Cashier"))
+        {
+            Layout = "~/Views/Shared/_LayoutC.cshtml";
+        }
+    }
 }

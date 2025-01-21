@@ -22,126 +22,126 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+                       
                         <li class="nav-item">
                             <partial name="_LoginPartial" />
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Category
-                       
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Entry">Entry</a></li>
-                                <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="list">List</a></li>
-                               
-                            </ul>
-                        </li>
+                          @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Category
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Brand
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Entry">Entry</a></li>
+                                    <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="list">List</a></li>
 
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Brand" asp-action="Entry">Entry</a></li>
-                                <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Brand" asp-action="list">List</a></li>
+                                </ul>
+                            </li>
 
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Unit
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Brand
 
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Unit" asp-action="Entry">Entry</a></li>
-                                <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Unit" asp-action="list">List</a></li>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Brand" asp-action="Entry">Entry</a></li>
+                                    <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Brand" asp-action="list">List</a></li>
 
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                City
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Unit
 
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>  <a class="nav-link text-dark" asp-area="" asp-controller="City" asp-action="Entry">Entry</a></li>
-                                <li>  <a class="nav-link text-dark" asp-area="" asp-controller="City" asp-action="list">List</a></li>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Unit" asp-action="Entry">Entry</a></li>
+                                    <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Unit" asp-action="list">List</a></li>
 
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Township
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    City
 
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Township" asp-action="Entry">Entry</a></li>
-                                <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Township" asp-action="list">List</a></li>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>  <a class="nav-link text-dark" asp-area="" asp-controller="City" asp-action="Entry">Entry</a></li>
+                                    <li>  <a class="nav-link text-dark" asp-area="" asp-controller="City" asp-action="list">List</a></li>
 
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Supplier
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Township
 
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Supplier" asp-action="Entry">Entry</a></li>
-                                <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Supplier" asp-action="list">List</a></li>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Township" asp-action="Entry">Entry</a></li>
+                                    <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Township" asp-action="list">List</a></li>
 
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Customer
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Supplier
 
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Entry">Entry</a></li>
-                                <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="list">List</a></li>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Supplier" asp-action="Entry">Entry</a></li>
+                                    <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Supplier" asp-action="list">List</a></li>
 
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Item
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Customer
 
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Item" asp-action="Entry">Entry</a></li>
-                                <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Item" asp-action="list">List</a></li>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Entry">Entry</a></li>
+                                    <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="list">List</a></li>
 
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Price
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Item
 
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Price" asp-action="Entry">Entry</a></li>
-                                <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Price" asp-action="list">List</a></li>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Item" asp-action="Entry">Entry</a></li>
+                                    <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Item" asp-action="list">List</a></li>
 
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Stock
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Price
 
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>  <a class="nav-link text-dark" asp-area="" asp-controller="StockBalance" asp-action="Entry">Stock Control</a></li>
-                                <li>  <a class="nav-link text-dark" asp-area="" asp-controller="StockBalance" asp-action="list">Stock Balance List</a></li>
-                                <li>  <a class="nav-link text-dark" asp-area="" asp-controller="StockLedger" asp-action="list">Stock Ledger</a></li>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Price" asp-action="Entry">Entry</a></li>
+                                    <li>  <a class="nav-link text-dark" asp-area="" asp-controller="Price" asp-action="list">List</a></li>
 
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Stock
+
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>  <a class="nav-link text-dark" asp-area="" asp-controller="StockBalance" asp-action="Entry">Stock Control</a></li>
+                                    <li>  <a class="nav-link text-dark" asp-area="" asp-controller="StockBalance" asp-action="list">Stock Balance List</a></li>
+                                    <li>  <a class="nav-link text-dark" asp-area="" asp-controller="StockLedger" asp-action="list">Stock Ledger</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Purchase
 
                             </a>
@@ -152,6 +152,7 @@
 
                             </ul>
                         </li>
+                        }
                     </ul>
                 </div>
             </div>
@@ -174,3 +175,4 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+

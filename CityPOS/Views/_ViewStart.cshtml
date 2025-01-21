@@ -1,3 +1,15 @@
 ﻿@{
-    Layout = "_LayoutPOS";
+    Layout = "/Views/Shared/_Layout.cshtml"; 
+
+    if (User.Identity.IsAuthenticated)
+    {
+        if (User.IsInRole("Admin"))
+        {
+            Layout = "~/Views/Shared/_LayoutA.cshtml";
+        }
+        else if (User.IsInRole("Cashier"))
+        {
+            Layout = "~/Views/Shared/_LayoutC.cshtml";
+        }
+    }
 }
