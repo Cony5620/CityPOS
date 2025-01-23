@@ -89,11 +89,11 @@ namespace CityPOS.Controllers
             return View(model); 
         }
         [HttpGet]
-      public IActionResult List()
+      public IActionResult List(DateTime? fromDate = null, DateTime? toDate = null, string? Supplierid = null, string purchaseid = null)
         {
           
            
-            var purchase=_purchaseService.GetAll();
+            var purchase=_purchaseService.GetAll(  fromDate  ,  toDate ,  Supplierid,  purchaseid );
             bindSupplierData();
             bindPurchaseData();
             return View(purchase);

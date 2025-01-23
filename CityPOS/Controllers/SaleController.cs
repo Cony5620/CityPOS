@@ -91,8 +91,9 @@ namespace CityPOS.Controllers
             return View(model);
         }
         [HttpGet]
-        public IActionResult List()
-        {var sale=_saleOrderService.GetAll();
+        public IActionResult List(DateTime? fromDate = null, DateTime? toDate = null, string? Customerid = null, 
+            string? VoucherNo = null)
+        {var sale=_saleOrderService.GetAll( fromDate ,  toDate , Customerid, VoucherNo);
             bindSaleData();
             bindCustomerData();
             return View(sale);

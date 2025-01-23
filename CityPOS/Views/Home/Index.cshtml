@@ -1,461 +1,178 @@
-﻿@* @{
-    ViewData["Title"] = "Home Page";
+﻿
+
+@model IEnumerable<SaleViewModel>
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    // Check if the user is in the "Admin" role
+    var isAdmin = HttpContextAccessor.HttpContext.User.IsInRole("Admin");
 }
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* General container for the image and tips */
+        /* General container for the image and tips */
+        .welcome-content {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 20px;
+            gap: 20px; /* Space between the image and the tips */
+        }
 
-<div class="content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="card">
-                    <div class="card-header border-0">
-                        <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Online Store Visitors</h3>
-                            <a href="javascript:void(0);">View Report</a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <p class="d-flex flex-column">
-                                <span class="text-bold text-lg">820</span>
-                                <span>Visitors Over Time</span>
-                            </p>
-                            <p class="ml-auto d-flex flex-column text-right">
-                                <span class="text-success">
-                                    <i class="fas fa-arrow-up"></i> 12.5%
-                                </span>
-                                <span class="text-muted">Since last week</span>
-                            </p>
-                        </div>
-                        <!-- /.d-flex -->
+        /* Image styling */
+        .image-container {
+            flex: 2; /* Larger proportion for the image */
+        }
 
-                        <div class="position-relative mb-4">
-                            <canvas id="visitors-chart" height="200"></canvas>
-                        </div>
+            .image-container img {
+                max-width: 100%; /* Fill its container */
+                height: auto;
+                border-radius: 10px; /* Rounded corners */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            }
 
-                        <div class="d-flex flex-row justify-content-end">
-                            <span class="mr-2">
-                                <i class="fas fa-square text-primary"></i> This Week
-                            </span>
+        /* Skincare tips section */
+        .skincare-note {
+            flex: 1; /* Smaller proportion for the tips */
+            background-color: #fff5f8; /* Soft pink background */
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
+        }
 
-                            <span>
-                                <i class="fas fa-square text-gray"></i> Last Week
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.card -->
+            /* Heading for the skincare note */
+            .skincare-note h2 {
+                color: #e75480; /* Warm pink */
+                margin-bottom: 10px;
+            }
 
-                <div class="card">
-                    <div class="card-header border-0">
-                        <h3 class="card-title">Products</h3>
-                        <div class="card-tools">
-                            <a href="#" class="btn btn-tool btn-sm">
-                                <i class="fas fa-download"></i>
-                            </a>
-                            <a href="#" class="btn btn-tool btn-sm">
-                                <i class="fas fa-bars"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card-body table-responsive p-0">
-                        <table class="table table-striped table-valign-middle">
-                            <thead>
-                                <tr>
-                                    <th>Book</th>
-                                    <th>Price</th>
-                                    <th>Issue Fees</th>
-                                    <th>More</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                                        Romeo Juliet
-                                    </td>
-                                    <td>60000</td>
-                                    <td>
-                                        <small class="text-success mr-1">
-                                            <i class="fas fa-arrow-up"></i>
-                                            5% of Bookprice
-                                        </small>
-                                        3000
-                                    </td>
-                                    <td>
-                                        <a href="#" class="text-muted">
-                                            <i class="fas fa-search"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                                        Hamlet
-                                    </td>
-                                    <td>70000</td>
-                                    <td>
-                                        <small class="text-warning mr-1">
-                                            <i class="fas fa-arrow-down"></i>
-                                            5% of Bookprice
-                                        </small>
-                                        3500
-                                    </td>
-                                    <td>
-                                        <a href="#" class="text-muted">
-                                            <i class="fas fa-search"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                                        Essential of programing
-                                    </td>
-                                    <td>300000</td>
-                                    <td>
-                                        <small class="text-danger mr-1">
-                                            <i class="fas fa-arrow-down"></i>
-                                            5% of Bookprice
-                                        </small>
-                                        15000
-                                    </td>
-                                    <td>
-                                        <a href="#" class="text-muted">
-                                            <i class="fas fa-search"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                                        Perfect book
-                                        <span class="badge bg-danger">NEW</span>
-                                    </td>
-                                    <td>250000</td>
-                                    <td>
-                                        <small class="text-success mr-1">
-                                            <i class="fas fa-arrow-up"></i>
-                                            5% of Bookprice
-                                        </small>
-                                        12500
-                                    </td>
-                                    <td>
-                                        <a href="#" class="text-muted">
-                                            <i class="fas fa-search"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- /.card -->
-            </div>
-            <!-- /.col-md-6 -->
-            <div class="col-lg-6">
-                <div class="card">
-                    <div class="card-header border-0">
-                        <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Sales</h3>
-                            <a href="javascript:void(0);">View Report</a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <p class="d-flex flex-column">
-                                <span class="text-bold text-lg">$18,230.00</span>
-                                <span>Sales Over Time</span>
-                            </p>
-                            <p class="ml-auto d-flex flex-column text-right">
-                                <span class="text-success">
-                                    <i class="fas fa-arrow-up"></i> 33.1%
-                                </span>
-                                <span class="text-muted">Since last month</span>
-                            </p>
-                        </div>
-                        <!-- /.d-flex -->
+            /* List styling */
+            .skincare-note ul {
+                list-style-type: none; /* Removes default bullets */
+                padding-left: 0;
+                font-size: 0.9rem; /* Smaller font size for compactness */
+                line-height: 1.4; /* Slightly less spacing */
+            }
 
-                        <div class="position-relative mb-4">
-                            <canvas id="sales-chart" height="200"></canvas>
-                        </div>
+                .skincare-note ul li {
+                    margin-bottom: 8px;
+                }
 
-                        <div class="d-flex flex-row justify-content-end">
-                            <span class="mr-2">
-                                <i class="fas fa-square text-primary"></i> This year
-                            </span>
+                    .skincare-note ul li strong {
+                        color: #d63384; /* Highlight key points in pink */
+                    }
 
-                            <span>
-                                <i class="fas fa-square text-gray"></i> Last year
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.card -->
+        .citypos-guarantee{
+            color: #d63384;
+        }
+    </style>
+</head>
+<body>
+    @if (isAdmin)
+    {
+        <div style="width: 70%; margin: auto; text-align: center;">
+            <h1>Weekly Sales Report</h1>
 
-                <div class="card">
-                    <div class="card-header border-0">
-                        <h3 class="card-title">Library Overview</h3>
-                        <div class="card-tools">
-                            <a href="#" class="btn btn-sm btn-tool">
-                                <i class="fas fa-download"></i>
-                            </a>
-                            <a href="#" class="btn btn-sm btn-tool">
-                                <i class="fas fa-bars"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
-                            <p class="text-success text-xl">
-                                <i class="ion ion-ios-refresh-empty"></i>
-                            </p>
-                            <p class="d-flex flex-column text-right">
-                                <span class="font-weight-bold">
-                                    <i class="ion ion-android-arrow-up text-success"></i> 12%
-                                </span>
-                                <span class="text-muted">CONVERSION RATE</span>
-                            </p>
-                        </div>
-                        <!-- /.d-flex -->
-                        <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
-                            <p class="text-warning text-xl">
-                                <i class="ion ion-ios-cart-outline"></i>
-                            </p>
-                            <p class="d-flex flex-column text-right">
-                                <span class="font-weight-bold">
-                                    <i class="ion ion-android-arrow-up text-warning"></i> 0.8%
-                                </span>
-                                <span class="text-muted">Issue RATE</span>
-                            </p>
-                        </div>
-                        <!-- /.d-flex -->
-                        <div class="d-flex justify-content-between align-items-center mb-0">
-                            <p class="text-danger text-xl">
-                                <i class="ion ion-ios-people-outline"></i>
-                            </p>
-                            <p class="d-flex flex-column text-right">
-                                <span class="font-weight-bold">
-                                    <i class="ion ion-android-arrow-down text-danger"></i> 1%
-                                </span>
-                                <span class="text-muted">REGISTRATION RATE</span>
-                            </p>
-                        </div>
-                        <!-- /.d-flex -->
-                    </div>
-                </div>
-            </div>
-            <!-- /.col-md-6 -->
+            @if (Model != null && Model.Any())
+            {
+                <canvas id="salesChart"></canvas>
+            }
+            else
+            {
+                <p>No sales data available to display.</p>
+            }
         </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container-fluid -->
-</div>
- *@
-@* @{
-    ViewData["Title"] = "CityPos";
-}
 
-<div class="content">
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <!-- POS Display -->
-            <div class="col-lg-8">
-                <div class="card shadow-lg border-0">
-                    <div class="card-header bg-gradient-primary text-white text-center">
-                        <h2>CityPOS Dashboard</h2>
-                        <p class="mb-0">Your Smart POS Solution</p>
-                    </div>
-                    <div class="card-body p-4">
-                        <div class="row">
-                            <!-- Sales Summary -->
-                            <div class="col-md-6 mb-3">
-                                <div class="card bg-light shadow-sm">
-                                    <div class="card-body text-center">
-                                        <h5 class="text-primary">Today's Sales</h5>
-                                        <h3 class="text-success">$5,420</h3>
-                                        <p class="text-muted">+18% compared to yesterday</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Transactions -->
-                            <div class="col-md-6 mb-3">
-                                <div class="card bg-light shadow-sm">
-                                    <div class="card-body text-center">
-                                        <h5 class="text-primary">Transactions</h5>
-                                        <h3 class="text-info">320</h3>
-                                        <p class="text-muted">Including refunds & exchanges</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        @if (Model != null && Model.Any())
+        {
+            <script>
+                // Prepare the data for the chart
+                const labels = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.Select(s => s.Week)));
+                const data = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.Select(s => s.SalesAmount)));
 
-                        <!-- Product Categories -->
-                        <div class="row mt-3">
-                            <div class="col-md-3 text-center">
-                                <div class="card border-0 shadow-sm">
-                                    <div class="card-body">
-                                        <i class="fas fa-coffee fa-3x text-brown"></i>
-                                        <p class="mt-2">Beverages</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 text-center">
-                                <div class="card border-0 shadow-sm">
-                                    <div class="card-body">
-                                        <i class="fas fa-bread-slice fa-3x text-yellow"></i>
-                                        <p class="mt-2">Bakery</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 text-center">
-                                <div class="card border-0 shadow-sm">
-                                    <div class="card-body">
-                                        <i class="fas fa-apple-alt fa-3x text-red"></i>
-                                        <p class="mt-2">Fruits</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 text-center">
-                                <div class="card border-0 shadow-sm">
-                                    <div class="card-body">
-                                        <i class="fas fa-cash-register fa-3x text-green"></i>
-                                        <p class="mt-2">Checkout</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                // Render the chart
+                const ctx = document.getElementById('salesChart').getContext('2d');
+                const salesChart = new Chart(ctx, {
+                    type: 'line', // Line chart for weekly data
+                    data: {
+                        labels: labels, // Weeks
+                        datasets: [{
+                            label: 'Sales Amount',
+                            data: data, // Sales Amount per week
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        }
+    }
+    else
+    {
+      @*   <div class="text-center">
+            <h1 class="display-4">Welcome</h1>
+            <p>Take a moment to treat yourself—because you deserve to feel beautiful, inside and out.</p>
+            <div class="welcome-content">
+                <div class="image-container">
+                    <img src="~/images/home.jpg" alt="Welcome Image" />
+                </div>
+                <div class="skincare-note">
+                    <h2>Your Glow-Up Routine</h2>
+                    <ul>
+                        <li><strong>Cleanse:</strong> Say goodbye to dirt and hello to fresh skin! A gentle cleanse morning and night will keep you glowing.</li>
+                        <li><strong>Exfoliate:</strong> Scrub away the old, reveal the new! Exfoliate 1-2 times a week to keep your skin radiant and smooth.</li>
+                        <li><strong>Moisturize:</strong> Hydrate, baby! Give your skin the love it deserves with a daily dose of moisturizer for that soft, dewy look.</li>
+                        <li><strong>Sunscreen:</strong> Protect your magic! SPF 30+ every day is your best friend—keep that youthful glow all year long.</li>
+                    </ul>
                 </div>
             </div>
+        </div> *@
 
-            <!-- Quick Actions -->
-            <div class="col-lg-4">
-                <div class="card shadow-lg">
-                    <div class="card-header bg-gradient-secondary text-white">
-                        <h3>Quick Actions</h3>
+        <div class="text-center">
+            <h1 class="display-4">Welcome</h1>
+            <p>Take a moment to treat yourself—because you deserve to feel beautiful, inside and out.</p>
+            <div style="display: flex; align-items: flex-start; justify-content: center; gap: 30px; margin-top: 20px;">
+                <img src="~/images/home.jpg" alt="Welcome Image" style="width: 50%; height: auto; border-radius: 10px;">
+
+                <div style="flex: 1;">
+                    <div class="skincare-note">
+                        <h2>Your Glow-Up Routine</h2>
+                        <ul>
+                            <li><strong>Cleanse:</strong> Say goodbye to dirt and hello to fresh skin! A gentle cleanse morning and night will keep you glowing.</li>
+                            <li><strong>Exfoliate:</strong> Scrub away the old, reveal the new! Exfoliate 1-2 times a week to keep your skin radiant and smooth.</li>
+                            <li><strong>Moisturize:</strong> Hydrate, baby! Give your skin the love it deserves with a daily dose of moisturizer for that soft, dewy look.</li>
+                            <li><strong>Sunscreen:</strong> Protect your magic! SPF 30+ every day is your best friend—keep that youthful glow all year long.</li>
+                        </ul>
                     </div>
-                    <div class="card-body">
-                        <div class="d-flex flex-column gap-3">
-                            <button class="btn btn-outline-primary btn-lg">
-                                <i class="fas fa-cart-plus"></i> Add Product
-                            </button>
-                            <button class="btn btn-outline-success btn-lg">
-                                <i class="fas fa-receipt"></i> View Orders
-                            </button>
-                            <button class="btn btn-outline-danger btn-lg">
-                                <i class="fas fa-user-plus"></i> New Customer
-                            </button>
-                            <button class="btn btn-outline-warning btn-lg">
-                                <i class="fas fa-chart-line"></i> Sales Report
-                            </button>
-                        </div>
+
+                    <!-- CityPOS Guarantee Paragraph -->
+                    <div class="citypos-guarantee" style="margin-top: 30px;">
+                       
+                        <p>
+                            At CityPOS, we believe every individual deserves skincare products they can trust.
+                            Our products are crafted with care, ensuring safety, authenticity, and superior quality
+                            to give your skin the love it deserves. We guarantee that each product meets the highest
+                            standards, free from harmful ingredients, and dermatologically tested to ensure they’re
+                            gentle and effective. With CityPOS, your glow isn’t just skin-deep—it’s a reflection of
+                            confidence and care, backed by our promise of excellence.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div> *@
-<div class="container mt-4">
-    <div class="row justify-content-center align-items-stretch h-100">
-        <!-- POS Display -->
-        <div class="col-lg-8">
-            <div class="card shadow-lg border-0 h-100">
-                <div class="card-header text-center">
-                    <h2>Skincare POS </h2>
-                    <p class="mb-0">Your Beauty Business Partner</p>
-                </div>
-                <div class="card-body p-4">
-                    <div class="row">
-                        <!-- Sales Summary -->
-                        <div class="col-md-6 mb-3">
-                            <div class="card bg-light shadow-sm h-100">
-                                <div class="card-body text-center">
-                                    <h5 class="text-primary">Today's Sales</h5>
-                                    <h3 class="text-success">$2,150</h3>
-                                    <p class="text-muted">+12% from yesterday</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Transactions -->
-                        <div class="col-md-6 mb-3">
-                            <div class="card bg-light shadow-sm h-100">
-                                <div class="card-body text-center">
-                                    <h5 class="text-primary">Transactions</h5>
-                                    <h3 class="text-info">145</h3>
-                                    <p class="text-muted">Including returns</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product Categories -->
-                    <div class="row mt-3">
-                        <div class="col-md-3 text-center">
-                            <div class="card border-0 shadow-sm">
-                                <div class="card-body">
-                                    <i class="fas fa-spa fa-3x text-pink"></i>
-                                    <p class="mt-2">Facial Care</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <div class="card border-0 shadow-sm">
-                                <div class="card-body">
-                                    <i class="fas fa-hand-holding-water fa-3x text-blue"></i>
-                                    <p class="mt-2">Moisturizers</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <div class="card border-0 shadow-sm">
-                                <div class="card-body">
-                                    <i class="fas fa-seedling fa-3x text-green"></i>
-                                    <p class="mt-2">Organic</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <div class="card border-0 shadow-sm">
-                                <div class="card-body">
-                                    <i class="fas fa-cash-register fa-3x text-purple"></i>
-                                    <p class="mt-2">Checkout</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Quick Actions -->
-        <div class="col-lg-4 d-flex">
-            <div class="card shadow-lg w-100">
-                <div class="card-header text-white">
-                    <h3>Quick Actions</h3>
-                </div>
-                <div class="card-body d-flex flex-column justify-content-between">
-                    <div class="d-flex flex-column gap-3">
-                        <a href="item/entry" class="btn btn-outline-primary btn-lg">
-                            <i class="fas fa-cart-plus"></i> Add Product
-                        </a>
-                        <button class="btn btn-outline-success btn-lg" onclick="openModal('View Orders')">
-                            <i class="fas fa-receipt"></i> View Orders
-                        </button>
-                        <button class="btn btn-outline-danger btn-lg" onclick="openModal('New Customer')">
-                            <i class="fas fa-user-plus"></i> New Customer
-                        </button>
-                        <button class="btn btn-outline-warning btn-lg" onclick="openModal('Sales Report')">
-                            <i class="fas fa-chart-line"></i> Sales Report
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-   
-
-
+ }
+</body>
+</html>

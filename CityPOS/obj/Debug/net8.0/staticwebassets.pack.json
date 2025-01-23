@@ -301,6 +301,10 @@
       "PackagePath": "staticwebassets\\images\\14d51bf4-f3a4-4fbc-951e-02ffc0f1015c_images (6).jpg"
     },
     {
+      "Id": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\1745944a-acb7-41a1-8353-2069f7b50f7b_Uriage Thermal Water Spray 150 ml.jpg",
+      "PackagePath": "staticwebassets\\images\\1745944a-acb7-41a1-8353-2069f7b50f7b_Uriage Thermal Water Spray 150 ml.jpg"
+    },
+    {
       "Id": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\23b84a25-8728-49ed-98ed-89ea2ba69685_ponds-face-cream.jpeg",
       "PackagePath": "staticwebassets\\images\\23b84a25-8728-49ed-98ed-89ea2ba69685_ponds-face-cream.jpeg"
     },
@@ -321,6 +325,10 @@
       "PackagePath": "staticwebassets\\images\\3f42f14a-84bb-4ffe-a500-041367cca676_images.jpg"
     },
     {
+      "Id": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\48467c86-5373-4d09-a4f5-97f4cfd8eb4d_Uriage Canada.webp",
+      "PackagePath": "staticwebassets\\images\\48467c86-5373-4d09-a4f5-97f4cfd8eb4d_Uriage Canada.webp"
+    },
+    {
       "Id": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\496bd194-f478-4a0c-ae71-633ddd662753_IIVBE7472.JPG",
       "PackagePath": "staticwebassets\\images\\496bd194-f478-4a0c-ae71-633ddd662753_IIVBE7472.JPG"
     },
@@ -335,6 +343,10 @@
     {
       "Id": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\58ba7b86-f570-48ee-b040-c94df9488c7b_images (2).jpg",
       "PackagePath": "staticwebassets\\images\\58ba7b86-f570-48ee-b040-c94df9488c7b_images (2).jpg"
+    },
+    {
+      "Id": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\5a55fb21-bcee-4b00-bd1a-ea0a04b96b6f_uirage gel purifying cleansing gel.png",
+      "PackagePath": "staticwebassets\\images\\5a55fb21-bcee-4b00-bd1a-ea0a04b96b6f_uirage gel purifying cleansing gel.png"
     },
     {
       "Id": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\69877167-8cbb-4bfb-8969-a3aeb5261ecc_kwOICuNl_85bfb633947740028e87b227705248b9.jpg",
@@ -373,6 +385,10 @@
       "PackagePath": "staticwebassets\\images\\b1e1f5d5-890a-4e10-bfc5-274ff95316ad_517q0h4B5FL.jpg"
     },
     {
+      "Id": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\bdf645e7-ce25-4e40-84ad-a1b55e44470e_silky lotion.png",
+      "PackagePath": "staticwebassets\\images\\bdf645e7-ce25-4e40-84ad-a1b55e44470e_silky lotion.png"
+    },
+    {
       "Id": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\d67cca71-cfbd-459b-882f-db1cb59e142f_sunplay suncream.jpg",
       "PackagePath": "staticwebassets\\images\\d67cca71-cfbd-459b-882f-db1cb59e142f_sunplay suncream.jpg"
     },
@@ -389,8 +405,16 @@
       "PackagePath": "staticwebassets\\images\\e83d8046-2a66-4c0b-9c45-85ff52101b41_images (6).jpg"
     },
     {
+      "Id": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\e83f7065-f1e3-45ee-bf5f-f5ba6bb86fcf_Coca glow vaseline lotion.png",
+      "PackagePath": "staticwebassets\\images\\e83f7065-f1e3-45ee-bf5f-f5ba6bb86fcf_Coca glow vaseline lotion.png"
+    },
+    {
       "Id": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\f3fde82f-9d6d-4546-96c5-a719ec1a3c28_download (1).jpg",
       "PackagePath": "staticwebassets\\images\\f3fde82f-9d6d-4546-96c5-a719ec1a3c28_download (1).jpg"
+    },
+    {
+      "Id": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\home.jpg",
+      "PackagePath": "staticwebassets\\images\\home.jpg"
     },
     {
       "Id": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\js\\site.js",

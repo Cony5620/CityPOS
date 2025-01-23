@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bF47fNjXHdZA0LAJLIKwluql00KV2Q3+mxjgk2OzxMY=",
+  "Hash": "OthkHj2OcGxiqYMZIEh6PZmOkaMXYYe6PzJNTC6K0qE=",
   "Source": "CityPOS",
   "BasePath": "_content/CityPOS",
   "Mode": "Default",
@@ -2601,6 +2601,25 @@
       "OriginalItemSpec": "wwwroot\\images\\14d51bf4-f3a4-4fbc-951e-02ffc0f1015c_images (6).jpg"
     },
     {
+      "Identity": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\1745944a-acb7-41a1-8353-2069f7b50f7b_Uriage Thermal Water Spray 150 ml.jpg",
+      "SourceId": "CityPOS",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\",
+      "BasePath": "_content/CityPOS",
+      "RelativePath": "images/1745944a-acb7-41a1-8353-2069f7b50f7b_Uriage Thermal Water Spray 150 ml.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\1745944a-acb7-41a1-8353-2069f7b50f7b_Uriage Thermal Water Spray 150 ml.jpg"
+    },
+    {
       "Identity": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\23b84a25-8728-49ed-98ed-89ea2ba69685_ponds-face-cream.jpeg",
       "SourceId": "CityPOS",
       "SourceType": "Discovered",
@@ -2696,6 +2715,25 @@
       "OriginalItemSpec": "wwwroot\\images\\3f42f14a-84bb-4ffe-a500-041367cca676_images.jpg"
     },
     {
+      "Identity": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\48467c86-5373-4d09-a4f5-97f4cfd8eb4d_Uriage Canada.webp",
+      "SourceId": "CityPOS",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\",
+      "BasePath": "_content/CityPOS",
+      "RelativePath": "images/48467c86-5373-4d09-a4f5-97f4cfd8eb4d_Uriage Canada.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\48467c86-5373-4d09-a4f5-97f4cfd8eb4d_Uriage Canada.webp"
+    },
+    {
       "Identity": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\496bd194-f478-4a0c-ae71-633ddd662753_IIVBE7472.JPG",
       "SourceId": "CityPOS",
       "SourceType": "Discovered",
@@ -2770,6 +2808,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\58ba7b86-f570-48ee-b040-c94df9488c7b_images (2).jpg"
+    },
+    {
+      "Identity": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\5a55fb21-bcee-4b00-bd1a-ea0a04b96b6f_uirage gel purifying cleansing gel.png",
+      "SourceId": "CityPOS",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\",
+      "BasePath": "_content/CityPOS",
+      "RelativePath": "images/5a55fb21-bcee-4b00-bd1a-ea0a04b96b6f_uirage gel purifying cleansing gel.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\5a55fb21-bcee-4b00-bd1a-ea0a04b96b6f_uirage gel purifying cleansing gel.png"
     },
     {
       "Identity": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\69877167-8cbb-4bfb-8969-a3aeb5261ecc_kwOICuNl_85bfb633947740028e87b227705248b9.jpg",
@@ -2943,6 +3000,25 @@
       "OriginalItemSpec": "wwwroot\\images\\b1e1f5d5-890a-4e10-bfc5-274ff95316ad_517q0h4B5FL.jpg"
     },
     {
+      "Identity": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\bdf645e7-ce25-4e40-84ad-a1b55e44470e_silky lotion.png",
+      "SourceId": "CityPOS",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\",
+      "BasePath": "_content/CityPOS",
+      "RelativePath": "images/bdf645e7-ce25-4e40-84ad-a1b55e44470e_silky lotion.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\bdf645e7-ce25-4e40-84ad-a1b55e44470e_silky lotion.png"
+    },
+    {
       "Identity": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\d67cca71-cfbd-459b-882f-db1cb59e142f_sunplay suncream.jpg",
       "SourceId": "CityPOS",
       "SourceType": "Discovered",
@@ -3019,6 +3095,25 @@
       "OriginalItemSpec": "wwwroot\\images\\e83d8046-2a66-4c0b-9c45-85ff52101b41_images (6).jpg"
     },
     {
+      "Identity": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\e83f7065-f1e3-45ee-bf5f-f5ba6bb86fcf_Coca glow vaseline lotion.png",
+      "SourceId": "CityPOS",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\",
+      "BasePath": "_content/CityPOS",
+      "RelativePath": "images/e83f7065-f1e3-45ee-bf5f-f5ba6bb86fcf_Coca glow vaseline lotion.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\e83f7065-f1e3-45ee-bf5f-f5ba6bb86fcf_Coca glow vaseline lotion.png"
+    },
+    {
       "Identity": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\f3fde82f-9d6d-4546-96c5-a719ec1a3c28_download (1).jpg",
       "SourceId": "CityPOS",
       "SourceType": "Discovered",
@@ -3036,6 +3131,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\f3fde82f-9d6d-4546-96c5-a719ec1a3c28_download (1).jpg"
+    },
+    {
+      "Identity": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\home.jpg",
+      "SourceId": "CityPOS",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\",
+      "BasePath": "_content/CityPOS",
+      "RelativePath": "images/home.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\home.jpg"
     },
     {
       "Identity": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\js\\site.js",

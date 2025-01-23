@@ -14,7 +14,12 @@ namespace CityPOS.Repositories.Domain
             this._dbContext = dbContext;
         }
 
-       
+        public int GetAvailableStock(string itemId, string unitId)
+        {
+            return _dbContext.StockBalances
+           .Where(sb => sb.Itemid == itemId && sb.Unitid == unitId)
+           .Sum(sb => sb.Quantity);
+        }
 
         public StockBalanceEntity GetStockBalanceByItemUnitAndExpiration(string itemid, string unitid, DateTime expirationDate)
         {

@@ -41,13 +41,13 @@
         <div class="col-3">
             <div class="mb-3">
                 <label class="form-label">Voucher NO</label>
-                <select class="form-select" id="saleDropdown" name="SaleOrderid">
-                    <option value="" selected>Select an Voucher NO </option>
-                    @if (ViewBag.sale != null)
+                <select class="form-select" id="saleDropdown" name="VoucherNo">
+                    <option value="" selected>Select a Voucher NO</option>
+                    @if (ViewBag.Sale != null)
                     {
-                        foreach (var sales in ViewBag.Sale)
+                        foreach (var sale in ViewBag.Sale)
                         {
-                            <option value="@sales.id">@sales.VoucherNo</option>
+                            <option value="@sale.VoucherNo">@sale.VoucherNo</option>
                         }
                     }
                     else
@@ -142,3 +142,20 @@
         }
     </tbody>
 </table>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $('#filterForm').on('submit', function (event) {
+        const fromDate = $('[name="fromDate"]').val();
+        const toDate = $('[name="toDate"]').val();
+        const voucherNo = $('[name="VoucherNo"]').val();
+        const customerid = $('[name="Customerid"]').val();
+
+        console.log({ fromDate, toDate, saleOrderid, customerid });
+
+        if (!(fromDate && toDate) && !saleOrderid && !customerid) {
+            alert("Please fill in either the dates or select a filter (Voucher NO or Customer).");
+            event.preventDefault(); // Prevent form submission
+        }
+    });
+
+</script>

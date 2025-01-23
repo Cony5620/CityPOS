@@ -43,6 +43,12 @@ namespace CityPOS.Services
             {
                 if (model.StockSwitch)
                 {
+                    var stockAvailable = _unitOfWork.StockBalanceRepository.GetAvailableStock(detail.Itemid, detail.Unitid);
+
+                    if (stockAvailable < detail.Quantity)
+                    {
+                        throw new InvalidOperationException($"Stock is not enough for item: {detail.Itemid}. Required: {detail.Quantity}, Available: {stockAvailable}");
+                    }
                     var usedBatches = _unitOfWork.StockBalanceRepository.ReduceStockForSale(detail.Itemid, detail.Unitid, detail.Quantity);
 
                     foreach (var batch in usedBatches)
@@ -56,7 +62,7 @@ namespace CityPOS.Services
                             LedgerDate = DateTime.Now,
                             transactionType = "Sale",
                             Sourceid = SaleOrderEntity.id,
-                            ExpiredDate = DateTime.Parse(batch.ExpiredDate), // Use the expiration date from the batch
+                            ExpiredDate = DateTime.Parse(batch.ExpiredDate), 
                             CreatedAt = DateTime.Now
                         };
 
@@ -89,7 +95,7 @@ namespace CityPOS.Services
             }
         }
 
-        public IEnumerable<SaleOrderViewModel> GetAll(DateTime? fromDate = null, DateTime? toDate = null, string? Customerid = null)
+        public IEnumerable<SaleOrderViewModel> GetAll(DateTime? fromDate = null, DateTime? toDate = null, string? Customerid = null, string? VoucherNo = null)
         {
             var saleOrder = from so in _unitOfWork.SaleOrderRepository.GetAll()
                             join c in _unitOfWork.CustomerRepository.GetAll()
@@ -105,8 +111,29 @@ namespace CityPOS.Services
                             CashAmount=so.CashAmount,
 
                             };
+            //return saleOrder.ToList();
+            if (fromDate.HasValue)
+            {
+                saleOrder = saleOrder.Where(so => so.SaleDate >= fromDate.Value);
+            }
+            if (toDate.HasValue)
+            {
+                saleOrder = saleOrder.Where(so => so.SaleDate <= toDate.Value);
+            }
+
+            // Apply customer filter if Customerid is provided
+            if (!string.IsNullOrEmpty(Customerid))
+            {
+                saleOrder = saleOrder.Where(so => so.Customerid == Customerid);
+            }
+            if (!string.IsNullOrEmpty(VoucherNo))
+            {
+                saleOrder = saleOrder.Where(so => so.VoucherNo.Equals(VoucherNo, StringComparison.OrdinalIgnoreCase));
+            }
+
+            // Execute the query and return the results
             return saleOrder.ToList();
-                          
+
         }
     }
 

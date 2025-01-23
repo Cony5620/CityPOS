@@ -99,16 +99,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
-        // Fetch items based on selected category
+      
         $('#CategoryDropdown').change(function () {
             var categoryid = $(this).val();
             if (categoryid) {
                 $.ajax({
-                    url: '@Url.Action("GetItems", "StockBalance")', // Corrected to match the controller action name
+                    url: '@Url.Action("GetItems", "StockBalance")', 
                     type: 'GET',
-                    data: { categoryid: categoryid }, // Adjusted to match controller parameter name
+                    data: { categoryid: categoryid },
                     success: function (data) {
-                        $('#ItemDropdown').empty(); // Clear existing items
+                        $('#ItemDropdown').empty(); 
                         $('#ItemDropdown').append($('<option>', {
                             value: '',
                             text: 'Select an Item'
@@ -118,7 +118,7 @@
                             $.each(data, function (index, item) {
                                 $('#ItemDropdown').append($('<option>', {
                                     value: item.id,
-                                    text: item.name // Adjust this based on your item object structure
+                                    text: item.name 
                                 }));
                             });
                         } else {
