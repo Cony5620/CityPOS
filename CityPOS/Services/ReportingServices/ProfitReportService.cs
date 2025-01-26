@@ -41,7 +41,7 @@ namespace CityPOS.Services.ReportingServices
                                  OriginalPrice = sd.Price,
                                  PurchasePrice = pd.Price,
                                  DiscountPercentage = sd.DisPercent,
-                                 DiscountAmount =  sd.DisAmount ,
+                                 DiscountAmount = (sd.Price * sd.DisPercent / 100) ,
                                  NetSalePrice = sd.Price - (sd.Price * sd.DisPercent / 100),
                                  TotalRevenue = (sd.Price - (sd.Price * sd.DisPercent / 100)) * sd.Quantity,
                                  TotalCost = pd.Price * sd.Quantity,

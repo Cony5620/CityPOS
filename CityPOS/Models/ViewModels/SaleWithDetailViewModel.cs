@@ -18,7 +18,8 @@
     public class SaleOrderViewModel
     {
         public string id { get; set; }
-        public DateTime SaleDate { get; set; } = DateTime.Today;
+        public DateTime SaleDate { get; set; }/* = DateTime.Today;*/
+     
         public string VoucherNo { get; set; }
         public decimal SubTotal { get; set; }
         public decimal TotalAmount { get; set; }

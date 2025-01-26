@@ -1,13 +1,14 @@
-using CityPOS.Models; // Import the SaleViewModel
+using CityPOS.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using CityPOS.DAO;
 using System.Linq;
 using System;
 using System.Diagnostics;
-using CityPOS.DAO;
-using System.Globalization;
 using CityPOS.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 namespace CityPOS.Controllers
 {
@@ -16,45 +17,51 @@ namespace CityPOS.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly CityPOSDbContext _dbContext;
 
-      
         public HomeController(ILogger<HomeController> logger, CityPOSDbContext dbContext)
         {
             _logger = logger;
             _dbContext = dbContext;
         }
-       
 
         public IActionResult Index()
         {
             if (User.IsInRole("Admin"))
             {
-                var salesData = _dbContext.SaleOrders
-                .Where(s => s.SaleDate >= DateTime.Now.AddMonths(-3))
-                .ToList();
-
-
-                var weeklySalesData = salesData
-                    .GroupBy(s => new
+                // Retrieve sales data from the database (or your data source)
+                var salesData = _dbContext.SaleOrders // Assuming your data source is '_context.Sales'
+                    .Select(s => new SaleViewModel
                     {
-                        Week = CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(s.SaleDate, CalendarWeekRule.FirstDay, DayOfWeek.Monday),
-                        Year = s.SaleDate.Year
+                        SaleDate = s.SaleDate, // Assuming 'SaleDate' is the actual property
+                        CashAmount = s.CashAmount
                     })
-                    .Select(g => new SaleViewModel
-                    {
-                        Week = $"Week {g.Key.Week} ({g.Key.Year})",
-                        SalesAmount = g.Sum(s => s.TotalAmount)
-                    })
-                    .OrderBy(x => x.Week)
                     .ToList();
 
+                // Group sales data by week and calculate total cash amount per week
+                var groupedSalesData = salesData
+                    .GroupBy(s => new { s.WeekStart, s.WeekEnd }) // Assuming 'WeekStart' and 'WeekEnd' are DateTime fields
+                    .Select(g => new
+                    {
+                        WeekRange = $"{g.Key.WeekStart.ToString("MM/dd/yyyy")} - {g.Key.WeekEnd.ToString("MM/dd/yyyy")}",
+                        TotalCashAmount = g.Sum(s => s.CashAmount)
+                    })
+                    .ToList();
 
-                return View(weeklySalesData);
+                // Prepare the data for the chart
+                var chartData = new
+                {
+                    Labels = groupedSalesData.Select(sd => sd.WeekRange).ToArray(), // Week ranges for x-axis labels
+                    Data = groupedSalesData.Select(sd => sd.TotalCashAmount).ToArray() // Total cash amounts for y-axis
+                };
+
+                ViewData["chartData"] = chartData; // Passing chartData to the view
+
+                return View(salesData);  // Pass the model to the view (sales data)
             }
-            return View(null);
+
+            return View();
         }
 
-       
-        public IActionResult Privacy()
+            public IActionResult Privacy()
         {
             return View();
         }
