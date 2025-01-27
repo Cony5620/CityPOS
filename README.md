@@ -7,4 +7,6 @@ CityPOS
 - MVC with monolithic Pattern
 ![a-r-p](https://github.com/user-attachments/assets/f337f2e2-3c7a-4bda-b6f4-8414d37f63e3)
 # Database ERD Design
+-[https://docs.google.com/spreadsheets/d/1xWfb-umX6_jhuDroiPHyx7ey8PmdZfpSSOtieXhqe-Y/edit?usp=sharing]
+
 
