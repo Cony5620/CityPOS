@@ -3,10 +3,33 @@ CityPOS
 <br>-City POS is a cloud-based Point of Sale solution designed for seamless sales transactions and efficient stock management. Perfect for small and medium businesses as well as large enterprises, it ensures accurate tracking of inventory and sales, anytime and anywhere. Built to simplify workflows, enhance employee productivity, and support business owners with quick and reliable tools for managing daily operations effectively.
 # Application Architecture Diagram
 - MVC with Repository & Unit Of Work Pattern 
-(https://github.com/user-attachments/assets/ba7aedb1-6252-4add-b5e6-8379445ff705)
+![a-r-p-1](https://github.com/user-attachments/assets/ba7aedb1-6252-4add-b5e6-8379445ff705)
 - MVC with monolithic Pattern
 ![a-r-p](https://github.com/user-attachments/assets/f337f2e2-3c7a-4bda-b6f4-8414d37f63e3)
+
+# Used Technoligies
+- ASP.NET Core 8.0 MVC With Repository Architecture Pattern 
+- ORM (Object Relational Mapper) With Entity Framework Core 8.0
+- Authentication & Authorization With ASP.NET Core Identity Membership 
+- UI/UX With Bootstrap 3.3 & JQuery 3.3
+- Reportings With RDLC  
+- Data Storages With MS SQL Server 
+- Admin Dashboard With AdminLTE ( crd : https://adminlte.io/)
+
 # Database ERD Design
 -[https://docs.google.com/spreadsheets/d/1xWfb-umX6_jhuDroiPHyx7ey8PmdZfpSSOtieXhqe-Y/edit?usp=sharing]
+# Functional Lists
+- User/Role Management (Authentication vs. Authorization) according to roles.
+- Category Management
+- Brand Management
+- CustomerManagement 
+- Supplier Management
+- City & Township Management
+- Item Management 
+- Stock Management(stock balance & stock ledger)
+- Purchase Order & Purchase Detail Process
+- Sale Order & Sale Detail Process
+- Reportings
+- Dashboard for each role (Admin, Cashier)
 
 
