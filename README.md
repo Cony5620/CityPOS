@@ -31,5 +31,6 @@ CityPOS
 - Sale Order & Sale Detail Process
 - Reportings
 - Dashboard for each role (Admin, Cashier)
+ # Public User View
 
 
