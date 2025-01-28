@@ -1,6 +1,5 @@
-CityPOS
-<br>
-<br>-City POS is a cloud-based Point of Sale solution designed for seamless sales transactions and efficient stock management. Perfect for small and medium businesses as well as large enterprises, it ensures accurate tracking of inventory and sales, anytime and anywhere. Built to simplify workflows, enhance employee productivity, and support business owners with quick and reliable tools for managing daily operations effectively.
+# CityPOS
+- City POS is a cloud-based Point of Sale solution designed for seamless sales transactions and efficient stock management. Perfect for small and medium businesses as well as large enterprises, it ensures accurate tracking of inventory and sales, anytime and anywhere. Built to simplify workflows, enhance employee productivity, and support business owners with quick and reliable tools for managing daily operations effectively.
 # Application Architecture Diagram
 - MVC with Repository & Unit Of Work Pattern 
 ![a-r-p-1](https://github.com/user-attachments/assets/ba7aedb1-6252-4add-b5e6-8379445ff705)
@@ -36,6 +35,7 @@ CityPOS
  # Admin View 
  ![Image](https://github.com/user-attachments/assets/69976299-ac2d-496b-a3ef-5ce315879edd)
  #Cashier View
+ ![Image](https://github.com/user-attachments/assets/553d8d70-a8e7-47f3-9a35-5ecaaa79de9f)
  
 
 
