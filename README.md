@@ -34,5 +34,8 @@ CityPOS
  # Public User View
  ![Image](https://github.com/user-attachments/assets/7a96b2bf-db91-463d-aba7-07509a23711d)
  # Admin View 
+ ![Image](https://github.com/user-attachments/assets/69976299-ac2d-496b-a3ef-5ce315879edd)
+ #Cashier View
+ 
 
 
