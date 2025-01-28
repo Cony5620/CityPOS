@@ -1,158 +1,4 @@
-﻿@* @model IEnumerable<SaleViewModel>
-@using Microsoft.AspNetCore.Http
-@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
-
-@{
-    // Check if the user is in the "Admin" role
-    var isAdmin = HttpContextAccessor.HttpContext.User.IsInRole("Admin");
-
-    // Group data by week and calculate total cash amount per week (Monday to Sunday)
-    var salesData = Model
-        .GroupBy(s => new { s.WeekStart, s.WeekEnd }) // Assuming 'WeekStart' and 'WeekEnd' are DateTime fields
-        .Select(g => new
-        {
-            WeekRange = $"{g.Key.WeekStart.ToString("MM/dd/yyyy")} - {g.Key.WeekEnd.ToString("MM/dd/yyyy")}",
-            TotalCashAmount = g.Sum(s => s.CashAmount)
-        })
-        .ToList();
-}
-@{
-    var chartData = ViewData["chartData"] as dynamic;
-    var labels = chartData?.Labels ?? new string[] { };
-    var data = chartData?.Data ?? new decimal[] { };
-}
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Home</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        /* General container for the image and tips */
-        .welcome-content {
-            display: flex;
-            align-items: flex-start;
-            margin-top: 20px;
-            gap: 20px; /* Space between the image and the tips */
-        }
-
-        /* Image styling */
-        .image-container {
-            flex: 2; /* Larger proportion for the image */
-        }
-
-            .image-container img {
-                max-width: 100%; /* Fill its container */
-                height: auto;
-                border-radius: 10px; /* Rounded corners */
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            }
-
-        /* Skincare tips section */
-        .skincare-note {
-            flex: 1; /* Smaller proportion for the tips */
-            background-color: #fff5f8; /* Soft pink background */
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
-        }
-
-            /* Heading for the skincare note */
-            .skincare-note h2 {
-                color: #e75480; /* Warm pink */
-                margin-bottom: 10px;
-            }
-
-            /* List styling */
-            .skincare-note ul {
-                list-style-type: none; /* Removes default bullets */
-                padding-left: 0;
-                font-size: 0.9rem; /* Smaller font size for compactness */
-                line-height: 1.4; /* Slightly less spacing */
-            }
-
-                .skincare-note ul li {
-                    margin-bottom: 8px;
-                }
-
-                    .skincare-note ul li strong {
-                        color: #d63384; /* Highlight key points in pink */
-                    }
-
-        .citypos-guarantee {
-            color: #d63384;
-        }
-    </style>
-</head>
-<body>
-    @if (isAdmin)
-    {
-        <div>
-            <h2>Weekly Sales</h2>
-            <canvas id="myChart" width="400" height="200"></canvas>
-        </div>
-
-        <script>
-            var ctx = document.getElementById('myChart').getContext('2d');
-            var myChart = new Chart(ctx, {
-                type: 'bar',  // Bar chart
-                data: {
-                    labels: @Html.Raw(Json.Serialize(labels)),  // Days of the week (X-axis)
-                    datasets: [{
-                        label: 'Cash Amount',
-                        data: @Html.Raw(Json.Serialize(data)),  // Cash amount for each day (Y-axis)
-                        backgroundColor: 'rgba(54, 162, 235, 0.2)',  // Bar color
-                        borderColor: 'rgba(54, 162, 235, 1)',  // Border color
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-        </script>
-    }
-    else
-    {
-        <div class="text-center">
-            <h1 class="display-4">Welcome</h1>
-            <p>Take a moment to treat yourself—because you deserve to feel beautiful, inside and out.</p>
-            <div style="display: flex; align-items: flex-start; justify-content: center; gap: 30px; margin-top: 20px;">
-                <img src="~/images/home.jpg" alt="Welcome Image" style="width: 50%; height: auto; border-radius: 10px;">
-
-                <div style="flex: 1;">
-                    <div class="skincare-note">
-                        <h2>Your Glow-Up Routine</h2>
-                        <ul>
-                            <li><strong>Cleanse:</strong> Say goodbye to dirt and hello to fresh skin! A gentle cleanse morning and night will keep you glowing.</li>
-                            <li><strong>Exfoliate:</strong> Scrub away the old, reveal the new! Exfoliate 1-2 times a week to keep your skin radiant and smooth.</li>
-                            <li><strong>Moisturize:</strong> Hydrate, baby! Give your skin the love it deserves with a daily dose of moisturizer for that soft, dewy look.</li>
-                            <li><strong>Sunscreen:</strong> Protect your magic! SPF 30+ every day is your best friend—keep that youthful glow all year long.</li>
-                        </ul>
-                    </div>
-
-                    <!-- CityPOS Guarantee Paragraph -->
-                    <div class="citypos-guarantee" style="margin-top: 30px;">
-                        <p>
-                            At CityPOS, we believe every individual deserves skincare products they can trust.
-                            Our products are crafted with care, ensuring safety, authenticity, and superior quality
-                            to give your skin the love it deserves. We guarantee that each product meets the highest
-                            standards, free from harmful ingredients, and dermatologically tested to ensure they’re
-                            gentle and effective. With CityPOS, your glow isn’t just skin-deep—it’s a reflection of
-                            confidence and care, backed by our promise of excellence.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    }
-</body>
-</html>
- *@
+﻿
  @model IEnumerable<SaleViewModel>
 @using Microsoft.AspNetCore.Http
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
@@ -230,9 +76,10 @@
 <body>
     @if (isAdmin)
     {
-        <div>
-            <h2>Weekly Sales</h2>
-            <canvas id="myChart" width="200" height="100"></canvas>
+        <h3>Weekly Sale</h3>
+        <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+            
+            <canvas id="myChart" style="max-width: 800px; max-height: 500px;"></canvas>
         </div>
 
         <script>
@@ -244,8 +91,8 @@
                     datasets: [{
                         label: 'Cash Amount',
                         data: @Html.Raw(Json.Serialize(data)),  // Cash amount for each week (Y-axis)
-                        backgroundColor: 'rgba(54, 162, 235, 0.2)',  // Bar color
-                        borderColor: 'rgba(54, 162, 235, 1)',  // Border color
+                        backgroundColor: 'rgba(0, 123, 167, 0.7)',  // Deep bright teal background
+                        borderColor: 'rgba(0, 123, 167, 1)',  // Solid teal border
                         borderWidth: 1
                     }]
                 },
