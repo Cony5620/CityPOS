@@ -11,7 +11,7 @@
 - ORM (Object Relational Mapper) With Entity Framework Core 8.0
 - Authentication & Authorization With ASP.NET Core Identity Membership 
 - UI/UX With Bootstrap 3.3 & JQuery 3.3
-- Reportings With RDLC  
+- Reportings With EPPlus Library  
 - Data Storages With MS SQL Server 
 - Admin Dashboard With AdminLTE ( crd : https://adminlte.io/)
 
