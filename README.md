@@ -33,5 +33,6 @@ CityPOS
 - Dashboard for each role (Admin, Cashier)
  # Public User View
  ![Image](https://github.com/user-attachments/assets/7a96b2bf-db91-463d-aba7-07509a23711d)
+ # Admin View 
 
 
