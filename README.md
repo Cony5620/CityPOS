@@ -34,6 +34,7 @@
  ![Image](https://github.com/user-attachments/assets/7a96b2bf-db91-463d-aba7-07509a23711d)
  # Admin View 
  ![Image](https://github.com/user-attachments/assets/69976299-ac2d-496b-a3ef-5ce315879edd)
+ ![Image](https://github.com/user-attachments/assets/9308fbac-54bb-43d1-be50-40ae55c4537a)
  #Cashier View
  ![Image](https://github.com/user-attachments/assets/553d8d70-a8e7-47f3-9a35-5ecaaa79de9f)
  
