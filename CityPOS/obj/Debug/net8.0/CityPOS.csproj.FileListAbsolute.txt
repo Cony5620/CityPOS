@@ -444,6 +444,9 @@ D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\CityPOS.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\CityPOS.pdb
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Azure.Core.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Azure.Identity.dll
+D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\EPPlus.dll
+D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\EPPlus.Interfaces.dll
+D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\EPPlus.System.Drawing.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Humanizer.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
@@ -474,6 +477,8 @@ D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relati
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Sqlite.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
@@ -491,6 +496,7 @@ D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Microsoft.NET.StringTools.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
@@ -529,6 +535,7 @@ D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\System.Memory.Data.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\System.Reflection.MetadataLoadContext.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\System.Runtime.Caching.dll
+D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\System.Security.Permissions.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\System.Windows.Extensions.dll
@@ -677,6 +684,7 @@ D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Da
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\runtimes\browser-wasm\nativeassets\net8.0\e_sqlite3.a
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\runtimes\linux-arm\native\libe_sqlite3.so
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\runtimes\linux-arm64\native\libe_sqlite3.so
@@ -698,6 +706,7 @@ D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\runtimes\win-arm64\native\e_sqlite3.
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\runtimes\win-x64\native\e_sqlite3.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 D:\MVCprojects\POS\CityPOS\obj\Debug\net8.0\CityPOS.csproj.AssemblyReference.cache
@@ -718,6 +727,8 @@ D:\MVCprojects\POS\CityPOS\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTa
 D:\MVCprojects\POS\CityPOS\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.CityPOS.props
 D:\MVCprojects\POS\CityPOS\obj\Debug\net8.0\staticwebassets.pack.json
 D:\MVCprojects\POS\CityPOS\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\MVCprojects\POS\CityPOS\obj\Debug\net8.0\scopedcss\Views\Shared\_LayoutA.cshtml.rz.scp.css
+D:\MVCprojects\POS\CityPOS\obj\Debug\net8.0\scopedcss\Views\Shared\_LayoutC.cshtml.rz.scp.css
 D:\MVCprojects\POS\CityPOS\obj\Debug\net8.0\scopedcss\bundle\CityPOS.styles.css
 D:\MVCprojects\POS\CityPOS\obj\Debug\net8.0\scopedcss\projectbundle\CityPOS.bundle.scp.css
 D:\MVCprojects\POS\CityPOS\obj\Debug\net8.0\CityPOS.csproj.Up2Date
@@ -726,14 +737,3 @@ D:\MVCprojects\POS\CityPOS\obj\Debug\net8.0\refint\CityPOS.dll
 D:\MVCprojects\POS\CityPOS\obj\Debug\net8.0\CityPOS.pdb
 D:\MVCprojects\POS\CityPOS\obj\Debug\net8.0\CityPOS.genruntimeconfig.cache
 D:\MVCprojects\POS\CityPOS\obj\Debug\net8.0\ref\CityPOS.dll
-D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\EPPlus.dll
-D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\EPPlus.Interfaces.dll
-D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\EPPlus.System.Drawing.dll
-D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
-D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
-D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
-D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
-D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
-D:\MVCprojects\POS\CityPOS\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
-D:\MVCprojects\POS\CityPOS\obj\Debug\net8.0\scopedcss\Views\Shared\_LayoutC.cshtml.rz.scp.css
-D:\MVCprojects\POS\CityPOS\obj\Debug\net8.0\scopedcss\Views\Shared\_LayoutA.cshtml.rz.scp.css
