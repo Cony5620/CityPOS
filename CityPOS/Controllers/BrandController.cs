@@ -48,14 +48,14 @@ namespace CityPOS.Controllers
         {
             try
             {
-                var isAlreadyExist = _brandService.IsAlreadyExist(brandViewModel);
-                if (isAlreadyExist)
-                {
-                    ViewData["Info"] = "This Brand code or name is already exist in the system.";
-                    ViewData["Status"] = false;
-                    bindCategoryData();
-                    return View(brandViewModel);
-                }
+                //var isAlreadyExist = _brandService.IsAlreadyExist(brandViewModel);
+                //if (isAlreadyExist)
+                //{
+                //    ViewData["Info"] = "This Brand code or name is already exist in the system.";
+                //    ViewData["Status"] = false;
+                //    bindCategoryData();
+                //    return View(brandViewModel);
+                //}
                 _brandService.Create(brandViewModel);
                 ViewData["Info"] = "Successfully save data to the system";
                 ViewData["status"] = true;

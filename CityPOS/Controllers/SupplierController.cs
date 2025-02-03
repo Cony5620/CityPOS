@@ -118,7 +118,7 @@ namespace CityPOS.Controllers
 
                 _SupplierService.Update(SupplierViewModel);
                 TempData["Info"] = "Successfully update data to the system";
-                ViewData["status"] = true;
+                TempData["status"] = true;
             }
             catch (Exception e)
             { 

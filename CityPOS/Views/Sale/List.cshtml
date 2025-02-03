@@ -98,7 +98,7 @@
             <th scope="col">Customer</th>
             <th scope="col">Sale Type</th>
             <th scope="col">Cash Amount</th>
-            <th scope="col">Actions</th>
+           @*  <th scope="col">Actions</th> *@
 
         </tr>
     </thead>
@@ -119,9 +119,9 @@
                     <td>@item.CustomerName</td>
                     <td>@item.SaleType</td>
                     <td>@item.CashAmount</td>
-                    <td>
+                   @*  <td>
                         <a href="/sale/delete?id=@item.id" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?');">Delete</a>
-                    </td>
+                    </td> *@
 
 
                 </tr>

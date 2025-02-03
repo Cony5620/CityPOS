@@ -49,7 +49,7 @@ namespace CityPOS.Controllers
                 });
                 var fileContentsInBytes = ReportHelper.ExportToExcel(PurchaseDetails, fileName);
                 var contentType = "application/vnd.openxmlformat-officedocument.spreadsheet.sheet";
-                ViewData["Info"] = "Successfully download the overdue ExcelFile.";
+                ViewData["Info"] = "Successfully download the purchasedeatil ExcelFile.";
                 ViewData["Status"] = true;
                 return File(fileContentsInBytes, contentType, fileName);
             }
@@ -57,7 +57,7 @@ namespace CityPOS.Controllers
             {
 
                 BindItemData();
-                ViewData["Info"] = "Not PurchaseDetail";
+                ViewData["Info"] = "No Purchase Details found.";
                 ViewData["Status"] = false;
                 return View();
             }

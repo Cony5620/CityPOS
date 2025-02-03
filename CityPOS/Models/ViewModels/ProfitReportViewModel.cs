@@ -7,7 +7,7 @@
         public string ItemName { get; set; }
         public string CategoryName { get; set; }
         public int QuantitySold { get; set; }
-        public decimal OriginalPrice { get; set; }
+        public decimal OriginalSellingPrice { get; set; }
         public decimal DiscountPercentage { get; set; }
         public decimal DiscountAmount { get; set; }
         public decimal NetSalePrice { get; set; }

@@ -15,7 +15,7 @@ namespace CityPOS.Services.ReportingServices
         {
             DateTime? fromDateValue = null;
             DateTime? toDateValue = null;
-
+           
             if (!string.IsNullOrEmpty(fromDate)) fromDateValue = DateTime.Parse(fromDate);
             if (!string.IsNullOrEmpty(toDate)) toDateValue = DateTime.Parse(toDate);
 
@@ -38,7 +38,7 @@ namespace CityPOS.Services.ReportingServices
                                  ItemName = i.Name,
                                  CategoryName = c.Name,
                                  QuantitySold = sd.Quantity,
-                                 OriginalPrice = sd.Price,
+                                 OriginalSellingPrice = sd.Price,
                                  PurchasePrice = pd.Price,
                                  DiscountPercentage = sd.DisPercent,
                                  DiscountAmount = (sd.Price * sd.DisPercent / 100) ,

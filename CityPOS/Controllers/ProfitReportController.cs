@@ -27,7 +27,7 @@ namespace CityPOS.Controllers
             if (profitReport.Any())
             {
                 var totalQuantitySold = profitReport.Sum(r => r.QuantitySold);
-                var totalOriginalPrice = profitReport.Sum(r => r.OriginalPrice );
+                var OriginalSellingPrice = profitReport.Sum(r => r.OriginalSellingPrice);
                 var discountpercent = profitReport.Sum(r=>r.DiscountPercentage);
                 var discountamount = profitReport.Sum(r => r.DiscountAmount);
                 var totalPurchasePrice = profitReport.Sum(r => r.PurchasePrice );
@@ -40,7 +40,7 @@ namespace CityPOS.Controllers
                 {
                     CategoryName = "Total",
                     QuantitySold = totalQuantitySold,
-                    OriginalPrice = totalOriginalPrice,
+                    OriginalSellingPrice = OriginalSellingPrice,
                     DiscountPercentage = discountpercent,
                     DiscountAmount = discountamount,
                     PurchasePrice = totalPurchasePrice,
