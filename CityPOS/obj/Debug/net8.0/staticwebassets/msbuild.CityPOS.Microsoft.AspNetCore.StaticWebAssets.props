@@ -1200,6 +1200,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\0969cce7-545a-4c92-bdfc-eeb3e17578b6_Garnier Toner.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\10b44d84-d44e-4c1a-8b79-8d0ec13a8ff8_centalla suncream.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>CityPOS</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CityPOS</BasePath>
+      <RelativePath>images/10b44d84-d44e-4c1a-8b79-8d0ec13a8ff8_centalla suncream.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\10b44d84-d44e-4c1a-8b79-8d0ec13a8ff8_centalla suncream.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\14d51bf4-f3a4-4fbc-951e-02ffc0f1015c_images (6).jpg))">
       <SourceType>Package</SourceType>
       <SourceId>CityPOS</SourceId>

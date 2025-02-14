@@ -22,7 +22,7 @@
 
     }
 }
-<table class="table">
+<table id="townshipTable" class="table">
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -54,12 +54,22 @@
         }
         else
         {
-            <div class="alert alert-danger" role="alert">
-                There is no data.
-            </div>
+            <tr>
+                <td colspan="5" class="text-center text-danger">There is no data.</td>
+            </tr>
         }
 
 
     </tbody>
 </table>
 <a href="/township/entry" class="btn btn-primary">Entry</a>
+<!-- Include jQuery & DataTables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#townshipTable').DataTable();
+    });
+</script>

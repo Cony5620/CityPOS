@@ -14,6 +14,7 @@ namespace CityPOS.Services
         }
         public void Create(SaleWithDetailViewModel model)
         {
+            //var user = _unitOfWork.UserRepository.Get(u => u.Email == model.UserEmail).FirstOrDefault();
             var SaleOrderEntity = new SaleOrderEntity
             {
                 id = Guid.NewGuid().ToString(),

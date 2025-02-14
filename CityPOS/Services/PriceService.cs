@@ -74,6 +74,7 @@ namespace CityPOS.Services
                                                       PurchasePrice = p.PurchasePrice,
                                                       WholeSalePrice = p.WholeSalePrice,
                                                       RetailSalePrice = p.RetailSalePrice,
+                                                      ModifiedAt = p.ModifiedAt,
 
                                                   }).ToList();
             return Prices;

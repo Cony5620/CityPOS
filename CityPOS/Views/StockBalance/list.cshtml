@@ -22,7 +22,7 @@
     }
 }
 
-<form id="filterForm" method="get">
+@* <form id="filterForm" method="get">
     <div class="row mb-3">
         <div class="col-4">
             <div class="mb-3">
@@ -53,7 +53,7 @@
             </div>
         </div>
     </div>
-</form>
+</form> *@
 
 <table id="StockBalanceTable" class="table">
     <thead>
@@ -88,7 +88,7 @@
         else
         {
             <tr>
-                <td colspan="7" class="text-center">There is no data available!</td>
+                <td colspan="6" class="text-center">There is no data available!</td>
             </tr>
         }
     </tbody>
@@ -96,45 +96,55 @@
 
 <a href="/StockBalance/entry" class="btn btn-primary">Go To StockControl</a>
 <a href="/StockLedger/list" class="btn btn-primary">Go To StockLedger</a>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-    $(document).ready(function () {
+    // $(document).ready(function () {
       
-        $('#CategoryDropdown').change(function () {
-            var categoryid = $(this).val();
-            if (categoryid) {
-                $.ajax({
-                    url: '@Url.Action("GetItems", "StockBalance")', 
-                    type: 'GET',
-                    data: { categoryid: categoryid },
-                    success: function (data) {
-                        $('#ItemDropdown').empty(); 
-                        $('#ItemDropdown').append($('<option>', {
-                            value: '',
-                            text: 'Select an Item'
-                        }));
-                        if (data && data.length > 0) {
-                            console.log("Data Success");
-                            $.each(data, function (index, item) {
-                                $('#ItemDropdown').append($('<option>', {
-                                    value: item.id,
-                                    text: item.name 
-                                }));
-                            });
-                        } else {
-                            $('#ItemDropdown').append($('<option>', {
-                                value: '',
-                                text: 'No items available'
-                            }));
-                        }
-                    },
-                    error: function (xhr, status, error) {
-                        console.error("Error fetching items: " + error);
-                    }
-                });
-            } else {
-                $('#ItemDropdown').empty().append('<option selected>Select an Item</option>');
-            }
-        });
+    //     $('#CategoryDropdown').change(function () {
+    //         var categoryid = $(this).val();
+    //         if (categoryid) {
+    //             $.ajax({
+    //                 url: '@Url.Action("GetItems", "StockBalance")', 
+    //                 type: 'GET',
+    //                 data: { categoryid: categoryid },
+    //                 success: function (data) {
+    //                     $('#ItemDropdown').empty(); 
+    //                     $('#ItemDropdown').append($('<option>', {
+    //                         value: '',
+    //                         text: 'Select an Item'
+    //                     }));
+    //                     if (data && data.length > 0) {
+    //                         console.log("Data Success");
+    //                         $.each(data, function (index, item) {
+    //                             $('#ItemDropdown').append($('<option>', {
+    //                                 value: item.id,
+    //                                 text: item.name 
+    //                             }));
+    //                         });
+    //                     } else {
+    //                         $('#ItemDropdown').append($('<option>', {
+    //                             value: '',
+    //                             text: 'No items available'
+    //                         }));
+    //                     }
+    //                 },
+    //                 error: function (xhr, status, error) {
+    //                     console.error("Error fetching items: " + error);
+    //                 }
+    //             });
+    //         } else {
+    //             $('#ItemDropdown').empty().append('<option selected>Select an Item</option>');
+    //         }
+    //     });
+    // });
+    $(document).ready(function () {
+        $('#StockBalanceTable').DataTable();
     });
 </script>

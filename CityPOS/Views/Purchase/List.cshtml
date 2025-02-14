@@ -75,7 +75,7 @@
                     }
                 </select>
             </div>
-        </div>
+        </div> 
 
         <div class="col-3 d-flex align-items-end">
             <div class="mb-3">
@@ -137,11 +137,18 @@
         else
         {
             <tr>
-                <td colspan="8" class="text-center">There is no data available!</td>
+                <td colspan="9" class="text-center">There is no data available!</td>
             </tr>
         }
     </tbody>
 </table>
+
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+
 
 <script>
     $('#filterForm').on('submit', function (event) {
@@ -157,5 +164,6 @@
             event.preventDefault(); // Prevent form submission
         }
     });
+ 
 </script>
 

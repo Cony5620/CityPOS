@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tpMLXXlCKbJIX9uhtvYCp7TGlJJwq2RdEIF/fAGnHfo=",
+  "Hash": "FP6Yi+iF0ZzVAxBh2CeIADPC/sduGbnxbYMmInxB1mI=",
   "Source": "CityPOS",
   "BasePath": "_content/CityPOS",
   "Mode": "Default",
@@ -2599,6 +2599,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\0969cce7-545a-4c92-bdfc-eeb3e17578b6_Garnier Toner.jpg"
+    },
+    {
+      "Identity": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\10b44d84-d44e-4c1a-8b79-8d0ec13a8ff8_centalla suncream.jpg",
+      "SourceId": "CityPOS",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\",
+      "BasePath": "_content/CityPOS",
+      "RelativePath": "images/10b44d84-d44e-4c1a-8b79-8d0ec13a8ff8_centalla suncream.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\10b44d84-d44e-4c1a-8b79-8d0ec13a8ff8_centalla suncream.jpg"
     },
     {
       "Identity": "D:\\MVCprojects\\POS\\CityPOS\\wwwroot\\images\\14d51bf4-f3a4-4fbc-951e-02ffc0f1015c_images (6).jpg",

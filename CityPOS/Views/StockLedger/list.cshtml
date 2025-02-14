@@ -38,7 +38,7 @@
             </div>
         </div>
 
-        <div class="col-3">
+       @*  <div class="col-3">
             <div class="mb-3">
                 <label class="form-label">Item</label>
                 <select class="form-select" id="ItemDropdown" name="Itemid">
@@ -56,7 +56,7 @@
                     }
                 </select>
             </div>
-        </div>
+        </div> *@
 
         <div class="col-3 d-flex align-items-end">
             <div class="mb-3">
@@ -110,6 +110,12 @@
     </tbody>
 </table>
 
+<!-- Include jQuery & DataTables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
@@ -120,9 +126,13 @@
 
            
             if (!(fromDate && toDate) && !itemId) {
-                alert("Please fill in either the dates or select an item.");
+                alert("Please fill in either the dates.");
                 event.preventDefault();
             }
         });
     });
+    $(document).ready(function () {
+        $('#StockLedgerTable').DataTable();
+    });
 </script>
+

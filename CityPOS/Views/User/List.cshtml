@@ -19,7 +19,7 @@
         @TempData["ErrorMessage"]
     </div>
 }
-<table class="table ">
+<table id="userTable" class="table ">
     <thead>
         <tr>
             <th>User Name</th>
@@ -43,4 +43,15 @@
         }
     </tbody>
 </table>
+<!-- Include jQuery & DataTables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#userTable').DataTable();
+    });
+</script>
+
 

@@ -1,35 +1,34 @@
 ﻿@model IEnumerable<CityViewModel>
+
 @{
     ViewData["Title"] = "City";
 }
+
 <h3>City List</h3>
+
 @{
     var info = TempData["info"];
 }
+
 @if (info != null)
 {
-    @if (Convert.ToBoolean(TempData["status"]))
+    if (Convert.ToBoolean(TempData["status"]))
     {
-        <div class="alert alert-success" role="alert">
-            @info
-        </div>
+        <div class="alert alert-success" role="alert">@info</div>
     }
     else
     {
-        <div class="alert alert-danger" role="alert">
-            @info
-        </div>
-
+        <div class="alert alert-danger" role="alert">@info</div>
     }
 }
-<table class="table">
+
+<table id="cityTable" class="table table-striped">
     <thead>
         <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
             <th scope="col">Remark</th>
             <th scope="col">Actions</th>
-            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
@@ -42,22 +41,42 @@
                     <th scope="row">@i</th>
                     <td>@item.Name</td>
                     <td>@item.Remark</td>
-                    <td><a href="/city/edit?id=@item.id" class="btn btn-success">Edit</a></td>
-                    <td><a href="/city/delete?id=@item.id" class="btn btn-danger" onclick="return confirm('Are you sure to delete');">Delete</a></td>
+                    <td>
+                        <a href="/city/edit?id=@item.id" class="btn btn-success">Edit</a>
+                        <a href="/city/delete?id=@item.id" class="btn btn-danger" onclick="return confirm('Are you sure to delete?');">Delete</a>
+                    </td>
                 </tr>
                 i++;
             }
-
-
         }
         else
         {
-            <div class="alert alert-danger" role="alert">
-                There is no data.
-            </div>
+            <tr>
+                <td colspan="4" class="text-center text-danger">There is no data.</td>
+            </tr>
         }
-
-
     </tbody>
 </table>
-<a href="/city/entry" class="btn btn-primary">Entry</a>
+
+<a href="/city/entry" class="btn btn-primary">Add New City</a>
+
+<!-- Include jQuery & DataTables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+@* <script>
+    $(document).ready(function () {
+        $('#cityTable').DataTable({
+            "paging": true,
+            "searching": true,
+            "ordering": true,
+            "info": true
+        });
+    });
+</script> *@
+<script>
+    $(document).ready(function () {
+        $('#cityTable').DataTable();
+    });
+</script>

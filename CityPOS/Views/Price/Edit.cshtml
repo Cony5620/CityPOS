@@ -73,8 +73,12 @@
         <label class="form-label">RetailSale Price</label>
         <input type="number" class="form-control" name="RetailSalePrice" value="@Model.RetailSalePrice" required>
     </div>
+    <div class="mb-3">
+        <label class="form-label">ModifiedAt</label>
+        <input type="text" class="form-control" name="ModifiedAt" value="@Model.ModifiedAt" readonly>
 
-  
+    </div>
+
 
     <button type="submit" class="btn btn-primary">Update</button>
     <a href="/Price/list" class="btn btn-secondary">Go to List</a>

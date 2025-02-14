@@ -73,7 +73,7 @@ namespace CityPOS.Controllers
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
 
-                TempData["ErrorMessage"] = "User creation failed. Please check the errors below.";
+                TempData["ErrorMessage"] = "User creation failed. Please don't space your name and check already exist and your password must be strong!";
             }
 
             var roles = _roleManager.Roles.Select(r => new SelectListItem

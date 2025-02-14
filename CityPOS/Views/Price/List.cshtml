@@ -32,6 +32,7 @@
             <th scope="col">Purchase Price</th>
             <th scope="col">WholeSale Price</th>
             <th scope="col">RetailSale Price</th>
+            <th scope="col">Modified Date</th>
             <th scope="col">Actions</th>
             <th scope="col"></th>
         </tr>
@@ -50,6 +51,7 @@
                     <td>@Price.PurchasePrice</td>
                     <td>@Price.WholeSalePrice</td>
                     <td>@Price.RetailSalePrice</td>
+                    <td>@Price.ModifiedAt.ToString("yyyy-MM-dd")</td>
                     
                     <td>
                         <a href="/Price/edit?id=@Price.id" class="btn btn-success">Edit</a>
@@ -69,26 +71,14 @@
         }
     </tbody>
 </table>
-
-<a href="/Price/entry" class="btn btn-primary">Entry</a>
-
-<!-- jQuery -->
+<!-- Include jQuery & DataTables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- DataTables CSS and JS -->
-<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" />
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 
 <script>
     $(document).ready(function () {
-        $('#categoryTable').DataTable({
-            "paging": true,
-            "searching": true,
-            "ordering": true,
-            "info": true,
-            "lengthChange": true,
-            "pageLength": 10
-        });
+        $('#PriceTable').DataTable();
     });
 </script>
+
